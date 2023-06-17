@@ -18,6 +18,18 @@
     --color-hover: #FF00FF;
 }
 
+/* Effects */
+.setBlurEffect {
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 570px) {
+    .setAutoHide {
+      display: none;
+    }
+  }
+
+/* Background */
 .mainBackground {
     background-color: var(--color-background);
     background-image: url('/img/background.png');
@@ -28,7 +40,7 @@
 /* Nav */
 .mainNav {
     width: 100%;
-    backdrop-filter: blur(5px);
+    height: 70px;
     overflow: hidden;
     position: relative;
     display: inline-flex;
@@ -93,22 +105,20 @@
 .scrollDown {
     width: 20%;
     height: auto;
-    scale: 2;
-    margin: 10% 40%;
-    margin-top: 80px;
-    margin-bottom: 150px;
+    scale: 0.5;
+    margin: 0px 40% 200px;
     animation: 0.5s linear 0s infinite alternate scrollDownAnim;
     -webkit-animation: 0.5s linear 0s infinite alternate scrollDownAnim;
 }
 
 @keyframes scrollDownAnim {
     from {
-        transform: translateY(-0.1vh);
-        -webkit-transform: translateY(-0.1vh);
-        -moz-transform: translateY(-0.1vh);
-        -ms-transform: translateY(-0.1vh);
-        -o-transform: translateY(-0.1vh);
-    }
+        transform: translateY(-1vh);
+        -webkit-transform: translateY(-1vh);
+        -moz-transform: translateY(-1vh);
+        -ms-transform: translateY(-1vh);
+        -o-transform: translateY(-1vh);
+}
     to {
         transform: translateY(0);
         -webkit-transform: translateY(0);
@@ -127,7 +137,6 @@
     -moz-border-radius: 16px;
     -ms-border-radius: 16px;
     -o-border-radius: 16px;
-    backdrop-filter: blur(5px);
     margin-bottom: 128px;
 }
 
