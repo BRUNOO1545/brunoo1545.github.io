@@ -174,30 +174,3 @@
     margin: 10px 16%;
     margin-bottom: 32px;
 }
-
-/* Footer */
-.footerMain {
-    display: inline-flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    border-style: solid;
-    border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
-    margin-bottom: 128px;
-}
-
-.footerIcon {
-    margin: 10px 15px;
-    width: 32px;
-    height: auto;
-}
-
-.footerIcon:hover {
-    scale: 1.1;
-    filter: opacity(50%);
-    -webkit-filter: opacity(50%);
-}
