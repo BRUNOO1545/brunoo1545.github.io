@@ -32,9 +32,9 @@
 /* Background */
 .mainBackground {
     background-color: var(--color-background);
-    /*background-image: url('../img/background.png');
+    background-image: url('../img/background.png');
     background-repeat: no-repeat;
-    background-size: 100%;*/
+    background-size: 100%;
 }
 
 .mainBackgroundVideo {
