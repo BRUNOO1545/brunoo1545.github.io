@@ -201,11 +201,18 @@
 
 /* Footer */
 .footerMain {
+    display: block;
+    font-family: 'Architects Daughter', cursive;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.footerSet {
     display: inline-flex;
     width: 100%;
     align-items: center;
     justify-content: center;
-    border-style: solid;
+    border-style: none;
     border-radius: 16px;
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
