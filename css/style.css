@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 * {
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
 
@@ -63,6 +64,7 @@
 
 /* Nav */
 .mainNav {
+    scroll-snap-align: start;
     width: 100%;
     height: 70px;
     overflow: hidden;
@@ -154,6 +156,7 @@
 
 /* Frames */
 .mainFrame {
+    scroll-snap-align: start;
     background-color: var(--color-background-2);
     border-style: solid;
     border-radius: 16px;
