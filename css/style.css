@@ -204,6 +204,7 @@
 
 /* Footer */
 .footerMain {
+    scroll-snap-align: end;
     display: block;
     font-family: 'Architects Daughter', cursive;
     text-align: center;
