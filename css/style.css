@@ -160,6 +160,7 @@
     justify-content: center;
     color: var(--color-texto);
     font-family: 'Rubik Bubbles', bold;
+    text-shadow: var(--color-sombra) 2px 5px;
 }
 
 .helloContainer {
@@ -167,7 +168,7 @@
     height: 100vh;
     display: flex;
     position: center;
-    background-image: url("../assets/img/gallery/background.jpg");
+    background-image: url("../assets/img/gallery/background/background_1.png");
     background-position: center;
     background-size: cover;
 }
