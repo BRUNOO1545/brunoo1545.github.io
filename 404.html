@@ -24,12 +24,12 @@
                 --color-texto-hover: #000;
                 --color-texto-active: #000;
                 --color-sombra: #000;
-                --color-principal: #ea00d9;
-                --color-secundario: #091833;
-                --color-terciario: #0abdc6;
-                --color-principal-hover: #bd00b0;
-                --color-secundario-hover: #050c18;
-                --color-terciario-hover: #08696e;
+                --color-principal: #ecdd18;
+                --color-secundario: #222222;
+                --color-terciario: #22cad3;
+                --color-principal-hover: #aaa00c;
+                --color-secundario-hover: #1d1d1d;
+                --color-terciario-hover: #18868b;
             }
 
             .userUnselect {
@@ -194,6 +194,14 @@
                 text-decoration: underline;
                 color: var(--color-texto);
             }
+
+            .returnButton a {
+                color: var(--color-principal);
+            }
+
+            .returnButton a:hover {
+                color: var(--color-principal-hover);
+            }
         </style>
     </head>
 
@@ -202,8 +210,7 @@
             <p>Error 404</p>
         </div>
 
-        <div id="home" class="helloContainer userUnselect">
-            <!--<p>Hola!<br>Parece que te confundiste de pagina, intenta <a href="https://brunoo1545.github.io/">volver al inicio</a>.</p>-->
+        <div id="home" class="helloContainer userUnselect returnButton">
             <p>Hola!<br>Parece que te confundiste de pagina, intenta <a href="https://brunoo1545.github.io/">volver al inicio</a>.</p>
         </div>
 
