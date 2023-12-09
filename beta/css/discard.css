@@ -105,3 +105,9 @@
     font-size: 2rem;
     position: absolute;
 }
+
+/* html video bg
+<video autoplay loop muted plays-inline class="mainBackgroundVideo">
+    <source src="assets/video/background/code_background.mp4" type="video/mp4">
+</video>
+*/
