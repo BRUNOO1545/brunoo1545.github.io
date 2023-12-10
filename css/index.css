@@ -157,6 +157,11 @@
 }
 
 /* Hamburguer menu*/
+.navHamburguerMenuDisplayed {
+    margin-top: 5px;
+    background-color: var(--color-secundario);
+}
+
 .mainNavOptionsHamburguer {
     justify-content: center;
     align-items: center;
@@ -173,10 +178,6 @@
 }
 
 /* Display */
-.navHamburguerMenuDisplayed {
-    visibility: hidden;
-}
-
 .navHamburguerMenuDisplayed ul {
     display: flex;
     flex-direction: column;

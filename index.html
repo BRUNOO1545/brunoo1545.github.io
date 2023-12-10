@@ -13,9 +13,10 @@
         <!-- link -->
         <link rel="stylesheet" href="./css/index.css">
         <link rel="stylesheet" href="./css/progress.css">
+        <script src="./js/index.js"></script>
     </head>
 
-    <body class="mainBody">
+    <body class="mainBody" onload="navHamburguerMenuForceClose()">
         <nav class="mainNav">
             <div class="navNormalMenuDisplayed useUnselect useShadow useShadowImg">
                 <div class="mainNavLogo">
@@ -23,7 +24,7 @@
                     <p class="useShadowTextSub">BRUNOO1545</p>
                 </div>
 
-                <div class="mainNavOptionsHamburguer" onclick="">
+                <div id="navHamburguer" class="mainNavOptionsHamburguer" onclick="navHamburguerMenuShow()">
                     <img src="./assets/img/ui/menu_hamburguer.png">
                 </div>
 
@@ -37,8 +38,8 @@
                 </div>
             </div>
 
-            <div class="navHamburguerMenuDisplayed useUnselect useShadow">
-                <ul onclick="">
+            <div id="navMenuDisplay" class="navHamburguerMenuDisplayed useUnselect useShadow">
+                <ul onclick="navHamburguerMenuForceClose()">
                     <li><a href="#home">INICIO</a></li>
                     <li><a href="#about">SOBRE MÍ</a></li>
                     <li><a href="#portfolio">PORTFOLIO</a></li>
