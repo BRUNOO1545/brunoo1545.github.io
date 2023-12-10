@@ -16,18 +16,29 @@
     </head>
 
     <body class="mainBody">
-        <nav class="mainNav userUnselect useShadow">
-            <div class="mainNavLogo">
-                <img src="https://avatars.githubusercontent.com/u/71949811?v=4">
-                <p>BRUNOO1545</p>
+        <nav class="mainNav">
+            <div class="navNormalMenuDisplayed useUnselect useShadow useShadowImg">
+                <div class="mainNavLogo">
+                    <img src="https://avatars.githubusercontent.com/u/71949811?v=4">
+                    <p class="useShadowTextSub">BRUNOO1545</p>
+                </div>
+
+                <div class="mainNavOptionsHamburguer" onclick="">
+                    <img src="./assets/img/ui/menu_hamburguer.png">
+                </div>
+
+                <div class="mainNavOptions">
+                    <ul>
+                        <li><a href="#home">INICIO</a></li>
+                        <li><a href="#about">SOBRE MÍ</a></li>
+                        <li><a href="#portfolio">PORTFOLIO</a></li>
+                        <li><a href="#contact">CONTACTO</a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="mainNavOptionsHamburguer">
-                <a href="#menuHamburguer"><img src="./assets/img/ui/menu_hamburguer.png"></a>
-            </div>
-
-            <div class="mainNavOptions">
-                <ul>
+            <div class="navHamburguerMenuDisplayed useUnselect useShadow">
+                <ul onclick="">
                     <li><a href="#home">INICIO</a></li>
                     <li><a href="#about">SOBRE MÍ</a></li>
                     <li><a href="#portfolio">PORTFOLIO</a></li>
@@ -36,77 +47,77 @@
             </div>
         </nav>
 
-        <div id="home" class="helloContainer userUnselect">
-            <p>Hola!<br>Bienvenido al brunoverso.</p>
+        <div id="home" class="helloContainer useUnselect">
+            <p class="useShadowText">Hola!<br>Bienvenido al brunoverso.</p>
         </div>
 
         <div id="about" class="basicContainer useShadow basicContainerHoverImg">
-            <p class="basicContainerTitle">Sobre mi</p>
+            <p class="basicContainerTitle useShadowText">Sobre mi</p>
 
             <div class="basicContainerContent">
-                <img src="./assets/img/gallery/art/2.jpg" class="useShadow userUnselect">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur doloribus cumque veritatis molestias nulla quod earum voluptates saepe quia neque, tempora similique totam. Ducimus deserunt neque nisi delectus repellendus eos!</p>
+                <img src="./assets/img/gallery/art/2.jpg" class="useShadow useUnselect">
+                <p class="useShadowTextSub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur doloribus cumque veritatis molestias nulla quod earum voluptates saepe quia neque, tempora similique totam. Ducimus deserunt neque nisi delectus repellendus eos!</p>
             </div>
         </div>
 
-        <div id="portfolio" class="basicContainer userUnselect useShadow basicContainerHoverImg">
+        <div id="portfolio" class="basicContainer useUnselect useShadow basicContainerHoverImg">
+            <p class="basicContainerTitle useShadowText">Portfolio</p>
 
             <!-- Tecnologias -->
-            <p class="basicContainerTitle">Portfolio</p>
-            <p class="basicContainerSubtitle">Hablemos un poco de mis habilidades en software y tecnologias</p>
+            <p class="basicContainerSubtitle useShadowTextSub">Hablemos un poco de mis habilidades en software y tecnologias</p>
 
-            <div class="basicContainerAppLogos">
+            <div class="basicContainerAppLogos useShadowTextSub useShadowImg">
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/logo/androidstudio.png" class="userUnselect" alt="Android Studio">
+                    <img src="./assets/img/logo/androidstudio.png" class="useUnselect" alt="Android Studio">
                     <p>Android Studio</p>
                     
                     <progress value="50" max="100" style="--value: 50; --max: 100;"></progress>
                 </div>  
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/logo/firebase.png" class="userUnselect" alt="Firebase">
+                    <img src="./assets/img/logo/firebase.png" class="useUnselect" alt="Firebase">
                     <p>Firebase</p>
                     
                     <progress value="75" max="100" style="--value: 75; --max: 100;"></progress>
                 </div>
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/logo/gamemaker.png" class="userUnselect" alt="Gamemaker Studio">
+                    <img src="./assets/img/logo/gamemaker.png" class="useUnselect" alt="Gamemaker Studio">
                     <p>Gamemaker Studio</p>
                     
                     <progress value="75" max="100" style="--value: 75; --max: 100;"></progress>
                 </div>
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/logo/github.png" class="userUnselect" alt="Github">
+                    <img src="./assets/img/logo/github.png" class="useUnselect" alt="Github">
                     <p>Github</p>
                     
                     <progress value="75" max="100" style="--value: 75; --max: 100;"></progress>
                 </div>
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/logo/githubpages.png" class="userUnselect" alt="Github Pages">
+                    <img src="./assets/img/logo/githubpages.png" class="useUnselect" alt="Github Pages">
                     <p>Github Pages</p>
                     
                     <progress value="75" max="100" style="--value: 75; --max: 100;"></progress>
                 </div>
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/logo/ue4.png" class="userUnselect" alt="Unreal Engine 4">
+                    <img src="./assets/img/logo/ue4.png" class="useUnselect" alt="Unreal Engine 4">
                     <p>Unreal Engine 4</p>
                     
                     <progress value="50" max="100" style="--value: 50; --max: 100;"></progress>
                 </div>
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/logo/vs2019.png" class="userUnselect" alt="Visual Studio 2019">
+                    <img src="./assets/img/logo/vs2019.png" class="useUnselect" alt="Visual Studio 2019">
                     <p>Visual Studio 2019</p>
                     
                     <progress value="50" max="100" style="--value: 50; --max: 100;"></progress>
                 </div>
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/logo/vsc.png" class="userUnselect" alt="Visual Studio Code">
+                    <img src="./assets/img/logo/vsc.png" class="useUnselect" alt="Visual Studio Code">
                     <p>Visual Studio Code</p>
                     
                     <progress value="100" max="100" style="--value: 100; --max: 100;"></progress>
@@ -114,46 +125,46 @@
             </div>
 
             <!-- lenguajes -->
-            <p class="basicContainerSubtitle">Ahora le toca a los lenguajes</p>
+            <p class="basicContainerSubtitle useShadowTextSub">Ahora le toca a los lenguajes</p>
 
-            <div class="basicContainerAppLogos">
+            <div class="basicContainerAppLogos useShadowTextSub useShadowImg">
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/lang/cpp.png" class="userUnselect" alt="CPP">
+                    <img src="./assets/img/lang/cpp.png" class="useUnselect" alt="CPP">
                     <p>C++</p>
                     
                     <progress value="50" max="100" style="--value: 50; --max: 100;"></progress>
                 </div>
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/lang/csharp.png" class="userUnselect" alt="C Sharp">
+                    <img src="./assets/img/lang/csharp.png" class="useUnselect" alt="C Sharp">
                     <p>C#</p>
                     
                     <progress value="25" max="100" style="--value: 25; --max: 100;"></progress>
                 </div>
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/lang/css.png" class="userUnselect" alt="CSS3">
+                    <img src="./assets/img/lang/css.png" class="useUnselect" alt="CSS3">
                     <p>CSS3</p>
                     
                     <progress value="75" max="100" style="--value: 75; --max: 100;"></progress>
                 </div>
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/lang/html.png" class="userUnselect" alt="HTML5">
+                    <img src="./assets/img/lang/html.png" class="useUnselect" alt="HTML5">
                     <p>HTML5</p>
                     
                     <progress value="75" max="100" style="--value: 75; --max: 100;"></progress>
                 </div>
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/lang/javascript.png" class="userUnselect" alt="JavaScript">
+                    <img src="./assets/img/lang/javascript.png" class="useUnselect" alt="JavaScript">
                     <p>JavaScript</p>
                     
                     <progress value="50" max="100" style="--value: 50; --max: 100;"></progress>
                 </div>
                 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/lang/kotlin.png" class="userUnselect" alt="Kotlin">
+                    <img src="./assets/img/lang/kotlin.png" class="useUnselect" alt="Kotlin">
                     <p>Kotlin</p>
                     
                     <progress value="50" max="100" style="--value: 50; --max: 100;"></progress>
@@ -161,18 +172,18 @@
             </div>
 
             <!-- Otros -->
-            <p class="basicContainerSubtitle">Otros programas</p>
+            <p class="basicContainerSubtitle useShadowTextSub">Otros programas</p>
 
-            <div class="basicContainerAppLogos">
+            <div class="basicContainerAppLogos useShadowTextSub useShadowImg">
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/logo/canva.png" class="userUnselect" alt="Canva">
+                    <img src="./assets/img/logo/canva.png" class="useUnselect" alt="Canva">
                     <p>Canva</p>
                     
                     <progress value="75" max="100" style="--value: 75; --max: 100;"></progress>
                 </div>
 
                 <div class="basicContainerAppLogoSquare">
-                    <img src="./assets/img/logo/flstudio.png" class="userUnselect" alt="FL Studio">
+                    <img src="./assets/img/logo/flstudio.png" class="useUnselect" alt="FL Studio">
                     <p>FL Studio</p>
                     
                     <progress value="100" max="100" style="--value: 100; --max: 100;"></progress>
@@ -182,19 +193,19 @@
 
         <footer id="contact">
             <div class="basicContainerFooter useShadow userHoverBasic">
-                <p class="basicContainerTitle">Contacto y redes</p>
-                <p class="basicContainerSubtitle">Acá estan mis redes, usa cualquiera de estos metodos de contacto</p>
+                <p class="basicContainerTitle useShadowText">Contacto y redes</p>
+                <p class="basicContainerSubtitle useShadowTextSub">Acá están mis redes, usá cualquier metodo de contacto</p>
 
-                <div class="basicContainerLogos">
-                    <a href="https://www.github.com/brunoo1545/" target="_blank"><img src="./assets/img/socialmedia/github.png" class="userUnselect" alt="Github" title="Github"></a>
-                    <a href="https://www.instagram.com/brunoo1545/" target="_blank"><img src="./assets/img/socialmedia/instagram.png" class="userUnselect" alt="Instagram" title="Instagram"></a>
-                    <a href="https://open.spotify.com/intl-es/artist/5GU3aszupYH9fS3jNnsWhV?si=L_AAchzcQtGF53cLPFysFA" target="_blank"><img src="./assets/img/socialmedia/spotify.png" class="userUnselect" alt="Spotify" title="Spotify"></a>
-                    <a href="https://www.twitch.tv/brunoo1545/" target="_blank"><img src="./assets/img/socialmedia/twitch.png" class="userUnselect" alt="Twitch" title="Twitch"></a>
-                    <a href="https://www.twitter.com/brunooo1545/" target="_blank"><img src="./assets/img/socialmedia/twitterx.png" class="userUnselect" alt="Twitter (X)" title="Twitter (X)"></a>
-                    <a href="https://www.youtube.com/channel/UCN3H8P5ltstml7YoOJGDcbw" target="_blank"><img src="./assets/img/socialmedia/youtube.png" class="userUnselect" alt="Youtube" title="Youtube"></a>
+                <div class="basicContainerLogos useShadowImg">
+                    <a href="https://www.github.com/brunoo1545/" target="_blank"><img src="./assets/img/socialmedia/github.png" class="useUnselect" alt="Github" title="Github"></a>
+                    <a href="https://www.instagram.com/brunoo1545/" target="_blank"><img src="./assets/img/socialmedia/instagram.png" class="useUnselect" alt="Instagram" title="Instagram"></a>
+                    <a href="https://open.spotify.com/intl-es/artist/5GU3aszupYH9fS3jNnsWhV?si=L_AAchzcQtGF53cLPFysFA" target="_blank"><img src="./assets/img/socialmedia/spotify.png" class="useUnselect" alt="Spotify" title="Spotify"></a>
+                    <a href="https://www.twitch.tv/brunoo1545/" target="_blank"><img src="./assets/img/socialmedia/twitch.png" class="useUnselect" alt="Twitch" title="Twitch"></a>
+                    <a href="https://www.twitter.com/brunooo1545/" target="_blank"><img src="./assets/img/socialmedia/twitterx.png" class="useUnselect" alt="Twitter (X)" title="Twitter (X)"></a>
+                    <a href="https://www.youtube.com/channel/UCN3H8P5ltstml7YoOJGDcbw" target="_blank"><img src="./assets/img/socialmedia/youtube.png" class="useUnselect" alt="Youtube" title="Youtube"></a>
                 </div>
 
-                <p class="footerCopy">2023 BRUNOO1545 • <a href="https://github.com/BRUNOO1545/brunoo1545.github.io" target="_blank">SOURCE CODE</a></p>
+                <p class="footerCopy useShadowTextSub">2023 BRUNOO1545 • <a href="https://github.com/BRUNOO1545/brunoo1545.github.io" target="_blank">SOURCE CODE</a></p>
             </div>
         </footer>
     </body>

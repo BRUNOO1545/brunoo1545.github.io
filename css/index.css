@@ -23,7 +23,8 @@
     --color-terciario-hover: #18868b;
 }
 
-.userUnselect {
+/* Propieties */
+.useUnselect {
     user-select: none;
 }
 
@@ -31,6 +32,20 @@
     box-shadow: var(--color-sombra) 0px 5px;
 }
 
+.useShadowText {
+    text-shadow: var(--color-sombra) 2px 5px;
+}
+
+.useShadowTextSub {
+    text-shadow: var(--color-sombra) 2px 2px;
+}
+
+.useShadowImg img {
+    filter: drop-shadow(2px 2px var(--color-sombra));
+    -webkit-filter: drop-shadow(2px 2px var(--color-sombra));
+}
+
+/* Body */
 .mainBody {
     margin: 0;
     padding: 0;
@@ -42,6 +57,10 @@
     .mainNavOptions {
         display: none;
     }
+    
+    .mainNavOptionsHamburguer {
+        display: flex;
+    }
 
     .basicContainerContent {
         flex-wrap: wrap;
@@ -50,6 +69,10 @@
 }
 
 @media screen and (min-width: 800px) {
+    .mainNavOptions {
+        display: flex;
+    }
+
     .mainNavOptionsHamburguer {
         display: none;
     }
@@ -69,26 +92,34 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    flex-direction: column;
     margin: 0;
     background-color: var(--color-secundario);
 }
 
+.navNormalMenuDisplayed {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .mainNavLogo {
-    font-family: 'Architects Daughter', bold;
+    font-family: 'Rubik Bubbles', bold;
     color: var(--color-texto);
-    padding-left: 16px;
+    margin: 0;
+    padding: 0;
     display: flex;
 }
 
 .mainNavLogo img {
     width: 32px;
     height: 32px;
-    margin: 10px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    margin: 8px;
+    border-radius: 20%;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    -ms-border-radius: 20%;
+    -o-border-radius: 20%;
 }
 
 .mainNavOptions ul {
@@ -97,7 +128,6 @@
     overflow: hidden;
     margin: 0;
     padding: 0;
-    display: flex;
 }
 
 .mainNavOptions ul li {
@@ -105,37 +135,79 @@
 }
 
 .mainNavOptions ul li a {
-    font-family: 'Architects Daughter', bold;
+    font-family: 'Rubik Bubbles', bold;
     color: var(--color-texto);
     text-decoration: none;
     display: block;
     padding: 16px;
     margin: 0px;
+    text-shadow: var(--color-sombra) 2px 2px;
 }
 
 .mainNavOptions ul li a:hover {
     color: var(--color-texto-hover);
     background-color: var(--color-principal);
+    text-shadow: var(--color-sombra) 0px 0px;
 }
 
 .mainNavOptions ul li a:active {
     color: var(--color-texto-active);
     background-color: var(--color-principal-hover);
+    text-shadow: var(--color-sombra) 0px 0px;
 }
 
 /* Hamburguer menu*/
 .mainNavOptionsHamburguer {
-    scale: 0.05;
-    width: 25px;
-    height: 25px;
-    padding-top: 5px;
-    padding-right: 50px;
+    justify-content: center;
+    align-items: center;
 }
 
-.mainNavOptionsHamburguer:hover {
-    scale: 0.06;
-    padding-top: 2px;
-    padding-right: 55px;
+.mainNavOptionsHamburguer img {
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+}
+
+.mainNavOptionsHamburguer img:hover {
+    scale: 1.1;
+}
+
+/* Display */
+.navHamburguerMenuDisplayed ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    background-color: transparent;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navHamburguerMenuDisplayed ul li {
+    float: right;
+}
+
+.navHamburguerMenuDisplayed ul li a {
+    font-family: 'Rubik Bubbles', bold;
+    color: var(--color-texto);
+    text-decoration: none;
+    display: block;
+    padding: 16px;
+    margin: 0px;
+    text-shadow: var(--color-sombra) 2px 2px;
+}
+
+.navHamburguerMenuDisplayed ul li a:hover {
+    color: var(--color-texto-hover);
+    background-color: var(--color-principal);
+    text-shadow: var(--color-sombra) 0px 0px;
+}
+
+.navHamburguerMenuDisplayed ul li a:active {
+    color: var(--color-texto-active);
+    background-color: var(--color-principal-hover);
+    text-shadow: var(--color-sombra) 0px 0px;
 }
 
 /* Cointainer */
@@ -149,7 +221,6 @@
     justify-content: center;
     color: var(--color-texto);
     font-family: 'Rubik Bubbles', bold;
-    text-shadow: var(--color-sombra) 2px 5px;
 }
 
 .helloContainer {

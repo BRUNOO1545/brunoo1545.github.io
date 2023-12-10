@@ -24,6 +24,7 @@ Original code from: https://codepen.io/brandonmcconnell/pen/RwpyZGo
 }
 
 progress[value] {
+    box-shadow: #000 2px 2px;
     display: block;
     position: relative;
     appearance: none;
