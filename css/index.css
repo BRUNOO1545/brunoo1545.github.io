@@ -116,25 +116,11 @@
 .mainNavOptions ul li a:hover {
     color: var(--color-texto-hover);
     background-color: var(--color-principal);
-    /*
-    box-shadow: 0px 0px 5px 5px var(--color-principal);
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    */
 }
 
 .mainNavOptions ul li a:active {
     color: var(--color-texto-active);
     background-color: var(--color-principal-hover);
-    /*box-shadow: 0 0 5px 5px var(--color-principal-hover);
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;*/
 }
 
 /* Hamburguer menu*/
@@ -171,7 +157,7 @@
     height: 100vh;
     display: flex;
     position: center;
-    background-image: url("../assets/img/gallery/background/background_1.png");
+    background-image: url("../assets/img/gallery/background/background.png");
     background-position: center;
     background-size: cover;
 }
