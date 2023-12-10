@@ -94,13 +94,13 @@
     flex-wrap: wrap;
     flex-direction: column;
     margin: 0;
-    background-color: var(--color-secundario);
 }
 
 .navNormalMenuDisplayed {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: var(--color-secundario);
 }
 
 .mainNavLogo {
@@ -173,6 +173,10 @@
 }
 
 /* Display */
+.navHamburguerMenuDisplayed {
+    visibility: hidden;
+}
+
 .navHamburguerMenuDisplayed ul {
     display: flex;
     flex-direction: column;
