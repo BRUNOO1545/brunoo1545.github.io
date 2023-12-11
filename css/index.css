@@ -23,35 +23,6 @@
     --color-terciario-hover: #18868b;
 }
 
-/* Propieties */
-.useUnselect {
-    user-select: none;
-}
-
-.useShadow {
-    box-shadow: var(--color-sombra) 0px 5px;
-}
-
-.useShadowText {
-    text-shadow: var(--color-sombra) 2px 5px;
-}
-
-.useShadowTextSub {
-    text-shadow: var(--color-sombra) 2px 2px;
-}
-
-.useShadowImg img {
-    filter: drop-shadow(2px 2px var(--color-sombra));
-    -webkit-filter: drop-shadow(2px 2px var(--color-sombra));
-}
-
-/* Body */
-.mainBody {
-    margin: 0;
-    padding: 0;
-    background-color: var(--color-fondo);
-}
-
 /* media */
 @media screen and (max-width: 800px) {
     .mainNavOptions {
@@ -81,6 +52,40 @@
         flex-wrap: nowrap;
         text-align: left;
     }
+}
+
+/* Propieties */
+.useUnselect {
+    user-select: none;
+}
+
+.useShadow {
+    box-shadow: var(--color-sombra) 0px 5px;
+}
+
+.useShadowText {
+    text-shadow: var(--color-sombra) 2px 5px;
+}
+
+.useShadowTextSub {
+    text-shadow: var(--color-sombra) 2px 2px;
+}
+
+.useShadowImg img {
+    filter: drop-shadow(2px 2px var(--color-sombra));
+    -webkit-filter: drop-shadow(2px 2px var(--color-sombra));
+}
+
+.useShadowImgMobileNav a:hover img {
+    filter: brightness(0);
+    -webkit-filter: brightness(0);
+}
+
+/* Body */
+.mainBody {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
 }
 
 /* nav */
@@ -194,15 +199,17 @@
 
 .navHamburguerMenuDisplayed ul li {
     float: right;
+    display: block;
 }
 
 .navHamburguerMenuDisplayed ul li a {
     font-family: 'Rubik Bubbles', bold;
     color: var(--color-texto);
     text-decoration: none;
-    display: block;
-    padding: 16px;
-    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
     text-shadow: var(--color-sombra) 2px 2px;
 }
 
@@ -216,6 +223,12 @@
     color: var(--color-texto-active);
     background-color: var(--color-principal-hover);
     text-shadow: var(--color-sombra) 0px 0px;
+}
+
+.navHamburguerMenuDisplayed img {
+    width: 32px;
+    height: 32px;
+    margin: 8px;
 }
 
 /* Cointainer */

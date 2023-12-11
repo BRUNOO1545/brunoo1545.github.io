@@ -25,7 +25,7 @@
                 </a>
 
                 <div id="navHamburguer" class="mainNavOptionsHamburguer" onclick="navHamburguerMenuShow()">
-                    <img src="./assets/img/ui/menu_hamburguer.png">
+                    <img id="navHamburguerMenuIcon" src="./assets/img/ui/menu_hamburguer.png">
                 </div>
 
                 <div class="mainNavOptions">
@@ -38,12 +38,42 @@
                 </div>
             </div>
 
-            <div id="navMenuDisplay" class="navHamburguerMenuDisplayed useUnselect useShadow">
-                <ul onclick="navHamburguerMenuForceClose()">
+            <div id="navMenuDisplay" class="navHamburguerMenuDisplayed useUnselect useShadow useShadowImg">
+                <ul onclick="navHamburguerMenuForceClose()" class="useShadowImgMobileNav">
+                    <li>
+                        <a href="#home">
+                            <img src="./assets/img/ui/menu_home.png">
+                            <p>INICIO</p>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#about">
+                            <img src="./assets/img/ui/menu_about.png">
+                            <p>SOBRE MÍ</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio">
+                            <img src="./assets/img/ui/menu_portfolio.png">
+                            <p>PORTFOLIO</p>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#contact">
+                            <img src="./assets/img/ui/menu_contact.png">
+                            <p>CONTRATO</p>
+                        </a>
+                    </li>
+                    
+                    <!--
                     <li><a href="#home">INICIO</a></li>
                     <li><a href="#about">SOBRE MÍ</a></li>
                     <li><a href="#portfolio">PORTFOLIO</a></li>
                     <li><a href="#contact">CONTACTO</a></li>
+                    -->
                 </ul>
             </div>
         </nav>
