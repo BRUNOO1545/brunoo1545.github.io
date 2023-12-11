@@ -3,7 +3,7 @@ debugMode = false;
 
 //Hamburguer
 let navHamburguer = document.getElementById("navHamburguer");
-let navOpen = true;
+let navOpen = false;
 
 function navHamburguerMenuShow() {
     let navMenuDisplay = document.getElementById("navMenuDisplay");
