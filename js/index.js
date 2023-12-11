@@ -31,7 +31,7 @@ function navHamburguerMenuForceClose() {
     }
 }
 
-
+//Auto close nav
 var viewWidth = window.matchMedia("(max-width: 800px)")
 
 viewWidth.addEventListener("change", function() {
