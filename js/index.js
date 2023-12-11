@@ -2,6 +2,7 @@
 debugMode = false;
 
 //#region Hamburguer
+
 let navHamburguer = document.getElementById("navHamburguer");
 let navOpen = false;
 
@@ -32,7 +33,7 @@ function navHamburguerMenuForceClose() {
 }
 
 //Auto close nav
-var viewWidth = window.matchMedia("(max-width: 800px)")
+let viewWidth = window.matchMedia("(max-width: 800px)");
 
 viewWidth.addEventListener("change", function() {
     navHamburguerMenuForceClose();
