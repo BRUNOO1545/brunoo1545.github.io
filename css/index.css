@@ -123,6 +123,8 @@
 }
 
 .mainNavOptions ul {
+    display: flex;
+    flex-direction: row;
     list-style-type: none;
     background-color: transparent;
     overflow: hidden;
