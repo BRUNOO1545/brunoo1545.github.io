@@ -1,7 +1,7 @@
 //page data
 debugMode = false;
 
-//Hamburguer
+//#region Hamburguer
 let navHamburguer = document.getElementById("navHamburguer");
 let navOpen = false;
 
@@ -37,3 +37,5 @@ var viewWidth = window.matchMedia("(max-width: 800px)")
 viewWidth.addEventListener("change", function() {
     navHamburguerMenuForceClose();
 });
+
+//#endregion
