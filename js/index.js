@@ -1,5 +1,5 @@
 //page data
-debugMode = true;
+debugMode = false;
 
 //Hamburguer
 let navHamburguer = document.getElementById("navHamburguer");
