@@ -1,6 +1,18 @@
 //page data
 debugMode = false;
 
+//#region startup
+
+function pageStartup() {
+    let pageStartupDiv = document.getElementById("pageStartupDiv");
+
+    pageStartupDiv.style.visibility = "hidden";
+
+    navHamburguerMenuForceClose();
+}
+
+//#endregion
+
 //#region Hamburguer
 
 let navHamburguer = document.getElementById("navHamburguer");
@@ -49,17 +61,5 @@ let viewWidth = window.matchMedia("(max-width: 800px)");
 viewWidth.addEventListener("change", function() {
     navHamburguerMenuForceClose();
 });
-
-//#endregion
-
-//#region startup
-
-function pageStartup() {
-    let pageStartupDiv = document.getElementById("pageStartupDiv");
-
-    pageStartupDiv.style.visibility = "hidden";
-
-    navHamburguerMenuForceClose();
-}
 
 //#endregion
