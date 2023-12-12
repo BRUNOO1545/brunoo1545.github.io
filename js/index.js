@@ -59,10 +59,9 @@ function navHamburguerMenuForceClose() {
 //Auto close nav
 let viewWidth = window.matchMedia("(max-width: 800px)");
 
-if (pageStarted === true) {
-    viewWidth.addEventListener("change", function() {
-        navHamburguerMenuForceClose();
-    });
-}
+viewWidth.addEventListener("change", function() {
+    navHamburguerMenuForceClose();
+});
+
 
 //#endregion
