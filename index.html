@@ -16,7 +16,11 @@
         <script src="./js/index.js"></script>
     </head>
 
-    <body class="mainBody" onload="navHamburguerMenuForceClose()">
+    <body class="mainBody" onload="pageStartup()">
+        <div id="pageStartupDiv" class="pageStartup">
+            <p>CARGANDO</p>
+        </div>
+
         <nav class="mainNav">
             <div class="navNormalMenuDisplayed useUnselect useShadow useShadowImg">
                 <a href="https://brunoo1545.github.io/" class="mainNavLogo">
@@ -39,7 +43,7 @@
             </div>
 
             <div id="navMenuDisplay" class="navHamburguerMenuDisplayed useUnselect useShadow useShadowImg">
-                <ul onclick="navHamburguerMenuForceClose()" class="useShadowImgMobileNav">
+                <ul id="navMenuContent" onclick="navHamburguerMenuForceClose()" class="useShadowImgMobileNav">
                     <li>
                         <a href="#home">
                             <img src="./assets/img/ui/menu_home.png">

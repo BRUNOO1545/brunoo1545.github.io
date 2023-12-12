@@ -81,6 +81,27 @@
     -webkit-filter: brightness(0);
 }
 
+/*Page startup*/
+.pageStartup {
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--color-fondo);
+}
+
+.pageStartup p {
+    font-family: 'Rubik Bubbles', bold;
+    font-size: 1.5rem;
+    color: var(--color-texto);
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 /* Body */
 .mainBody {
     margin: 0;
@@ -93,7 +114,7 @@
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 99;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -189,12 +210,12 @@
 .navHamburguerMenuDisplayed ul {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     list-style-type: none;
     background-color: transparent;
     overflow: hidden;
     margin: 0;
     padding: 0;
-    display: flex;
 }
 
 .navHamburguerMenuDisplayed ul li {
@@ -223,6 +244,10 @@
     color: var(--color-texto-active);
     background-color: var(--color-principal-hover);
     text-shadow: var(--color-sombra) 0px 0px;
+}
+
+.navHamburguerMenuDisplayed ul li a p {
+    width: 110px;
 }
 
 .navHamburguerMenuDisplayed img {
