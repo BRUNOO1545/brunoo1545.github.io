@@ -63,5 +63,4 @@ viewWidth.addEventListener("change", function() {
     navHamburguerMenuForceClose();
 });
 
-
 //#endregion
