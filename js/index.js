@@ -1,4 +1,5 @@
 //page data
+pageStarted = false;
 debugMode = false;
 
 //#region startup
@@ -6,9 +7,9 @@ debugMode = false;
 function pageStartup() {
     let pageStartupDiv = document.getElementById("pageStartupDiv");
 
-    pageStartupDiv.style.visibility = "hidden";
-
+    pageStarted = true;
     navHamburguerMenuForceClose();
+    pageStartupDiv.style.visibility = "hidden";
 }
 
 //#endregion
@@ -58,8 +59,10 @@ function navHamburguerMenuForceClose() {
 //Auto close nav
 let viewWidth = window.matchMedia("(max-width: 800px)");
 
-viewWidth.addEventListener("change", function() {
-    navHamburguerMenuForceClose();
-});
+if (pageStarted === true) {
+    viewWidth.addEventListener("change", function() {
+        navHamburguerMenuForceClose();
+    });
+}
 
 //#endregion
