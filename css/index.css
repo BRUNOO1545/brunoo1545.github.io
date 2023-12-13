@@ -282,7 +282,7 @@
     height: 100vh;
     display: flex;
     position: center;
-    background-image: url("../assets/img/gallery/background/background.png");
+    background-image: url("../assets/img/gallery/other/background.png");
     background-position: center;
     background-size: cover;
 }
