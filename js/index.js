@@ -1,6 +1,6 @@
 //page data
-pageStarted = false;
-debugMode = false;
+let pageStarted = false;
+let debugMode = false;
 
 //#region startup
 
