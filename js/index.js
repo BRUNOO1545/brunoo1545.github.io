@@ -6,6 +6,10 @@ let debugMode = false;
 
 function pageStartup() {
     let pageStartupDiv = document.getElementById("pageStartupDiv");
+    
+    if (debugMode === true) {
+        console.log("page loaded.");
+    }
 
     pageStarted = true;
     navHamburguerMenuForceClose();
