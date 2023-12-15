@@ -9,7 +9,8 @@ function pageStartup() {
 
     pageStarted = true;
     navHamburguerMenuForceClose();
-    pageStartupDiv.style.visibility = "hidden";
+    //pageStartupDiv.style.visibility = "hidden";
+    pageStartupDiv.classList = "pageStartup useUnselect pageStartupLoaded";
 }
 
 //#endregion

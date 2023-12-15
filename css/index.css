@@ -64,6 +64,17 @@
     }
 }
 
+@keyframes animDisapear {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 /* Propieties */
 .useUnselect {
     user-select: none;
@@ -126,6 +137,11 @@
     height: 60px;
     animation: animRotate 2s infinite linear;
     -webkit-animation: animRotate 2s infinite linear;
+}
+
+.pageStartupLoaded {
+    animation: animDisapear 0.5s forwards linear;
+    -webkit-animation: animDisapear 0.5s forwards linear;
 }
 
 /* Body */
