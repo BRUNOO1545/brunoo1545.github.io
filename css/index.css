@@ -351,7 +351,7 @@
 }
 
 .basicContainerImg {
-    margin: 0px 10px 20px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -397,7 +397,7 @@
 }
 
 .basicContainerContent img {
-    width: 128px;
+    width: 256px;
     height: auto;
     margin: 16px 10px;
     border-radius: 10px;
