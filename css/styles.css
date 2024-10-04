@@ -1,0 +1,22 @@
+* {
+    scroll-behavior: smooth;
+    overflow: hidden;
+    -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar { 
+    display: none;
+}
+
+:root {
+    color-scheme: light dark;
+
+    /* Colors */
+    --color-text:                       light-dark(#000000, #FFFFFF);
+    --color-background:                 light-dark(#e6e6e6, #1a1a1a);
+    --color-primary:                    light-dark(#5407b2, #7227ce);
+    --color-secondary:                  light-dark(#e0a4d9, #5a1f53);
+    --color-accent:                     light-dark(#2302f7, #2605fd);
+    --color-shadow:                     light-dark(#000000, #FFFFFF);
+    --color-background-container:       light-dark(hsl(267, 92%, 36%, 5%), hsl(267, 68%, 48%, 5%));
+}
