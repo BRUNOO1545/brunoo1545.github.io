@@ -263,6 +263,22 @@
                     </div>
                 </div>
             </div>
+
+            <div id="portfolio" class="basicContainer useUnselect useShadow basicContainerHoverImg">
+                <p class="basicContainerTitle useShadowText">Portfolio</p>
+
+                <p class="basicContainerSubtitle useShadowTextSub">Hablemos un poco de mis habilidades en software y tecnologias</p>
+                <ul id="list-technologies" class="container-card"></ul>
+                
+                <p class="basicContainerSubtitle useShadowTextSub">Ahora le toca a los lenguajes</p>
+                <ul id="list-languages" class="container-card"></ul>
+                
+                <p class="basicContainerSubtitle useShadowTextSub">Otros programas</p>
+                <ul id="list-software" class="container-card"></ul>
+                
+                <p class="basicContainerSubtitle useShadowTextSub">Proyectos relacionados</p>
+                <ul id="list-project" class="container-card"></ul>
+            </div>
         </main>
 
         <footer id="contact" onclick="navHamburguerMenuForceClose()">
@@ -282,5 +298,61 @@
                 <p class="footerCopy useShadowTextSub">2024 BRUNOO1545 • <a href="https://github.com/BRUNOO1545/brunoo1545.github.io" target="_blank">SOURCE CODE</a></p>
             </div>
         </footer>
+
+        <script>
+            const listProject = document.getElementById('list-project');
+            const listLanguages = document.getElementById('list-languages');
+            const projectTechnologies = document.getElementById('list-technologies');
+            const listSoftware = document.getElementById('list-software');
+            
+            fetch('./pagedata.json')
+                .then(res => res.json())
+                .then(data => {
+                    
+                    // fetch projects
+                    data.projects.forEach(element => {
+                        listProject.insertAdjacentHTML('beforeend', 
+                            `<li alt="${element.title}" class="project-card">
+                                <div class="metadata">
+                                    <img src="./assets/img/projects/${element.imageIcon}" width="64px">
+                                    <p>${element.title}</p>
+                                    <p>${element.caption}</p>
+                                </div>
+
+                                <a href="${element.url}">VER MAS</a>
+                            </li>`);
+                    });
+                    
+                    // fetch languages
+                    data.languages.forEach(element => {
+                        listLanguages.insertAdjacentHTML('beforeend', 
+                            `<li alt="${element.alt}" class="general-card">
+                                <img src="./assets/img/lang/${element.logo}" width="64px">
+                                <p>${element.name}</p>
+                                <progress value="${element.percent}" max="100" style="--value: ${element.percent}; --max: 100;"></progress>
+                            </li>`);
+                    });
+                    
+                    // fetch technologies
+                    data.technologies.forEach(element => {
+                        projectTechnologies.insertAdjacentHTML('beforeend', 
+                            `<li alt="${element.alt}" class="general-card">
+                                <img src="./assets/img/logo/${element.logo}" width="64px">
+                                <p>${element.name}</p>
+                                <progress value="${element.percent}" max="100" style="--value: ${element.percent}; --max: 100;"></progress>
+                            </li>`);
+                    });
+                    
+                    // fetch software
+                    data.software.forEach(element => {
+                        listSoftware.insertAdjacentHTML('beforeend', 
+                            `<li alt="${element.alt}" class="general-card">
+                                <img src="./assets/img/logo/${element.logo}" width="64px">
+                                <p>${element.name}</p>
+                                <progress value="${element.percent}" max="100" style="--value: ${element.percent}; --max: 100;"></progress>
+                            </li>`);
+                    });
+                });
+        </script>
     </body>
 </html>
