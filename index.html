@@ -311,14 +311,45 @@
                     
                     // fetch projects
                     data.projects.forEach(element => {
+                        
+                        var _type, _status;
+
+                        switch (element.type) {
+                            case 0: _type = "Software"; break;
+                            case 1: _type = "Videojuego"; break;
+                            case 2: _type = "Página web"; break;
+                            case 3: _type = "Otro"; break;
+                            default: _type = "Desconocido"; break;
+                        }
+
+                        switch (element.status) {
+                            case 0: _status = "En concepto"; break;
+                            case 1: _status = "En desarollo"; break;
+                            case 2: _status = "Terminado"; break;
+                            case 3: _status = "Cancelado"; break;
+                            default: _status = "Desconocido"; break;
+                        }
+                        
+
                         listProject.insertAdjacentHTML('beforeend', 
                             `<li alt="${element.title}" class="project-card">
-                                <div class="project-card-metadata">
-                                    <img src="./assets/img/projects/${element.imageIcon}" width="64px">
-                                    <p>${element.title}</p>
+                                <div>
+                                    <div class="project-card-metadata" style="background-image: linear-gradient(to top, black, transparent), url('./assets/img/projects/${element.id}/card.png')">
+                                        <div class="project-card-title">
+                                            <img src="./assets/img/projects/${element.id}/icon.png" width="64px">
+                                            <p>${element.title}</p>
+                                        </div>
+                                        
+                                        <div class="project-card-status">
+                                            <p class="project-card-status-type">${_type}</p>
+                                            <p>•</p>
+                                            <p class="project-card-status-status">${_status}</p>
+                                        </div>
+                                    </div>
+
+                                    <p>${element.caption}</p>
                                 </div>
                                 
-                                <p>${element.caption}</p>
                                 <a href="${element.url}" target="_blank">VER MAS</a>
                             </li>`);
                     });

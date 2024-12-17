@@ -26,10 +26,13 @@
 
     --color-background:     light-dark(#5f5f5f, #0D0D0D);
     --color-text:           light-dark(#000, #FFF);
+    --color-text-button:    light-dark(#FFF, #000);
+    --color-text-title:     light-dark(#000, #FFF);
+    --color-text-subtitle:  light-dark(#e7e7e7, #e6e6e6);
+    --color-text-metadata:  light-dark(#000000, #949494);
     --color-border:         light-dark(#000, #FFF);
     --color-shadow:         light-dark(#000, #000);
     --color-button:         light-dark(#3d3d3d, #FFF);
-    --color-button-text:    light-dark(#FFF, #000);
     --color-button-hover:   light-dark(#202020, #c7c7c7);
     --color-card:           light-dark(#ffffff6e, #0000006e);
 }
@@ -534,14 +537,14 @@
 /* project card */
 .project-card {
     width: 360px;
+    height: 300px;
     background-color: var(--color-card);
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
     margin: 12px;
-    padding: 12px;
     border-color: transparent;
     border-style: solid;
     border-width: 1px;
@@ -565,13 +568,21 @@
     z-index: 1;
 }
 
+.project-card p {
+    color: var(--color-text-subtitle);
+    margin: 16px 12px;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
 .project-card a {
     background-color: var(--color-button);
-    color: var(--color-button-text);
-    margin: 12px;
-    padding: 8px;
+    color: var(--color-text-button);
+    margin: 16px;
+    padding: 8px 16px;
     align-self: flex-end;
     text-decoration: none;
+    font-size: 1rem;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -589,11 +600,22 @@
 }
 
 .project-card img {
+    margin-left: 12px;
     filter: drop-shadow(2px 2px var(--color-shadow));
     -webkit-filter: drop-shadow(2px 2px var(--color-shadow));
 }
 
 .project-card-metadata {
+    display: inline-flex;
+    flex-wrap: wrap;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.project-card-title {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -602,11 +624,23 @@
     align-items: center;
 }
 
-.project-card-metadata p {
+.project-card-title p {
+    color: var(--color-text-title);
     margin-left: 12px;
+    font-size: 1.5rem;
 }
 
-/* project card */
+.project-card-status {
+    display: flex;
+    font-size: 0.6rem;
+}
+
+.project-card-status p {
+    color: var(--color-text-metadata);
+    margin: 0 0 10px 16px;
+}
+
+/* general card */
 .general-card {
     background-color: var(--color-card);
     display: flex;
@@ -641,7 +675,7 @@
 }
 
 .general-card:hover p {
-    color: var(--color-text);
+    color: var(--color-text-button);
     height: 32px;
 }
 

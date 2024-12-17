@@ -5,11 +5,11 @@
     "projects": [
         {
             "type": 1,
+            "status": 2,
+            "id": "in_memoriam",
             "title": "In Memoriam",
             "caption": "In Memoriam brings you back to one of the darkest times of Argentinian history.",
             "description": "A small game part of a dev programming course inspired in Metal Slug, In Memoriam brings you back to one of the darkest times of Argentinian history with a tragic narrative behind an action gameplay.",
-            "imageIcon": "in_memoriam.png",
-            "imageCard": "CARD BG IMAGE URL",
             "screenshoots": [
                 "URL 1",
                 "URL 2",
@@ -32,11 +32,11 @@
         },
         {
             "type": 1,
+            "status": 3,
+            "id": "fdarcade",
             "title": "Florida Decay Arcade",
-            "caption": "In Memoriam brings you back to one of the darkest times of Argentinian history.",
-            "description": "A small game part of a dev programming course inspired in Metal Slug, In Memoriam brings you back to one of the darkest times of Argentinian history with a tragic narrative behind an action gameplay.",
-            "imageIcon": "florida_decay_arcade.png",
-            "imageCard": "CARD BG IMAGE URL",
+            "caption": "Florida Decay Arcade gives you a quality sound experience behind an intense action gameplay.",
+            "description": "",
             "screenshoots": [
                 "URL 1",
                 "URL 2",
