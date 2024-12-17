@@ -26,7 +26,7 @@
         <script src="./js/index.js"></script>
     </head>
 
-    <body class="mainBody" onload="pageStartup()">
+    <body class="mainBody" onload="pageStartup();">
         <div id="pageStartupDiv" class="pageStartup useUnselect">
             <img src="./assets/img/ui/load.png">
             <p>CARGANDO</p>
@@ -313,13 +313,13 @@
                     data.projects.forEach(element => {
                         listProject.insertAdjacentHTML('beforeend', 
                             `<li alt="${element.title}" class="project-card">
-                                <div class="metadata">
+                                <div class="project-card-metadata">
                                     <img src="./assets/img/projects/${element.imageIcon}" width="64px">
                                     <p>${element.title}</p>
-                                    <p>${element.caption}</p>
                                 </div>
-
-                                <a href="${element.url}">VER MAS</a>
+                                
+                                <p>${element.caption}</p>
+                                <a href="${element.url}" target="_blank">VER MAS</a>
                             </li>`);
                     });
                     
@@ -336,7 +336,7 @@
                     // fetch technologies
                     data.technologies.forEach(element => {
                         projectTechnologies.insertAdjacentHTML('beforeend', 
-                            `<li alt="${element.alt}" class="general-card">
+                            `<li alt="${element.alt} project" class="general-card">
                                 <img src="./assets/img/logo/${element.logo}" width="64px">
                                 <p>${element.name}</p>
                                 <progress value="${element.percent}" max="100" style="--value: ${element.percent}; --max: 100;"></progress>
