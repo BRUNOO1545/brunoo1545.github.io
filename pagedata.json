@@ -5,6 +5,32 @@
     "projects": [
         {
             "type": 1,
+            "status": 0,
+            "id": "florida_decay",
+            "title": "Florida decay",
+            "caption": "No data.",
+            "description": "No data.",
+            "screenshoots": [
+                "URL 1",
+                "URL 2",
+                "URL 3",
+                "URL 4"
+            ],
+            "technologies": [
+                { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "Bizarre Engine 2", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" }
+            ],
+            "languages": [
+                "GML",
+                "GLSL"
+            ],
+            "url": [
+                "https://brunoo1545.itch.io/florida-decay/"
+            ]
+        },
+        {
+            "type": 1,
             "status": 2,
             "id": "in_memoriam",
             "title": "In Memoriam",
@@ -45,13 +71,11 @@
             ],
             "technologies": [
                 { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "Bizarre Engine 2", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "LootLocker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "Bizarre Engine", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
                 { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" }
             ],
             "languages": [
-                "GML",
-                "GLSL"
+                "GML"
             ],
             "url": [
                 "https://brunoo1545.itch.io/fdarcade/"
