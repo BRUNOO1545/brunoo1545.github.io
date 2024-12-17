@@ -678,7 +678,7 @@
 }
 
 .general-card:hover p {
-    color: var(--color-text-button);
+    color: var(--color-text);
     height: 32px;
 }
 
