@@ -1,0 +1,133 @@
+{
+    "metadata": {
+        "icon": "https://avatars.githubusercontent.com/u/71949811?v=4?s=400"
+    },
+    "projects": [
+        {
+            "type": 1,
+            "status": 0,
+            "id": "space_souls",
+            "title": "Space Souls",
+            "caption": "No data.",
+            "description": "No data.",
+            "screenshoots": [
+                "URL 1",
+                "URL 2",
+                "URL 3",
+                "URL 4"
+            ],
+            "technologies": [
+                { "name": "Unreal Engine 4", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "Blender", "image": "LOGO IMAGE URL", "source": "SOURCE URL" }
+            ],
+            "languages": [
+                "C++"
+            ],
+            "url": [
+                ""
+            ]
+        },
+        {
+            "type": 1,
+            "status": 0,
+            "id": "florida_decay",
+            "title": "Florida decay",
+            "caption": "No data.",
+            "description": "No data.",
+            "screenshoots": [
+                "URL 1",
+                "URL 2",
+                "URL 3",
+                "URL 4"
+            ],
+            "technologies": [
+                { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "Bizarre Engine 2", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" }
+            ],
+            "languages": [
+                "GML",
+                "GLSL"
+            ],
+            "url": [
+                "https://brunoo1545.itch.io/florida-decay/"
+            ]
+        },
+        {
+            "type": 1,
+            "status": 2,
+            "id": "in_memoriam",
+            "title": "In Memoriam",
+            "caption": "In Memoriam brings you back to one of the darkest times of Argentinian history.",
+            "description": "A small game part of a dev programming course inspired in Metal Slug, In Memoriam brings you back to one of the darkest times of Argentinian history with a tragic narrative behind an action gameplay.",
+            "screenshoots": [
+                "URL 1",
+                "URL 2",
+                "URL 3",
+                "URL 4"
+            ],
+            "technologies": [
+                { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "Bizarre Engine 2", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "LootLocker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" }
+            ],
+            "languages": [
+                "GML",
+                "GLSL"
+            ],
+            "url": [
+                "https://brunoo1545.itch.io/in-memoriam/"
+            ]
+        },
+        {
+            "type": 1,
+            "status": 3,
+            "id": "fdarcade",
+            "title": "Florida Decay Arcade",
+            "caption": "Florida Decay Arcade gives you a quality sound experience behind an intense action gameplay.",
+            "description": "",
+            "screenshoots": [
+                "URL 1",
+                "URL 2",
+                "URL 3",
+                "URL 4"
+            ],
+            "technologies": [
+                { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "Bizarre Engine", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" }
+            ],
+            "languages": [
+                "GML"
+            ],
+            "url": [
+                "https://brunoo1545.itch.io/fdarcade/"
+            ]
+        }
+    ],
+    "technologies": [
+        { "name": "Android Studio",         "logo": "androidstudio.png",    "percent": 75,  "alt": "Android Studio" },
+        { "name": "Firebase",               "logo": "firebase.png",         "percent": 50,  "alt": "Firebase" },
+        { "name": "Gamemaker Studio",       "logo": "gamemaker.png",        "percent": 100, "alt": "Gamemaker Studio" },
+        { "name": "Github",                 "logo": "github.png",           "percent": 75,  "alt": "Github" },
+        { "name": "Github Pages",           "logo": "githubpages.png",      "percent": 75,  "alt": "Github Pages" },
+        { "name": "Unreal Engine 4",        "logo": "ue4.png",              "percent": 50,  "alt": "Unreal Engine 4" },
+        { "name": "Visual Studio 2019",     "logo": "vs2019.png",           "percent": 50,  "alt": "Visual Studio 2019" },
+        { "name": "Visual Studio Code",     "logo": "vsc.png",              "percent": 75,  "alt": "Visual Studio Code" }
+    ],
+    "languages": [
+        { "name": "C++",        "logo": "cpp.png",        "percent": 50,    "alt": "C++" },
+        { "name": "C#",         "logo": "csharp.png",     "percent": 25,    "alt": "C#" },
+        { "name": "CSS3",       "logo": "css.png",        "percent": 75,    "alt": "CSS3" },
+        { "name": "HTML",       "logo": "html.png",       "percent": 75,    "alt": "HTML" },
+        { "name": "JavaScript", "logo": "javascript.png", "percent": 50,    "alt": "JavaScript" },
+        { "name": "Kotlin",     "logo": "kotlin.png",     "percent": 50,    "alt": "Kotlin" },
+        { "name": "GML",        "logo": "gml.png",        "percent": 75,    "alt": "GML" },
+        { "name": "GLSL",       "logo": "glsl.png",       "percent": 25,    "alt": "GLSL" }
+    ],
+    "software": [
+        { "name": "FL Studio",  "logo": "flstudio.png",  "percent": 100,    "alt": "FL Studio" },
+        { "name": "Canva",      "logo": "canva.png",     "percent": 75,     "alt": "Canva" }
+    ]
+}
