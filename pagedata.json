@@ -8,8 +8,8 @@
             "status": 0,
             "id": "space_souls",
             "title": "Space Souls",
-            "caption": "No data.",
-            "description": "No data.",
+            "caption": "",
+            "description": "",
             "screenshots": 0,
             "technologies": [
                 { "name": "Unreal Engine 4", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
@@ -27,8 +27,8 @@
             "status": 0,
             "id": "florida_decay",
             "title": "Florida decay",
-            "caption": "No data.",
-            "description": "No data.",
+            "caption": "",
+            "description": "",
             "screenshots": 0,
             "technologies": [
                 { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },

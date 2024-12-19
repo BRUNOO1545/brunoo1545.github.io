@@ -59,24 +59,25 @@ viewWidth.addEventListener("change", function() {
 // #endregion
 
 //#region list project data
+const mainPath = '../';
+const jsonfile = mainPath + 'pagedata.json'; // "https://brunoo1545.github.io/pagedata.json"
 
 function scanProjects() {
-    const mainPath = '../';
-    const file = mainPath + 'pagedata.json'; // "https://brunoo1545.github.io/pagedata.json"
-
     const listProject = document.getElementById('list-project');
     const listLanguages = document.getElementById('list-languages');
     const projectTechnologies = document.getElementById('list-technologies');
     const listSoftware = document.getElementById('list-software');
     
-    fetch(file)
+    fetch(jsonfile)
         .then(res => res.json())
         .then(data => {
             
             // fetch projects
-            data.projects.forEach(element => {
+            data.projects.forEach( (element, projectIndex) => {
                 
-                var _type, _status, _screenshots;
+                var _type, _status, _caption, _description, _screenshots;
+                _caption = (element.caption === "") ? "Sin información." : element.caption;
+                _description = (element.description === "") ? "No hay decripción." : element.description;
 
                 switch (element.type) {
                     case 0: _type = "Software"; break;
@@ -103,7 +104,7 @@ function scanProjects() {
                         <div>
                             <div class="project-card-metadata" style="background-image: linear-gradient(to top, black, transparent), url('${mainPath}/assets/img/projects/${element.id}/card.png');">
                                 <div class="project-card-title">
-                                    <img src="${mainPath}/assets/img/projects/${element.id}/icon.png" alt="${element.title} icon">
+                                    <img src="${mainPath}/assets/img/projects/${element.id}/icon.png" alt="icon">
                                     
                                     <p>${element.title}</p>
                                 </div>
@@ -115,10 +116,10 @@ function scanProjects() {
                                 </div>
                             </div>
 
-                            <p>${element.caption}</p>
+                            <p>${_caption}</p>
                         </div>
                         
-                        <a onclick="previewProjectOpen('${element.id}')">Ver más</a>
+                        <a onclick="previewProjectOpen('${projectIndex}')">Ver más</a>
                     </li>`);
             });
             
@@ -161,9 +162,15 @@ function scanProjects() {
 
 let previewOpen = false;
     
-function previewProjectOpen(id) {
+function previewProjectOpen(projectId) {
     previewOpen = true;
-    console.log("open [" + id + "]");
+    console.log("open [" + projectId + "]");
+
+    fetch(jsonfile)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.projects[projectId]);
+    });
 }
 
 function previewProjectClose() {

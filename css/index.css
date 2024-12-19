@@ -537,7 +537,7 @@
 /* project card */
 .project-card {
     width: 360px;
-    height: 360px;
+    height: 320px;
     background-color: var(--color-card);
     display: flex;
     flex-direction: column;
@@ -572,7 +572,7 @@
     color: var(--color-text-subtitle);
     margin: 16px 12px;
     padding: 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .project-card a {
@@ -618,6 +618,10 @@
     -o-border-radius: 10px 10px 0 0;
 }
 
+.project-card-metadata img {
+    width: 64px;
+}
+
 .project-card-title {
     display: flex;
     flex-direction: row;
@@ -631,10 +635,6 @@
     color: var(--color-text-title);
     margin-left: 12px;
     font-size: 1.5rem;
-}
-
-.project-card-title img {
-    width: 64px;
 }
 
 .project-card-status {
