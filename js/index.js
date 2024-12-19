@@ -88,7 +88,7 @@ function scanProjects() {
                 }
 
                 switch (element.status) {
-                    case 0: _status = "En concepto"; break;
+                    case 0: _status = "Concepto"; break;
                     case 1: _status = "En desarollo"; break;
                     case 2: _status = "Terminado"; break;
                     case 3: _status = "Cancelado"; break;
