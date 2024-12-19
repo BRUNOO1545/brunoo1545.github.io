@@ -23,10 +23,10 @@
 		<link rel="icon" type="image/x-icon" href="./assets/img/ui/favicon.ico"/>
         <link rel="stylesheet" href="./css/index.css"/>
         <link rel="stylesheet" href="./css/progress.css"/>
-        <script src="./js/index.js"></script>
+        <script defer src="./js/index.js"></script>
     </head>
 
-    <body class="mainBody" onload="pageStartup()">
+    <body class="mainBody" onload="pageStartup();">
         <div id="pageStartupDiv" class="pageStartup useUnselect">
             <img src="./assets/img/ui/load.png">
             <p>CARGANDO</p>
@@ -262,6 +262,22 @@
                         <progress value="100" max="100" style="--value: 100; --max: 100;"></progress>
                     </div>
                 </div>
+            </div>
+
+            <div id="portfolio" class="basicContainer useUnselect useShadow basicContainerHoverImg">
+                <p class="basicContainerTitle useShadowText">Portfolio</p>
+
+                <p class="basicContainerSubtitle useShadowTextSub">Hablemos un poco de mis habilidades en software y tecnologias</p>
+                <ul id="list-technologies" class="container-card"></ul>
+                
+                <p class="basicContainerSubtitle useShadowTextSub">Ahora le toca a los lenguajes</p>
+                <ul id="list-languages" class="container-card"></ul>
+                
+                <p class="basicContainerSubtitle useShadowTextSub">Otros programas</p>
+                <ul id="list-software" class="container-card"></ul>
+                
+                <p class="basicContainerSubtitle useShadowTextSub">Proyectos relacionados</p>
+                <ul id="list-project" class="container-card"></ul>
             </div>
         </main>
 
