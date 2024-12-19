@@ -578,6 +578,7 @@
 .project-card a {
     background-color: var(--color-button);
     color: var(--color-text-button);
+    text-shadow: 0 0;
     margin: 16px;
     padding: 8px 16px;
     align-self: flex-end;
@@ -649,8 +650,8 @@
 
 /* general card */
 .general-card {
-    width: 180px;
-    height: 180px;
+    width: 130px;
+    height: 130px;
     background-color: var(--color-card);
     display: flex;
     flex-direction: column;
@@ -689,7 +690,7 @@
 .general-card p {
     color: transparent;
     height: 0px;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
