@@ -8,9 +8,14 @@
             "status": 0,
             "id": "space_souls",
             "title": "Space Souls",
-            "caption": "",
-            "description": "",
-            "screenshots": 0,
+            "caption": "No data.",
+            "description": "No data.",
+            "screenshoots": [
+                "URL 1",
+                "URL 2",
+                "URL 3",
+                "URL 4"
+            ],
             "technologies": [
                 { "name": "Unreal Engine 4", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
                 { "name": "Blender", "image": "LOGO IMAGE URL", "source": "SOURCE URL" }
@@ -27,9 +32,14 @@
             "status": 0,
             "id": "florida_decay",
             "title": "Florida decay",
-            "caption": "",
-            "description": "",
-            "screenshots": 0,
+            "caption": "No data.",
+            "description": "No data.",
+            "screenshoots": [
+                "URL 1",
+                "URL 2",
+                "URL 3",
+                "URL 4"
+            ],
             "technologies": [
                 { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
                 { "name": "Bizarre Engine 2", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
@@ -50,7 +60,12 @@
             "title": "In Memoriam",
             "caption": "In Memoriam brings you back to one of the darkest times of Argentinian history.",
             "description": "A small game part of a dev programming course inspired in Metal Slug, In Memoriam brings you back to one of the darkest times of Argentinian history with a tragic narrative behind an action gameplay.",
-            "screenshots": 4,
+            "screenshoots": [
+                "URL 1",
+                "URL 2",
+                "URL 3",
+                "URL 4"
+            ],
             "technologies": [
                 { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
                 { "name": "Bizarre Engine 2", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
@@ -72,7 +87,12 @@
             "title": "Florida Decay Arcade",
             "caption": "Florida Decay Arcade gives you a quality sound experience behind an intense action gameplay.",
             "description": "",
-            "screenshots": 0,
+            "screenshoots": [
+                "URL 1",
+                "URL 2",
+                "URL 3",
+                "URL 4"
+            ],
             "technologies": [
                 { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
                 { "name": "Bizarre Engine", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
