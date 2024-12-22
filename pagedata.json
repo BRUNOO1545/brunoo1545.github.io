@@ -13,8 +13,8 @@
             "description": "",
             "screenshots": 0,
             "technologies": [
-                { "name": "Unreal Engine 4", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "Blender", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "Unreal Engine 4", "image": "", "source": "" },
+                { "name": "Blender", "image": "", "source": "" },
                 { "name": "FL Studio", "image": "", "source": "" }
             ],
             "languages": [
@@ -34,9 +34,9 @@
             "description": "",
             "screenshots": 0,
             "technologies": [
-                { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "Bizarre Engine 2", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "Gamemaker", "image": "", "source": "" },
+                { "name": "Bizarre Engine 2", "image": "", "source": "" },
+                { "name": "NekoPresence", "image": "", "source": "" },
                 { "name": "FL Studio", "image": "", "source": "" }
             ],
             "languages": [
@@ -57,10 +57,10 @@
             "description": "A small game part of a dev programming course inspired in Metal Slug, In Memoriam brings you back to one of the darkest times of Argentinian history with a tragic narrative behind an action gameplay.",
             "screenshots": 4,
             "technologies": [
-                { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "Bizarre Engine 2", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "LootLocker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "Gamemaker", "image": "", "source": "" },
+                { "name": "Bizarre Engine 2", "image": "", "source": "" },
+                { "name": "LootLocker", "image": "", "source": "" },
+                { "name": "NekoPresence", "image": "", "source": "" },
                 { "name": "FL Studio", "image": "", "source": "" }
             ],
             "languages": [
@@ -95,7 +95,7 @@
         {
             "type": 1,
             "status": 3,
-            "date": "2021",
+            "date": "2020",
             "id": "project_shooter",
             "title": "Project Shooter",
             "caption": "El hermano mayor de Florida Decay Arcade y creador del Bizarre Engine.",

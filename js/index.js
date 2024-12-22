@@ -115,7 +115,7 @@ function scanProjects() {
                         <div>
                             <div class="project-card-metadata" style="background-image: linear-gradient(to top, black, transparent), url('${mainPath}/assets/img/projects/${element.id}/card.png');">
                                 <div class="project-card-title">
-                                    <img src="${mainPath}/assets/img/projects/${element.id}/icon.png" alt="icon">
+                                    <img src="${mainPath}/assets/img/projects/${element.id}/icon.png" alt="icon" onerror="this.src='/assets/img/ui/image_fail.png'">
                                     
                                     <p>${element.title}</p>
                                 </div>
