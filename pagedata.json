@@ -6,6 +6,7 @@
         {
             "type": 1,
             "status": 0,
+            "date": "2024",
             "id": "space_souls",
             "title": "Space Souls",
             "caption": "",
@@ -13,7 +14,8 @@
             "screenshots": 0,
             "technologies": [
                 { "name": "Unreal Engine 4", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "Blender", "image": "LOGO IMAGE URL", "source": "SOURCE URL" }
+                { "name": "Blender", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "FL Studio", "image": "", "source": "" }
             ],
             "languages": [
                 "C++"
@@ -25,15 +27,17 @@
         {
             "type": 1,
             "status": 0,
+            "date": "2024",
             "id": "florida_decay",
-            "title": "Florida decay",
+            "title": "Florida Decay",
             "caption": "",
             "description": "",
             "screenshots": 0,
             "technologies": [
                 { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
                 { "name": "Bizarre Engine 2", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" }
+                { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "FL Studio", "image": "", "source": "" }
             ],
             "languages": [
                 "GML",
@@ -46,16 +50,18 @@
         {
             "type": 1,
             "status": 2,
+            "date": "2024",
             "id": "in_memoriam",
             "title": "In Memoriam",
-            "caption": "In Memoriam brings you back to one of the darkest times of Argentinian history.",
+            "caption": "Revive uno de los momentos más oscuros de la historia moderna Argentina.",
             "description": "A small game part of a dev programming course inspired in Metal Slug, In Memoriam brings you back to one of the darkest times of Argentinian history with a tragic narrative behind an action gameplay.",
             "screenshots": 4,
             "technologies": [
                 { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
                 { "name": "Bizarre Engine 2", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
                 { "name": "LootLocker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" }
+                { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
+                { "name": "FL Studio", "image": "", "source": "" }
             ],
             "languages": [
                 "GML",
@@ -69,20 +75,63 @@
             "type": 1,
             "status": 3,
             "id": "fdarcade",
+            "date": "2022",
             "title": "Florida Decay Arcade",
-            "caption": "Florida Decay Arcade gives you a quality sound experience behind an intense action gameplay.",
+            "caption": "Florida Decay Arcade proporciona un gameplay diferente detrás de un ambiente musical único.",
             "description": "",
             "screenshots": 0,
             "technologies": [
-                { "name": "Gamemaker", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "Bizarre Engine", "image": "LOGO IMAGE URL", "source": "SOURCE URL" },
-                { "name": "NekoPresence", "image": "LOGO IMAGE URL", "source": "SOURCE URL" }
+                { "name": "Gamemaker Studio 2", "image": "", "source": "" },
+                { "name": "Bizarre Engine", "image": "", "source": "" },
+                { "name": "NekoPresence", "image": "", "source": "" }
             ],
             "languages": [
                 "GML"
             ],
             "url": [
                 "https://brunoo1545.itch.io/fdarcade/"
+            ]
+        },
+        {
+            "type": 1,
+            "status": 3,
+            "date": "2021",
+            "id": "project_shooter",
+            "title": "Project Shooter",
+            "caption": "El hermano mayor de Florida Decay Arcade y creador del Bizarre Engine.",
+            "description": "Este fue uno de los proyectos mas ambiosioso que tuve en su momento, habiendo comprado la licencia de Gamemaker Studio 2, tenia que aprender a usarlo y por accidente terminé haciendo mi propio motor de fisicas, colisiones, entre otros. Esto pasó ya que no conocia el IDE en su totalidad y bueno, era obvio que teniendo que hacer tantas coas que no conocía iba a terminar en la nada. Sin duda, fue uno de los mejores proyectos que hice y me enseñó a usar Git a la fuerza, ya que solia alojar todo en un disco duro y un dia se rompió, asi fue como una version muy avanzada y con muchos cambios en el custom engine se perdieron, pero el aprender nuevas tecnologias me salvó los futuros proyectos.",
+            "screenshots": 0,
+            "technologies": [
+                { "name": "Gamemaker Studio 2", "image": "", "source": "" },
+                { "name": "Bizarre Engine", "image": "", "source": "" },
+                { "name": "NekoPresence", "image": "", "source": "" },
+                { "name": "FL Studio", "image": "", "source": "" }
+            ],
+            "languages": [
+                "GML"
+            ],
+            "url": [
+                "https://brunoo1545.itch.io/proyect_shooter/"
+            ]
+        },
+        {
+            "type": 1,
+            "status": 2,
+            "date": "2019",
+            "id": "wave_game",
+            "title": "Wave Game",
+            "caption": "Viaja por el espacio derrotando los enemigos que se interponen entre la musica y tu camino.",
+            "description": "Este fue mi primer juego creado usando Gamemaker Studio 1.4, con el aprendi las bases de la programacion y fue mi primer introduccion al desarrollo de videojuegos. Aunque el juego es muy simple y tiene muchos bugs (como conectar el joystick y que los fps bajen a 20 😂), es un gran recuerdo de mis inicios en el desarrollo de videojuegos. Este mismo lo presenté en una expo el primer año de la carrera de progamacion.",
+            "screenshots": 0,
+            "technologies": [
+                { "name": "Gamemaker Studio 1.4", "image": "", "source": "" },
+                { "name": "FL Studio", "image": "", "source": "" }
+            ],
+            "languages": [
+                "GML"
+            ],
+            "url": [
+                ""
             ]
         }
     ],
@@ -103,7 +152,7 @@
         { "name": "HTML",       "logo": "html.png",       "percent": 75,    "alt": "HTML" },
         { "name": "JavaScript", "logo": "javascript.png", "percent": 50,    "alt": "JavaScript" },
         { "name": "Kotlin",     "logo": "kotlin.png",     "percent": 50,    "alt": "Kotlin" },
-        { "name": "GML",        "logo": "gml.png",        "percent": 75,    "alt": "GML" },
+        { "name": "GML",        "logo": "gml.png",        "percent": 100,   "alt": "GML" },
         { "name": "GLSL",       "logo": "glsl.png",       "percent": 25,    "alt": "GLSL" }
     ],
     "software": [

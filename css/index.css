@@ -621,6 +621,8 @@
 
 .project-card-metadata img {
     width: 64px;
+    height: 64px;
+    margin-top: 8px;
 }
 
 .project-card-title {
@@ -634,18 +636,19 @@
 
 .project-card-title p {
     color: var(--color-text-title);
-    margin-left: 12px;
+    margin: 10px 0 6px 16px;
     font-size: 1.5rem;
 }
 
 .project-card-status {
     display: flex;
     font-size: 0.6rem;
+    margin-left: 10px;
 }
 
 .project-card-status p {
     color: var(--color-text-metadata);
-    margin: 0 0 10px 16px;
+    margin: 4px 0 10px 6px;
 }
 
 /* general card */

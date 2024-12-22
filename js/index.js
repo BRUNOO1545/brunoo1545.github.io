@@ -76,8 +76,19 @@ function scanProjects() {
             data.projects.forEach( (element, projectIndex) => {
                 
                 var _type, _status, _caption, _description, _screenshots;
-                _caption = (element.caption === "") ? "Sin información." : element.caption;
                 _description = (element.description === "") ? "No hay decripción." : element.description;
+
+                if (element.caption === "") {
+                    if (element.status === 0) {
+                        _caption = "Clasificado.";
+                    }
+                    else {
+                        _caption = "Sin información."
+                    }
+                }
+                else {
+                    _caption = element.caption;
+                }
 
                 switch (element.type) {
                     case 0: _type = "Software"; break;
@@ -110,9 +121,11 @@ function scanProjects() {
                                 </div>
                                 
                                 <div class="project-card-status">
-                                    <p class="project-card-status-type">${_type}</p>
+                                    <p>${element.date}</p>
                                     <p>•</p>
-                                    <p class="project-card-status-status">${_status}</p>
+                                    <p>${_type}</p>
+                                    <p>•</p>
+                                    <p>${_status}</p>
                                 </div>
                             </div>
 
