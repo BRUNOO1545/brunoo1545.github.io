@@ -11,6 +11,7 @@
             "title": "Space Souls",
             "caption": "",
             "description": "",
+            "history": "",
             "screenshots": 0,
             "technologies": [
                 { "name": "Unreal Engine 4", "image": "", "source": "" },
@@ -32,6 +33,7 @@
             "title": "Florida Decay",
             "caption": "",
             "description": "",
+            "history": "",
             "screenshots": 0,
             "technologies": [
                 { "name": "Gamemaker", "image": "", "source": "" },
@@ -54,7 +56,8 @@
             "id": "in_memoriam",
             "title": "In Memoriam",
             "caption": "Revive uno de los momentos más oscuros de la historia moderna Argentina.",
-            "description": "A small game part of a dev programming course inspired in Metal Slug, In Memoriam brings you back to one of the darkest times of Argentinian history with a tragic narrative behind an action gameplay.",
+            "description": "",
+            "history": "In Memoriam fue parte de una cursada de progamacion en videojuegos que hice. El juego es un sidescroller que trata sobre la guerra de Malvinas ya que era la temática que nos tocaba. Fue un proyecto que me enseñó a trabajar en equipo, a usar Git de manera mas ordenada, un tipo de progamación más recursiva y preparada para no romperse, y sobre todo, aprendi el uso de shaders con GLSL, fue divertido aunque caotico a la vez por el uso de LootLocker, una base de datos para los puntajes online, no paraba de dar errores y era muy tedioso trabajar con ese SDK, pero al final si se pudo resolver muchos de los errores que tenia el SDK y habilitar el uso de tablas de posicion online. Tambien debo decir que el haber dado uso al Bizarre Engine 2 me facilitó bastante el trabajo ya que en menos de 2 meses tenia el juego finalizado listo para presentar.",
             "screenshots": 4,
             "technologies": [
                 { "name": "Gamemaker", "image": "", "source": "" },
@@ -72,6 +75,26 @@
             ]
         },
         {
+            "type": 3,
+            "status": 1,
+            "date": "2024",
+            "id": "bizarre_engine_2",
+            "title": "Bizarre Engine 2",
+            "caption": "Impulsa la simplicidad con Bizarre Engine 2.",
+            "description": "",
+            "history": "Tras el estrsante uso y el caotico final del Bizarre Engine, en 2024 decidi dejarlo en el pasado para crear una version mucho mas estable y modular hecha desde cero, compatible con muchas tecnologias y abriendo puertas a proyectos futuros, asi nació el Bizarre Engine 2, un motor que habilita muchisimas funciones y facilidades para el desarrollo de videojuegos, todo lo que hubiese querido está contenido ahi.",
+            "screenshots": 4,
+            "technologies": [
+                { "name": "Gamemaker", "image": "", "source": "" }
+            ],
+            "languages": [
+                "GML"
+            ],
+            "url": [
+                "https://coffee-mug-games.github.io/"
+            ]
+        },
+        {
             "type": 1,
             "status": 3,
             "id": "fdarcade",
@@ -79,6 +102,7 @@
             "title": "Florida Decay Arcade",
             "caption": "Florida Decay Arcade proporciona un gameplay diferente detrás de un ambiente musical único.",
             "description": "",
+            "history": "Florida Decay Arcade es el hijo espiritual de Project Shooter, ya que curzando el ultimo año de la carrera de programación, aproximadamente en junio del 2022, se me prendió una chisma y dije ''Me gustaria ver un arcade frenetico estilo top-down''. Desde esa madrugada empece a planear todo, asi nació Florida Decay Arcade. Si bien el juego no es perfecto y se nota mucho la inspiracion en Hotline Miami, es algo que me enseño algo super importante, hacer el codigo legible, ordenado y escalable, esto paso principalmente porque el tiempo no me daba para arrancar todo desde cero, por lo que tome gran parte del codigo de Project Shooter, esto me costaria semanas de constantes crasheos ya que el codigo de Project Shooter no era perfecto ni legible, era como tener un tablero con muchos cables que no esta anotado y que cuando se ponen por primera vez andan, pero con los meses te olvidas de que hacia que, teniendo como resultado dependencias por todos lados y un codigo que no se entiende. Aunque el juego no es perfecto, es un gran recuerdo de mi ultimo año de la carrera de programación y fue un exito entre la gente que se encontraba alli. No me olvido mas ese sentimiento unico de ver como los chicos organizaban estrategias optimas para obtener la mayor puntuacion en una jugada, fue hermoso.",
             "screenshots": 0,
             "technologies": [
                 { "name": "Gamemaker Studio 2", "image": "", "source": "" },
@@ -98,8 +122,9 @@
             "date": "2020",
             "id": "project_shooter",
             "title": "Project Shooter",
-            "caption": "El hermano mayor de Florida Decay Arcade y creador del Bizarre Engine.",
-            "description": "Este fue uno de los proyectos mas ambiosioso que tuve en su momento, habiendo comprado la licencia de Gamemaker Studio 2, tenia que aprender a usarlo y por accidente terminé haciendo mi propio motor de fisicas, colisiones, entre otros. Esto pasó ya que no conocia el IDE en su totalidad y bueno, era obvio que teniendo que hacer tantas coas que no conocía iba a terminar en la nada. Sin duda, fue uno de los mejores proyectos que hice y me enseñó a usar Git a la fuerza, ya que solia alojar todo en un disco duro y un dia se rompió, asi fue como una version muy avanzada y con muchos cambios en el custom engine se perdieron, pero el aprender nuevas tecnologias me salvó los futuros proyectos.",
+            "caption": "Un proyecto y una meta demaciada grande para un aprendiz.",
+            "description": "",
+            "history": "Este fue uno de los proyectos mas ambiosioso que tuve en su momento, habiendo comprado la licencia de Gamemaker Studio 2, tenia que aprender a usarlo y por accidente terminé haciendo mi propio motor de fisicas, colisiones, entre otros. Esto pasó ya que no conocia el IDE en su totalidad y bueno, esto alargó el desarollo y teniendo que hacer tantas coas que no conocía iba a terminar en la cancelacion el proyecto. Sin duda, fue uno de los mejores proyectos que hice y me enseñó a usar Git a la fuerza, ya que solia alojar todo en un disco duro y un dia se rompió, asi fue como una version muy avanzada y con muchos cambios en el custom engine se perdieron, pero el aprender nuevas tecnologias me salvó los futuros proyectos y abrió puertas a futuros trabajos.",
             "screenshots": 0,
             "technologies": [
                 { "name": "Gamemaker Studio 2", "image": "", "source": "" },
@@ -121,7 +146,8 @@
             "id": "wave_game",
             "title": "Wave Game",
             "caption": "Viaja por el espacio derrotando los enemigos que se interponen entre la musica y tu camino.",
-            "description": "Este fue mi primer juego creado usando Gamemaker Studio 1.4, con el aprendi las bases de la programacion y fue mi primer introduccion al desarrollo de videojuegos. Aunque el juego es muy simple y tiene muchos bugs (como conectar el joystick y que los fps bajen a 20 😂), es un gran recuerdo de mis inicios en el desarrollo de videojuegos. Este mismo lo presenté en una expo el primer año de la carrera de progamacion.",
+            "description": "",
+            "history": "Este fue mi primer juego creado usando Gamemaker Studio 1.4, con el aprendi las bases de la programacion y fue mi primer introduccion al desarrollo de videojuegos. Aunque el juego es muy simple y tiene muchos bugs (como conectar el joystick y que los fps bajen a 20 😂), es un gran recuerdo de mis inicios en el desarrollo de videojuegos. Este mismo lo presenté en una expo el primer año de la carrera de progamacion.",
             "screenshots": 0,
             "technologies": [
                 { "name": "Gamemaker Studio 1.4", "image": "", "source": "" },
