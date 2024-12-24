@@ -4,11 +4,11 @@ let pageStarted = false;
 // #region startup
 
 function pageStartup() {
-    let pageStartupDiv = document.getElementById("pageStartupDiv");
+    //let pageStartupDiv = document.getElementById("pageStartupDiv");
 
     pageStarted = true;
-    navHamburguerMenuForceClose();
-    pageStartupDiv.classList = "pageStartup useUnselect pageStartupLoaded";
+    //navHamburguerMenuForceClose();
+    //pageStartupDiv.classList = "pageStartup useUnselect pageStartupLoaded";
 
     scanProjects();
 }
@@ -112,27 +112,34 @@ function scanProjects() {
 
                 listProject.insertAdjacentHTML('beforeend', 
                     `<li alt="${element.title}" class="project-card">
-                        <div>
+                        <div style="width: 100%">
                             <div class="project-card-metadata" style="background-image: linear-gradient(to top, black, transparent), url('${mainPath}/assets/img/projects/${element.id}/card.png');">
-                                <div class="project-card-title">
-                                    <img src="${mainPath}/assets/img/projects/${element.id}/icon.png" alt="icon" onerror="this.src='/assets/img/ui/image_fail.png'">
-                                    
-                                    <p>${element.title}</p>
-                                </div>
+                                <img src="${mainPath}/assets/img/projects/${element.id}/icon.png" alt="icon" onerror="this.src='/assets/img/ui/image_fail.svg';">
                                 
-                                <div class="project-card-status">
-                                    <p>${element.date}</p>
-                                    <p>•</p>
-                                    <p>${_type}</p>
-                                    <p>•</p>
-                                    <p>${_status}</p>
-                                </div>
+                                <p>${element.title}</p>
                             </div>
 
                             <p>${_caption}</p>
                         </div>
-                        
-                        <a onclick="previewProjectOpen('${projectIndex}')">Ver más</a>
+
+                        <div style="width: 100%; display: flex; flex-wrap: nowrap; flex-direction: row; justify-content: space-between;">
+                            <div style="display: flex; flex-wrap: wrap; flex-direction: column; align-content: flex-start; align-items: flex-start; margin-bottom: 14px;">
+                                <div class="project-card-preview-data">
+                                    <img src="${mainPath}/assets/img/ui/card_date.svg" alt="Card date">
+                                    <p>${element.date}</p>
+                                </div>
+                                <div class="project-card-preview-data">
+                                    <img src="${mainPath}/assets/img/ui/card_type.svg" alt="Card type">
+                                    <p>${_type}</p>
+                                </div>
+                                <div class="project-card-preview-data">
+                                    <img src="${mainPath}/assets/img/ui/card_status.svg" alt="Card status">
+                                    <p>${_status}</p>
+                                </div>
+                            </div>
+                            
+                            <a onclick="previewProjectOpen('${projectIndex}')">Ver más</a>
+                        </div>
                     </li>`);
             });
             
