@@ -42,9 +42,6 @@ function scanProjects() {
             // fetch projects
             data.projects.forEach( (element, projectIndex) => {
 
-                //apply color scheme
-                navApplyColorScheme(colorSchemeData.load());
-                
                 var _type, _status, _caption, _description, _screenshots;
                 _description = (element.description === "") ? "No hay decripción." : element.description;
                 _caption = (element.caption === "") ? "Sin información." : element.caption;
