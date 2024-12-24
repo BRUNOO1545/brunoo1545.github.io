@@ -1,68 +1,27 @@
-// page data
-let pageStarted = false;
-
 // #region startup
+
+let pageStarted = false;
+const mainPath = '../';
+
+
 
 function pageStartup() {
     //let pageStartupDiv = document.getElementById("pageStartupDiv");
 
     pageStarted = true;
-    //navHamburguerMenuForceClose();
-    //pageStartupDiv.classList = "pageStartup useUnselect pageStartupLoaded";
-
+    //navHamburgerInstantCollapse();
     scanProjects();
+    //pageStartupDiv.classList = "pageStartup useUnselect pageStartupLoaded";
 }
-
-// #endregion
-
-// #region Hamburguer
-
-let navHamburguer = document.getElementById("navHamburguer");
-let navOpen = false;
-
-function navHamburguerMenuShow() {
-    let navMenuDisplay = document.getElementById("navMenuDisplay");
-    let navMenuContent = document.getElementById("navMenuContent");
-    let navHamburguerMenuIcon = document.getElementById("navHamburguerMenuIcon");
-
-    if (navOpen === true) {
-        navOpen = false;
-        navMenuDisplay.style.visibility = "hidden";
-        navMenuContent.style.height = 0;
-        navHamburguerMenuIcon.src = "./assets/img/ui/menu_hamburguer.png";
-    } else {
-        navOpen = true;
-        navMenuDisplay.style.visibility = "visible";
-        navMenuContent.style.height = "auto";
-        navHamburguerMenuIcon.src = "./assets/img/ui/menu_hamburguer_close.png";
-    }
-}
-
-function navHamburguerMenuForceClose() {
-    let navMenuDisplay = document.getElementById("navMenuDisplay");
-    let navMenuContent = document.getElementById("navMenuContent");
-    let navHamburguerMenuIcon = document.getElementById("navHamburguerMenuIcon");
-
-    navMenuDisplay.style.visibility = "hidden";
-    navMenuContent.style.height = 0;
-    navHamburguerMenuIcon.src = "./assets/img/ui/menu_hamburguer.png";
-    navOpen = false;
-}
-
-// Auto close nav
-let viewWidth = window.matchMedia("(max-width: 800px)");
-
-viewWidth.addEventListener("change", function() {
-    navHamburguerMenuForceClose();
-});
 
 // #endregion
 
 //#region list project data
-const mainPath = '../';
+
 const jsonfile = mainPath + 'pagedata.json'; // "https://brunoo1545.github.io/pagedata.json"
 
 function scanProjects() {
+    const listFooter = document.getElementById('list-footer');
     const listProject = document.getElementById('list-project');
     const listLanguages = document.getElementById('list-languages');
     const projectTechnologies = document.getElementById('list-technologies');
@@ -72,8 +31,19 @@ function scanProjects() {
         .then(res => res.json())
         .then(data => {
             
+            // fetch footer
+            data.metadata.footer.forEach(element => {
+                listFooter.insertAdjacentHTML('beforeend', 
+                    `<li class="footer-card-data" alt="${element.name}">
+                        <a href="${element.url}" target="_blank"><img src="${mainPath}/assets/socialmedia/${element.logo}" class="svg-color" alt="${element.name}" title="${element.name}"></a>
+                    </li>`);
+            });
+            
             // fetch projects
             data.projects.forEach( (element, projectIndex) => {
+
+                //apply color scheme
+                navApplyColorScheme(colorSchemeData.load());
                 
                 var _type, _status, _caption, _description, _screenshots;
                 _description = (element.description === "") ? "No hay decripción." : element.description;
@@ -107,14 +77,14 @@ function scanProjects() {
                 }
 
                 for (var _i = 0; _i < element.screenshots; _i++) {
-                    _screenshots += `<img src="${mainPath}/assets/img/projects/${element.id}/screenshot_${[_i]}.png" alt="Screenshot ${_i}" class="project-card-preview-screenshot">`;
+                    _screenshots += `<img src="${mainPath}/assets/projects/${element.id}/screenshot_${[_i]}.png" alt="Screenshot ${_i}" class="project-card-preview-screenshot">`;
                 }
 
                 listProject.insertAdjacentHTML('beforeend', 
-                    `<li alt="${element.title}" class="project-card">
+                    `<li class="project-card" alt="${element.title}">
                         <div style="width: 100%">
-                            <div class="project-card-metadata" style="background-image: linear-gradient(to top, black, transparent), url('${mainPath}/assets/img/projects/${element.id}/card.png');">
-                                <img src="${mainPath}/assets/img/projects/${element.id}/icon.png" alt="icon" onerror="this.src='/assets/img/ui/image_fail.svg';">
+                            <div class="project-card-metadata" style="background-image: linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${element.id}/card.png');">
+                                <img src="${mainPath}/assets/projects/${element.id}/icon.png" alt="icon" onerror="this.src='/assets/ui/image_fail.svg';">
                                 
                                 <p>${element.title}</p>
                             </div>
@@ -125,15 +95,15 @@ function scanProjects() {
                         <div style="width: 100%; display: flex; flex-wrap: nowrap; flex-direction: row; justify-content: space-between;">
                             <div style="display: flex; flex-wrap: wrap; flex-direction: column; align-content: flex-start; align-items: flex-start; margin-bottom: 14px;">
                                 <div class="project-card-preview-data">
-                                    <img src="${mainPath}/assets/img/ui/card_date.svg" alt="Card date">
+                                    <img src="${mainPath}/assets/ui/card_date.svg" class="svg-color" alt="Card date">
                                     <p>${element.date}</p>
                                 </div>
                                 <div class="project-card-preview-data">
-                                    <img src="${mainPath}/assets/img/ui/card_type.svg" alt="Card type">
+                                    <img src="${mainPath}/assets/ui/card_type.svg" class="svg-color" alt="Card type">
                                     <p>${_type}</p>
                                 </div>
                                 <div class="project-card-preview-data">
-                                    <img src="${mainPath}/assets/img/ui/card_status.svg" alt="Card status">
+                                    <img src="${mainPath}/assets/ui/card_status.svg" class="svg-color" alt="Card status">
                                     <p>${_status}</p>
                                 </div>
                             </div>
@@ -146,8 +116,8 @@ function scanProjects() {
             // fetch languages
             data.languages.forEach(element => {
                 listLanguages.insertAdjacentHTML('beforeend', 
-                    `<li alt="${element.alt}" class="general-card">
-                        <img src="${mainPath}/assets/img/lang/${element.logo}" width="64px">
+                    `<li class="general-card" alt="${element.alt}">
+                        <img src="${mainPath}/assets/lang/${element.logo}" width="64px" alt="${element.alt}">
                         <p>${element.name}</p>
                         <progress value="${element.percent}" max="100" style="--value: ${element.percent}; --max: 100;"></progress>
                     </li>`);
@@ -156,8 +126,8 @@ function scanProjects() {
             // fetch technologies
             data.technologies.forEach(element => {
                 projectTechnologies.insertAdjacentHTML('beforeend', 
-                    `<li alt="${element.alt} project" class="general-card">
-                        <img src="${mainPath}/assets/img/logo/${element.logo}" width="64px">
+                    `<li class="general-card" alt="${element.alt} project">
+                        <img src="${mainPath}/assets/logo/${element.logo}" width="64px" alt="${element.alt}">
                         <p>${element.name}</p>
                         <progress value="${element.percent}" max="100" style="--value: ${element.percent}; --max: 100;"></progress>
                     </li>`);
@@ -166,17 +136,19 @@ function scanProjects() {
             // fetch software
             data.software.forEach(element => {
                 listSoftware.insertAdjacentHTML('beforeend', 
-                    `<li alt="${element.alt}" class="general-card">
-                        <img src="${mainPath}/assets/img/logo/${element.logo}" width="64px">
+                    `<li class="general-card" alt="${element.alt}">
+                        <img src="${mainPath}/assets/logo/${element.logo}" width="64px" alt="${element.alt}">
                         <p>${element.name}</p>
                         <progress value="${element.percent}" max="100" style="--value: ${element.percent}; --max: 100;"></progress>
                     </li>`);
             });
+
+            //apply color scheme
+            navApplyColorScheme(colorSchemeData.load());
         });
 }
 
 //#endregion
-
 
 // #region page interactions
 
@@ -199,3 +171,99 @@ function previewProjectClose() {
 }
 
 // #endregion
+
+//#region Nav and Hamburger
+
+// Vars
+const colorSchemeData = {
+    save: function(scheme) {
+        localStorage.setItem("colorScheme", parseInt(scheme));
+    },
+    load: function() {
+        let val = localStorage.getItem("colorScheme");
+        
+        return (val === null) ? 0 : parseInt(val);
+    }
+}
+
+let navHamburgerOpen = false;
+let navColorSchemeOption = colorSchemeData.load();
+
+// Check close
+function navHamburgerInteract() {
+    let navMobile = document.getElementById("navMobileOptions");
+    let navHamburgerIcon = document.getElementById("navHamburgerIcon");
+    
+    if (navHamburgerOpen === false) {
+        navHamburgerOpen = true;
+        navMobile.style.animation = "nav-options-mobile-hide 0.3s forwards";
+        navHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
+    } else {
+        navHamburgerOpen = false;
+        navMobile.style.animation = "nav-options-mobile-show 0.3s forwards";
+        navHamburgerIcon.src = `${mainPath}/assets/ui/hamburger_close.svg`;
+    }
+}
+
+// Instant collapse
+function navHamburgerInstantCollapse() {
+    let navMobile = document.getElementById("navMobileOptions");
+    let navHamburgerIcon = document.getElementById("navHamburgerIcon");
+    
+    navHamburgerOpen = true;
+    navMobile.style.animation = "nav-options-mobile-hide 0s forwards";
+    navHamburgerIcon.src = `${mainPath}/assets/page/hamburger.svg`;
+}
+
+// Force close
+function navHamburgerCollapse() {
+    navHamburgerOpen = false;
+    navHamburgerInteract();
+}
+
+// Auto close nav
+let viewWidth = window.matchMedia("(max-width: 780px)");
+
+viewWidth.addEventListener("change", function() {
+    navHamburgerCollapse();
+});
+
+// Apply color scheme
+function navApplyColorScheme(scheme) {
+    let navColorSchemeChanger = document.getElementById("navColorSchemeChanger");
+    let svgClass = document.getElementsByClassName("svg-color");
+    let root = document.documentElement;
+
+    Array.from(svgClass).forEach(e => {
+
+        switch(scheme) {
+            // Dark theme
+            case 0:
+                navColorSchemeChanger.src = `${mainPath}/assets/ui/mode_dark.svg`;
+                root.style = "color-scheme: dark;"
+                e.style = "filter: invert(0%);";
+            break;
+
+            // Light theme
+            case 1:
+                navColorSchemeChanger.src = `${mainPath}/assets/ui/mode_light.svg`;
+                root.style = "color-scheme: light;"
+                e.style = "filter: invert(100%);";
+            break;
+        }
+    });
+}
+
+// Change color scheme
+function navChangeColorScheme() {
+    if (navColorSchemeOption < 1) {
+        navColorSchemeOption += 1;
+    } else {
+        navColorSchemeOption = 0;
+    }
+
+    colorSchemeData.save(navColorSchemeOption);
+    navApplyColorScheme(navColorSchemeOption);
+}
+
+//#endregion

@@ -1,6 +1,12 @@
 {
     "metadata": {
-        "icon": "https://avatars.githubusercontent.com/u/71949811?v=4?s=400"
+        "icon": "https://avatars.githubusercontent.com/u/71949811?v=4?s=400",
+        "footer": [
+            { "name": "Github", "logo": "github.svg", "url": "https://www.github.com/brunoo1545/" },
+            { "name": "Instagram", "logo": "instagram.svg", "url": "https://www.instagram.com/brunoo1545/" },
+            { "name": "Spotify", "logo": "spotify.svg", "url": "https://open.spotify.com/intl-es/artist/5GU3aszupYH9fS3jNnsWhV?si=L_AAchzcQtGF53cLPFysFA" },
+            { "name": "Twitch", "logo": "twitch.svg", "url": "https://www.twitch.tv/el_gruno/" }
+        ]
     },
     "projects": [
         {

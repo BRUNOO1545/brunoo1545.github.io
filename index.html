@@ -20,7 +20,7 @@
         <meta property="og:locale" content="es_AR"/>
         <title>Bruno Suarez | Portfolio</title>
         <link rel="canonical" href="https://brunoo1545.github.io/"/>
-		<link rel="icon" type="image/x-icon" href="./assets/img/ui/favicon.ico"/>
+		<link rel="icon" type="image/x-icon" href="./assets/ui/favicon.ico"/>
         <link rel="stylesheet" href="./css/index.css"/>
         <link rel="stylesheet" href="./css/progress.css"/>
         <script defer src="./js/index.js"></script>
@@ -28,45 +28,38 @@
 
     <body onload="pageStartup();">
         <div id="pageStartupDiv" class="pageStartup useUnselect">
-            <img src="./assets/img/ui/load.png">
+            <img src="./assets/ui/load.svg" class="svg-color" alt="Cargando">
             <p>CARGANDO</p>
         </div>
 
         <nav class="mainNav">
+            <a class="nav-theme" onclick="navChangeColorScheme()">
+                <img src="./assets/ui/mode_auto.svg" alt="Change theme" id="navColorSchemeChanger" class="svg-color">
+            </a>
         </nav>
 
         <main>
             <div id="projectList" class="container">
-                <h1 class="container-title">Portfolio</h1>
+                <p class="container-title">Portfolio</p>
 
-                <h2 class="container-subtitle">Hablemos un poco de mis habilidades en software y tecnologias</h2>
+                <p class="container-subtitle">Hablemos un poco de mis habilidades en software y tecnologias</p>
                 <ul id="list-technologies" class="container-card"></ul>
                 
-                <h2 class="container-subtitle">Ahora le toca a los lenguajes</h2>
+                <p class="container-subtitle">Ahora le toca a los lenguajes</p>
                 <ul id="list-languages" class="container-card"></ul>
                 
-                <h2 class="container-subtitle">Otros programas</h2>
+                <p class="container-subtitle">Otros programas</p>
                 <ul id="list-software" class="container-card"></ul>
                 
-                <h2 class="container-subtitle">Proyectos relacionados</h2>
+                <p class="container-subtitle">Proyectos relacionados</p>
                 <ul id="list-project" class="container-card"></ul>
             </div>
         </main>
 
-        <footer id="contact" onclick="navHamburguerMenuForceClose()">
-            <div class="basicContainerFooter useShadow userHoverBasic">
-                <p class="basicContainerTitle useShadowText">Contacto y redes</p>
-                <p class="basicContainerSubtitle useShadowTextSub">Acá están mis redes, usá cualquier metodo de contacto</p>
 
-                <div class="basicContainerLogos useShadowImg">
-                    <a href="https://www.github.com/brunoo1545/" target="_blank"><img src="./assets/img/socialmedia/github.svg" class="useUnselect" alt="Github" title="Github"></a>
-                    <a href="https://www.instagram.com/brunoo1545/" target="_blank"><img src="./assets/img/socialmedia/instagram.svg" class="useUnselect" alt="Instagram" title="Instagram"></a>
-                    <a href="https://open.spotify.com/intl-es/artist/5GU3aszupYH9fS3jNnsWhV?si=L_AAchzcQtGF53cLPFysFA" target="_blank"><img src="./assets/img/socialmedia/spotify.svg" class="useUnselect" alt="Spotify" title="Spotify"></a>
-                    <a href="https://www.twitch.tv/el_gruno/" target="_blank"><img src="./assets/img/socialmedia/twitch.svg" class="useUnselect" alt="Twitch" title="Twitch"></a>
-                </div>
-
-                <p class="footerCopy useShadowTextSub">2024 BRUNOO1545 • <a href="https://github.com/BRUNOO1545/brunoo1545.github.io" target="_blank">SOURCE CODE</a></p>
-            </div>
+        <footer id="contact">
+            <p class="container-title">Contacto y redes</p>
+            <ul id="list-footer" class="footer-card"></ul>
         </footer>
     </body>
 </html>
