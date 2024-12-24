@@ -47,18 +47,7 @@ function scanProjects() {
                 
                 var _type, _status, _caption, _description, _screenshots;
                 _description = (element.description === "") ? "No hay decripción." : element.description;
-
-                if (element.caption === "") {
-                    if (element.status === 0) {
-                        _caption = "Clasificado.";
-                    }
-                    else {
-                        _caption = "Sin información."
-                    }
-                }
-                else {
-                    _caption = element.caption;
-                }
+                _caption = (element.caption === "") ? "Sin información." : element.caption;
 
                 switch (element.type) {
                     case 0: _type = "Software"; break;
