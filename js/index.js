@@ -1,9 +1,8 @@
+const mainPath = '../';
+
 // #region startup
 
 let pageStarted = false;
-const mainPath = '../';
-
-
 
 function pageStartup() {
     let loadingDiv = document.getElementById("loadingScreen");
@@ -150,8 +149,14 @@ function previewProjectOpen(projectId) {
                 let project = data.projects[projectId];
 
                 // apply data
+                let nav = document.getElementById("previewProjectNav");
+                nav.style.backgroundImage = `linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${project.id}/card.png')`;
+
                 let title = document.getElementById("previewProjectTitle");
                 title.textContent = project.title;
+                
+                let icon = document.getElementById("previewProjectIcon");
+                icon.src = `${mainPath}/assets/projects/${project.id}/icon.png`;
 
                 //previewDiv.style.visibility = 'visible';
                 previewDiv.style.animation = 'previewShow 0.3s forwards';

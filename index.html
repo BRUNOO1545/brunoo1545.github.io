@@ -33,9 +33,12 @@
         </div>
         
         <div id="previewProject" class="preview-screen">
-            <div class="preview-nav">
-                <h1 class="title" id="previewProjectTitle"></h1>
-                <img src="./assets/ui/hamburger_close.svg" class="svg-color" alt="Cerrar preview" onclick="previewProjectClose();">
+            <div class="preview-nav" id="previewProjectNav">
+                <div class="preview-title">
+                    <img src="./assets/ui/image_fail.svg" alt="Projcet icon" id="previewProjectIcon" onerror="this.src='./assets/ui/image_fail.svg';">
+                    <h1 id="previewProjectTitle"></h1>
+                </div>
+                <img src="./assets/ui/hamburger_close.svg" alt="Cerrar preview" onclick="previewProjectClose();">
             </div>
         </div>
 
