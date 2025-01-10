@@ -10,8 +10,9 @@ function pageStartup() {
 
     pageStarted = true;
     //navHamburgerInstantCollapse();
+    previewProjectClose();
     scanProjects();
-    //loadingDiv.style.animation = 'loadingFadeOut 1s forwards';
+    loadingDiv.style.animation = 'loadingFadeOut 1s forwards';
 }
 
 // #endregion
@@ -139,20 +140,32 @@ function scanProjects() {
 // #region page interactions
 
 let previewOpen = false;
+let previewDiv = document.getElementById("previewProject");
     
 function previewProjectOpen(projectId) {
-    previewOpen = true;
-    console.log("open [" + projectId + "]");
+    if (previewOpen === false) {
+        fetch(jsonfile)
+            .then(res => res.json())
+            .then(data => {
+                let project = data.projects[projectId];
 
-    fetch(jsonfile)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data.projects[projectId]);
-    });
+                // apply data
+                let title = document.getElementById("previewProjectTitle");
+                title.textContent = project.title;
+
+                //previewDiv.style.visibility = 'visible';
+                previewDiv.style.animation = 'previewShow 0.3s forwards';
+        });
+        
+        previewOpen = true;
+        console.log("open [" + projectId + "]");
+    }
 }
 
 function previewProjectClose() {
     previewOpen = false;
+    //previewDiv.style.visibility = 'hidden';
+    previewDiv.style.animation = 'previewHide 0.3s forwards ease-in-out';
     console.log("close");
 }
 

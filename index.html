@@ -31,10 +31,17 @@
             <img src="./assets/ui/load.svg" class="svg-color" alt="Cargando">
             <h1>CARGANDO</h1>
         </div>
+        
+        <div id="previewProject" class="preview-screen">
+            <div class="preview-nav">
+                <h1 class="title" id="previewProjectTitle"></h1>
+                <img src="./assets/ui/hamburger_close.svg" class="svg-color" alt="Cerrar preview" onclick="previewProjectClose();">
+            </div>
+        </div>
 
         <nav class="mainNav">
             <a class="nav-theme" onclick="navChangeColorScheme()">
-                <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navColorSchemeChanger" class="svg-color">
+                <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navColorSchemeChanger" class="svg-color" width="64px">
             </a>
         </nav>
 
