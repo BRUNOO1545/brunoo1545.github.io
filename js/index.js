@@ -11,7 +11,7 @@ function pageStartup() {
     pageStarted = true;
     //navHamburgerInstantCollapse();
     scanProjects();
-    loadingDiv.style.animation = 'loadingFadeOut 1s forwards';
+    //loadingDiv.style.animation = 'loadingFadeOut 1s forwards';
 }
 
 // #endregion
