@@ -6,19 +6,19 @@ const mainPath = '../';
 
 
 function pageStartup() {
-    //let pageStartupDiv = document.getElementById("pageStartupDiv");
+    let loadingDiv = document.getElementById("loadingScreen");
 
     pageStarted = true;
     //navHamburgerInstantCollapse();
     scanProjects();
-    //pageStartupDiv.classList = "pageStartup useUnselect pageStartupLoaded";
+    loadingDiv.style.animation = 'loadingFadeOut 1s forwards';
 }
 
 // #endregion
 
 //#region list project data
 
-const jsonfile = mainPath + 'pagedata.json'; // "https://brunoo1545.github.io/pagedata.json"
+const jsonfile = '../pagedata.json'; // "https://brunoo1545.github.io/pagedata.json"
 
 function scanProjects() {
     const listFooter = document.getElementById('list-footer');

@@ -35,9 +35,75 @@
     --size-border-small:        8px;
 }
 
+/* animations */
+@keyframes loadingSpin {
+    0% {
+        transform: rotate(0deg);    ;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+
+@keyframes loadingFadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
 /* body */
 body {
     background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+}
+
+/* loading screen */
+.loading-screen {
+    z-index: 1;
+    background-color: var(--color-background);
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-screen img {
+    width: 64px;
+    height: auto;
+    margin-bottom: 25px;
+    animation: loadingSpin 0.7s linear infinite;
+    -webkit-animation: loadingSpin 0.7s linear infinite;
+}
+
+.loading-screen h1 {
+    color: var(--color-text);
+    font-size: var(--size-font-medium);
+    font-style: normal;
 }
 
 /* card */
