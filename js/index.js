@@ -168,6 +168,7 @@ function previewProjectOpen(projectId) {
                 projectHistory.textContent = (project.history === "") ? "Sin historia." : project.history;
 
                 let projectLanguages = document.getElementById("listProjectLanguages");
+                projectLanguages.innerHTML = "";
                 project.languages.forEach(element => {
                     projectLanguages.insertAdjacentHTML('beforeend', 
                         `<li alt="${element}">
@@ -176,10 +177,12 @@ function previewProjectOpen(projectId) {
                 });
 
                 let projectTechnologies = document.getElementById("listProjectTechnologies");
+                projectTechnologies.innerHTML = "";
+
                 project.technologies.forEach(element => {
                     projectTechnologies.insertAdjacentHTML('beforeend', 
                         `<li alt="${element.name}">
-                            <p>${element.name}</p>
+                            <a href="${element.source}" target="_blank">${element.name}</a>
                         </li>`);
                 });
 
