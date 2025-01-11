@@ -145,84 +145,84 @@ let previewOpen = false;
 let previewDiv = document.getElementById("previewProject");
     
 function previewProjectOpen(projectId) {
-    if (previewOpen === false) {
-        fetch(jsonfile)
-            .then(res => res.json())
-            .then(data => {
-                let project = data.projects[projectId];
 
-                // apply data
-                let projectNav = document.getElementById("previewProjectNav");
-                projectNav.style.backgroundImage = `linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${project.id}/card.png')`;
+    if (previewOpen) return;
 
-                let projectTitle = document.getElementById("previewProjectTitle");
-                projectTitle.textContent = project.title;
+    fetch(jsonfile)
+        .then(res => res.json())
+        .then(data => {
+            let project = data.projects[projectId];
+
+            // apply data
+            let projectNav = document.getElementById("previewProjectNav");
+            projectNav.style.backgroundImage = `linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${project.id}/card.png')`;
+
+            let projectTitle = document.getElementById("previewProjectTitle");
+            projectTitle.textContent = project.title;
+            
+            let projectIcon = document.getElementById("previewProjectIcon");
+            projectIcon.src = `${mainPath}/assets/projects/${project.id}/icon.png`;
+
+            let projectCaption = document.getElementById("previewProjectCaption");
+            projectCaption.textContent = (project.caption === "") ? "" : `"${project.caption}"`;
+
+            let projectDescription = document.getElementById("previewProjectDescription");
+            projectDescription.textContent = (project.description === "") ? "Sin decripción." : project.description;
+            
+            let projectHistory = document.getElementById("previewProjectHistory");
+            projectHistory.textContent = (project.history === "") ? "Sin historia." : project.history;
+
+            let projectLanguages = document.getElementById("listProjectLanguages");
+            projectLanguages.innerHTML = "";
+            project.languages.forEach(element => {
+                projectLanguages.insertAdjacentHTML('beforeend', 
+                    `<li alt="${element}">
+                        <p>${element}</p>
+                    </li>`);
+            });
+
+            let projectTechnologies = document.getElementById("listProjectTechnologies");
+            projectTechnologies.innerHTML = "";
+
+            project.technologies.forEach(element => {
+                projectTechnologies.insertAdjacentHTML('beforeend', 
+                    `<li alt="${element.name}">
+                        <a href="${element.source}" target="_blank">${element.name}</a>
+                    </li>`);
+            });
+
+            let previewProjectURL = document.getElementById("previewProjectURL");
+            previewProjectURL.innerHTML = "";
+
+            project.url.forEach(element => {
+                if (element.url === "") return;
+
+                let _name;
+
+                switch (project.type) {
+                    case 0: _name = `Descargar (${element.name})`; break;
+                    case 1: _name = `Descargar (${element.name})`; break;
+                    case 2: _name = "Visitar página web"; break;
+                    case 3: _name = "Visitar página oficial"; break;
+                    default: _name = (element.name === "") ? "Visitar página" : element.name; break;
+                }
                 
-                let projectIcon = document.getElementById("previewProjectIcon");
-                projectIcon.src = `${mainPath}/assets/projects/${project.id}/icon.png`;
+                previewProjectURL.insertAdjacentHTML('beforeend', 
+                    `<li alt="${element.name}">
+                        <a href="${element.url}" target="_blank">${_name}</a>
+                    </li>`);
+            });
 
-                let projectCaption = document.getElementById("previewProjectCaption");
-                projectCaption.textContent = (project.caption === "") ? "" : `"${project.caption}"`;
-
-                let projectDescription = document.getElementById("previewProjectDescription");
-                projectDescription.textContent = (project.description === "") ? "Sin decripción." : project.description;
-                
-                let projectHistory = document.getElementById("previewProjectHistory");
-                projectHistory.textContent = (project.history === "") ? "Sin historia." : project.history;
-
-                let projectLanguages = document.getElementById("listProjectLanguages");
-                projectLanguages.innerHTML = "";
-                project.languages.forEach(element => {
-                    projectLanguages.insertAdjacentHTML('beforeend', 
-                        `<li alt="${element}">
-                            <p>${element}</p>
-                        </li>`);
-                });
-
-                let projectTechnologies = document.getElementById("listProjectTechnologies");
-                projectTechnologies.innerHTML = "";
-
-                project.technologies.forEach(element => {
-                    projectTechnologies.insertAdjacentHTML('beforeend', 
-                        `<li alt="${element.name}">
-                            <a href="${element.source}" target="_blank">${element.name}</a>
-                        </li>`);
-                });
-
-                let previewProjectURL = document.getElementById("previewProjectURL");
-                previewProjectURL.innerHTML = "";
-
-                project.url.forEach(element => {
-                    if (element.url === "") return;
-
-                    let _name;
-
-                    switch (project.type) {
-                        case 0: _name = `Descargar (${element.name})`; break;
-                        case 1: _name = `Descargar (${element.name})`; break;
-                        case 2: _name = "Visitar página web"; break;
-                        case 3: _name = "Visitar página oficial"; break;
-                        default: _name = (element.name === "") ? "Visitar página" : element.name; break;
-                    }
-                    
-                    previewProjectURL.insertAdjacentHTML('beforeend', 
-                        `<li alt="${element.name}">
-                            <a href="${element.url}" target="_blank">${_name}</a>
-                        </li>`);
-                });
-
-                // show preview
-                previewDiv.style.animation = 'previewShow 0.3s forwards';
-        });
-        
-        previewOpen = true;
-        console.log("open [" + projectId + "]");
-    }
+            // show preview
+            previewDiv.style.animation = 'previewShow 0.3s forwards';
+    });
+    
+    previewOpen = true;
+    console.log("open [" + projectId + "]");
 }
 
 function previewProjectClose() {
     previewOpen = false;
-    //previewDiv.style.visibility = 'hidden';
     previewDiv.style.animation = 'previewHide 0.3s forwards ease-in-out';
     console.log("close");
 }

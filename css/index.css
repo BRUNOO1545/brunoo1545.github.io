@@ -3,28 +3,31 @@
 * {
     scroll-behavior: smooth;
     scroll-margin-top: 60px;
-    scrollbar-width: thin;
+    /* scrollbar-width: thin;*/
     user-select: none;
     font-family: 'Kanit', sans-serif;
 }
 
 :root {
     /* colors */
-    --color-background:         light-dark(#e7e7e7, #0D0D0D);
-    --color-text:               light-dark(#000000, #ffffff);
-    --color-text-button:        light-dark(#ffffff, #000000);
-    --color-text-title:         light-dark(#000000, #ffffff);
-    --color-text-subtitle:      light-dark(#444444, #e6e6e6);
-    --color-border:             light-dark(#969696, #575757);
-    --color-border-hover:       light-dark(#000000, #ffffff);
-    --color-shadow:             light-dark(#000000, #000000);
-    --color-button:             light-dark(#202020, #ffffff);
-    --color-button-hover:       light-dark(#000000, #c7c7c7);
-    --color-card:               light-dark(#ffffff6e, #2c2c2c6e);
-    --color-card-hover:         light-dark(#e7e7e7ff, #1b1b1b6e);
-    --color-card-title:         light-dark(#ffffff, #ffffff);
-    --color-card-metadata:      light-dark(#949494, #949494);
-    --color-preview-background: light-dark(#ffffff, #1b1b1b);
+    --color-background:             light-dark(#e7e7e7, #0D0D0D);
+    --color-text:                   light-dark(#000000, #ffffff);
+    --color-text-button:            light-dark(#ffffff, #000000);
+    --color-text-title:             light-dark(#000000, #ffffff);
+    --color-text-subtitle:          light-dark(#444444, #e6e6e6);
+    --color-border:                 light-dark(#969696, #575757);
+    --color-border-hover:           light-dark(#000000, #ffffff);
+    --color-shadow:                 light-dark(#000000, #000000);
+    --color-button:                 light-dark(#202020, #ffffff);
+    --color-button-hover:           light-dark(#000000, #c7c7c7);
+    --color-card:                   light-dark(#ffffff6e, #2c2c2c6e);
+    --color-card-hover:             light-dark(#e7e7e7ff, #1b1b1b6e);
+    --color-card-title:             light-dark(#ffffff, #ffffff);
+    --color-card-metadata:          light-dark(#949494, #949494);
+    --color-preview-background:     light-dark(#ffffff, #1b1b1b);
+    --color-scrollbar-thumb:        light-dark(#202020, #ffffff);
+    --color-scrollbar-thumb-hover:  light-dark(#000000, #c7c7c7);
+    --color-scrollbar-background:   light-dark(#1b1b1b44, #ffffff44);
 
     /* sizing */
     --size-font-extra-big:      2.5rem;
@@ -36,6 +39,35 @@
     --size-border-medium:       10px;
     --size-border-small:        8px;
 }
+
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-scrollbar-background);
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar-thumb);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scrollbar-thumb-hover);
+}
+
 
 /* animations */
 @keyframes loadingSpin {
