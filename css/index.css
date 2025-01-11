@@ -3,6 +3,7 @@
 * {
     scroll-behavior: smooth;
     scroll-margin-top: 60px;
+    scrollbar-width: thin;
     user-select: none;
     font-family: 'Kanit', sans-serif;
 }

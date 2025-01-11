@@ -42,7 +42,7 @@ function scanProjects() {
             // fetch projects
             data.projects.forEach( (element, projectIndex) => {
 
-                var _type, _status, _caption, _description, _screenshots;
+                let _type, _status, _caption, _description, _screenshots;
                 _description = (element.description === "") ? "No hay decripción." : element.description;
                 _caption = (element.caption === "") ? "Sin información." : element.caption;
 
