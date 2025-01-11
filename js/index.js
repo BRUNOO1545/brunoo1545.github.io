@@ -282,7 +282,7 @@ function navHamburgerCollapse() {
 let viewWidth = window.matchMedia("(max-width: 780px)");
 
 viewWidth.addEventListener("change", function() {
-    navHamburgerCollapse();
+    //navHamburgerCollapse();
 });
 
 // Apply color scheme
