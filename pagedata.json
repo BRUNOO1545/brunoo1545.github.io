@@ -12,7 +12,8 @@
         {
             "type": 1,
             "status": 0,
-            "date": "2024",
+            "hide": false,
+            "date": "",
             "id": "space_souls",
             "title": "Space Souls",
             "caption": "",
@@ -34,6 +35,7 @@
         {
             "type": 1,
             "status": 0,
+            "hide": false,
             "date": "2024",
             "id": "florida_decay",
             "title": "Florida Decay",
@@ -58,6 +60,7 @@
         {
             "type": 1,
             "status": 2,
+            "hide": false,
             "date": "2024",
             "id": "in_memoriam",
             "title": "In Memoriam",
@@ -83,6 +86,7 @@
         {
             "type": 3,
             "status": 1,
+            "hide": false,
             "date": "2024",
             "id": "bizarre_engine_2",
             "title": "Bizarre Engine 2",
@@ -103,6 +107,7 @@
         {
             "type": 1,
             "status": 3,
+            "hide": false,
             "id": "fdarcade",
             "date": "2022",
             "title": "Florida Decay Arcade",
@@ -125,10 +130,11 @@
         {
             "type": 1,
             "status": 3,
+            "hide": false,
             "date": "2020",
             "id": "project_shooter",
             "title": "Project Shooter",
-            "caption": "Un proyecto y una meta demaciada grande para un aprendiz.",
+            "caption": "Un proyecto y una meta demasiado grande para un aprendiz.",
             "description": "",
             "history": "Este fue uno de los proyectos mas ambiosioso que tuve en su momento, habiendo comprado la licencia de Gamemaker Studio 2, tenia que aprender a usarlo y por accidente terminé haciendo mi propio motor de fisicas, colisiones, entre otros. Esto pasó ya que no conocia el IDE en su totalidad y bueno, esto alargó el desarollo y teniendo que hacer tantas coas que no conocía iba a terminar en la cancelacion el proyecto. Sin duda, fue uno de los mejores proyectos que hice y me enseñó a usar Git a la fuerza, ya que solia alojar todo en un disco duro y un dia se rompió, asi fue como una version muy avanzada y con muchos cambios en el custom engine se perdieron, pero el aprender nuevas tecnologias me salvó los futuros proyectos y abrió puertas a futuros trabajos.",
             "screenshots": 0,
@@ -148,6 +154,7 @@
         {
             "type": 1,
             "status": 2,
+            "hide": false,
             "date": "2019",
             "id": "wave_game",
             "title": "Wave Game",
@@ -164,6 +171,27 @@
             ],
             "url": [
                 { "name": "", "url": "" }
+            ]
+        },
+        {
+            "type": 0,
+            "status": 0,
+            "hide": true,
+            "date": "",
+            "id": "test",
+            "title": "Test item",
+            "caption": "Test caption",
+            "description": "Test description",
+            "history": "Test history",
+            "screenshots": 0,
+            "technologies": [
+                { "name": "Test Tech", "source": "https://www.google.com/" }
+            ],
+            "languages": [
+                "Test Lang"
+            ],
+            "url": [
+                { "name": "Test URL", "url": "https://www.google.com/" }
             ]
         }
     ],

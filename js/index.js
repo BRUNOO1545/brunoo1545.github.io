@@ -41,8 +41,11 @@ function scanProjects() {
             
             // fetch projects
             data.projects.forEach( (element, projectIndex) => {
+                
+                if (element.hide) return;
 
-                let _type, _status, _caption, _description, _screenshots;
+                let _type, _status, _caption, _date, _description, _screenshots;
+                _date = (element.date === "") ? "TBD" : element.date;
                 _description = (element.description === "") ? "No hay decripción." : element.description;
                 _caption = (element.caption === "") ? "Sin información." : element.caption;
 
@@ -82,7 +85,7 @@ function scanProjects() {
                             <div style="display: flex; flex-wrap: wrap; flex-direction: column; align-content: flex-start; align-items: flex-start; margin-bottom: 14px;">
                                 <div class="project-card-preview-data">
                                     <img src="${mainPath}/assets/ui/card_date.svg" class="svg-color" alt="Card date">
-                                    <p>${element.date}</p>
+                                    <p>${_date}</p>
                                 </div>
                                 <div class="project-card-preview-data">
                                     <img src="${mainPath}/assets/ui/card_type.svg" class="svg-color" alt="Card type">
