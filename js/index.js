@@ -186,6 +186,28 @@ function previewProjectOpen(projectId) {
                         </li>`);
                 });
 
+                let previewProjectURL = document.getElementById("previewProjectURL");
+                previewProjectURL.innerHTML = "";
+
+                project.url.forEach(element => {
+                    if (element.url === "") return;
+
+                    let _name;
+
+                    switch (project.type) {
+                        case 0: _name = `Descargar (${element.name})`; break;
+                        case 1: _name = `Descargar (${element.name})`; break;
+                        case 2: _name = "Visitar página web"; break;
+                        case 3: _name = "Visitar página oficial"; break;
+                        default: _name = (element.name === "") ? "Visitar página" : element.name; break;
+                    }
+                    
+                    previewProjectURL.insertAdjacentHTML('beforeend', 
+                        `<li alt="${element.name}">
+                            <a href="${element.url}" target="_blank">${_name}</a>
+                        </li>`);
+                });
+
                 // show preview
                 previewDiv.style.animation = 'previewShow 0.3s forwards';
         });

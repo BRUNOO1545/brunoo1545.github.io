@@ -28,7 +28,7 @@
                 "C++"
             ],
             "url": [
-                ""
+                { "name": "", "url": "" }
             ]
         },
         {
@@ -52,7 +52,7 @@
                 "GLSL"
             ],
             "url": [
-                "https://brunoo1545.itch.io/florida-decay/"
+                { "name": "Itch.io", "url": "https://brunoo1545.itch.io/florida-decay/" }
             ]
         },
         {
@@ -97,7 +97,7 @@
                 "GML"
             ],
             "url": [
-                "https://coffee-mug-games.github.io/"
+                { "name": "", "url": "https://coffee-mug-games.github.io/" }
             ]
         },
         {
@@ -119,7 +119,7 @@
                 "GML"
             ],
             "url": [
-                "https://brunoo1545.itch.io/fdarcade/"
+                { "name": "Itch.io", "url": "https://brunoo1545.itch.io/fdarcade/" }
             ]
         },
         {
@@ -142,7 +142,7 @@
                 "GML"
             ],
             "url": [
-                "https://brunoo1545.itch.io/proyect_shooter/"
+                { "name": "Itch.io", "url": "https://brunoo1545.itch.io/proyect_shooter/" }
             ]
         },
         {
@@ -163,7 +163,7 @@
                 "GML"
             ],
             "url": [
-                ""
+                { "name": "", "url": "" }
             ]
         }
     ],
