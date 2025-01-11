@@ -77,7 +77,7 @@
                 "GLSL"
             ],
             "url": [
-                "https://brunoo1545.itch.io/in-memoriam/"
+                { "name": "Itch.io", "url": "https://brunoo1545.itch.io/in-memoriam/" }
             ]
         },
         {

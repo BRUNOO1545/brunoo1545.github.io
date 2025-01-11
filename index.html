@@ -32,28 +32,30 @@
             <h1>CARGANDO</h1>
         </div>
         
-        <div id="previewProject" class="preview-screen">
-            <div class="preview-nav" id="previewProjectNav">
-                <div class="preview-title">
-                    <img src="./assets/ui/image_fail.svg" alt="Projcet icon" id="previewProjectIcon" onerror="this.src='./assets/ui/image_fail.svg';">
-                    <h1 id="previewProjectTitle"></h1>
+        <div id="previewProject" class="preview-container" onclick="previewProjectClose();">
+            <div class="preview-screen">
+                <div class="preview-nav" id="previewProjectNav">
+                    <div class="preview-title">
+                        <img src="./assets/ui/image_fail.svg" alt="Projcet icon" id="previewProjectIcon" onerror="this.src='./assets/ui/image_fail.svg';">
+                        <h1 id="previewProjectTitle"></h1>
+                    </div>
+                    <img src="./assets/ui/hamburger_close.svg" alt="Cerrar preview" onclick="previewProjectClose();">
                 </div>
-                <img src="./assets/ui/hamburger_close.svg" alt="Cerrar preview" onclick="previewProjectClose();">
-            </div>
-            
-            <div class="preview-content">
-                <h3 id="previewProjectCaption"></h3>
-                <h2>Descripción</h2>
-                <h4 id="previewProjectDescription"></h4>
-                <h2>Historia detrás del proyecto</h2>
-                <h4 id="previewProjectHistory"></h4>
-                <h2>Lenguajes usados</h2>
-                <ul id="listProjectLanguages"></ul>
-                <h2>Tecnologías usadas</h2>
-                <ul id="listProjectTechnologies"></ul>
-            </div>
+                
+                <div class="preview-content">
+                    <h3 id="previewProjectCaption"></h3>
+                    <h2>Descripción</h2>
+                    <h4 id="previewProjectDescription"></h4>
+                    <h2>Historia detrás del proyecto</h2>
+                    <h4 id="previewProjectHistory"></h4>
+                    <h2>Lenguajes usados</h2>
+                    <ul id="listProjectLanguages"></ul>
+                    <h2>Tecnologías usadas</h2>
+                    <ul id="listProjectTechnologies"></ul>
+                </div>
 
-            <ul id="previewProjectURL" class="preview-url"></ul>
+                <ul id="previewProjectURL" class="preview-url"></ul>
+            </div>
         </div>
 
         <nav class="mainNav">

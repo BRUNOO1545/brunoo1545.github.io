@@ -96,6 +96,16 @@
 }
 
 
+/* media query */
+@media screen and (max-width: 950px) {
+    
+}
+
+@media screen and (min-width: 950px) {
+    
+}
+
+
 /* body */
 body {
     background-color: var(--color-background);
@@ -131,13 +141,32 @@ body {
 }
 
 /* preview */
-.preview-screen {
+.preview-container {
     z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.preview-screen {
+    z-index: 3;
+    max-width: 680px;
+    width: calc(100% - 20px);
     margin: 10px;
     background-color: var(--color-preview-background);
     display: flex;
-    position: fixed;
-    width: calc(100% - 20px);
     height: 98%;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -289,30 +318,32 @@ body {
 }
 
 .preview-url li {
-    margin: 12px;
-    padding: 4px 8px;
-    background-color: var(--color-background);
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
+    margin: 24px 12px;
+    padding: 0;
 }
 
 .preview-url li a {
-    margin: 0;
-    padding: 0;
+    background-color: var(--color-button);
+    color: var(--color-text-button);
+    text-shadow: 0 0;
+    padding: 8px 16px;
+    align-self: flex-end;
     text-decoration: none;
-    color: var(--color-text);
+    font-size: var(--size-font-small);
+    border-radius: var(--size-border-small);
+    -webkit-border-radius: var(--size-border-small);
+    -moz-border-radius: var(--size-border-small);
+    -ms-border-radius: var(--size-border-small);
+    -o-border-radius: var(--size-border-small);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
 }
 
-.preview-url li:hover {
-    scale: 1.1;
+.preview-url li a:hover {
+    background-color: var(--color-button-hover);
 }
 
 /* card */
