@@ -149,16 +149,41 @@ function previewProjectOpen(projectId) {
                 let project = data.projects[projectId];
 
                 // apply data
-                let nav = document.getElementById("previewProjectNav");
-                nav.style.backgroundImage = `linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${project.id}/card.png')`;
+                let projectNav = document.getElementById("previewProjectNav");
+                projectNav.style.backgroundImage = `linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${project.id}/card.png')`;
 
-                let title = document.getElementById("previewProjectTitle");
-                title.textContent = project.title;
+                let projectTitle = document.getElementById("previewProjectTitle");
+                projectTitle.textContent = project.title;
                 
-                let icon = document.getElementById("previewProjectIcon");
-                icon.src = `${mainPath}/assets/projects/${project.id}/icon.png`;
+                let projectIcon = document.getElementById("previewProjectIcon");
+                projectIcon.src = `${mainPath}/assets/projects/${project.id}/icon.png`;
 
-                //previewDiv.style.visibility = 'visible';
+                let projectCaption = document.getElementById("previewProjectCaption");
+                projectCaption.textContent = (project.caption === "") ? "" : `"${project.caption}"`;
+
+                let projectDescription = document.getElementById("previewProjectDescription");
+                projectDescription.textContent = (project.description === "") ? "Sin decripción." : project.description;
+                
+                let projectHistory = document.getElementById("previewProjectHistory");
+                projectHistory.textContent = (project.history === "") ? "Sin historia." : project.history;
+
+                let projectLanguages = document.getElementById("listProjectLanguages");
+                project.languages.forEach(element => {
+                    projectLanguages.insertAdjacentHTML('beforeend', 
+                        `<li alt="${element}">
+                            <p>${element}</p>
+                        </li>`);
+                });
+
+                let projectTechnologies = document.getElementById("listProjectTechnologies");
+                project.technologies.forEach(element => {
+                    projectTechnologies.insertAdjacentHTML('beforeend', 
+                        `<li alt="${element.name}">
+                            <p>${element.name}</p>
+                        </li>`);
+                });
+
+                // show preview
                 previewDiv.style.animation = 'previewShow 0.3s forwards';
         });
         
