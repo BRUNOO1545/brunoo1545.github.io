@@ -8,7 +8,7 @@ function pageStartup() {
     let loadingDiv = document.getElementById("loadingScreen");
 
     pageStarted = true;
-    //navHamburgerInstantCollapse();
+    //navbarHamburgerInstantCollapse();
     previewProjectClose();
     scanProjects();
     loadingDiv.style.animation = 'loadingFadeOut 1s forwards';
@@ -133,7 +133,7 @@ function scanProjects() {
             });
 
             //apply color scheme
-            navApplyColorScheme(colorSchemeData.load());
+            navbarApplyColorScheme(colorSchemeData.load());
         });
 }
 
@@ -154,8 +154,8 @@ function previewProjectOpen(projectId) {
             let project = data.projects[projectId];
 
             // apply data
-            let projectNav = document.getElementById("previewProjectNav");
-            projectNav.style.backgroundImage = `linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${project.id}/card.png')`;
+            let projectnavbar = document.getElementById("previewProjectNav");
+            projectnavbar.style.backgroundImage = `linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${project.id}/card.png')`;
 
             let projectTitle = document.getElementById("previewProjectTitle");
             projectTitle.textContent = project.title;
@@ -218,18 +218,16 @@ function previewProjectOpen(projectId) {
     });
     
     previewOpen = true;
-    console.log("open [" + projectId + "]");
 }
 
 function previewProjectClose() {
     previewOpen = false;
     previewDiv.style.animation = 'previewHide 0.3s forwards ease-in-out';
-    console.log("close");
 }
 
 // #endregion
 
-//#region Nav and Hamburger
+//#region navbar and Hamburger
 
 // Vars
 const colorSchemeData = {
@@ -243,51 +241,51 @@ const colorSchemeData = {
     }
 }
 
-let navHamburgerOpen = false;
-let navColorSchemeOption = colorSchemeData.load();
+let navbarHamburgerOpen = false;
+let navbarColorSchemeOption = colorSchemeData.load();
 
 // Check close
-function navHamburgerInteract() {
-    let navMobile = document.getElementById("navMobileOptions");
-    let navHamburgerIcon = document.getElementById("navHamburgerIcon");
+function navbarHamburgerInteract() {
+    let navbarMobile = document.getElementById("navbarMobileOptions");
+    let navbarHamburgerIcon = document.getElementById("navbarHamburgerIcon");
     
-    if (navHamburgerOpen === false) {
-        navHamburgerOpen = true;
-        navMobile.style.animation = "nav-options-mobile-hide 0.3s forwards";
-        navHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
+    if (navbarHamburgerOpen === false) {
+        navbarHamburgerOpen = true;
+        navbarMobile.style.animation = "navbar-options-mobile-hide 0.3s forwards";
+        navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
     } else {
-        navHamburgerOpen = false;
-        navMobile.style.animation = "nav-options-mobile-show 0.3s forwards";
-        navHamburgerIcon.src = `${mainPath}/assets/ui/hamburger_close.svg`;
+        navbarHamburgerOpen = false;
+        navbarMobile.style.animation = "navbar-options-mobile-show 0.3s forwards";
+        navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger_close.svg`;
     }
 }
 
 // Instant collapse
-function navHamburgerInstantCollapse() {
-    let navMobile = document.getElementById("navMobileOptions");
-    let navHamburgerIcon = document.getElementById("navHamburgerIcon");
+function navbarHamburgerInstantCollapse() {
+    let navbarMobile = document.getElementById("navbarMobileOptions");
+    let navbarHamburgerIcon = document.getElementById("navbarHamburgerIcon");
     
-    navHamburgerOpen = true;
-    navMobile.style.animation = "nav-options-mobile-hide 0s forwards";
-    navHamburgerIcon.src = `${mainPath}/assets/page/hamburger.svg`;
+    navbarHamburgerOpen = true;
+    navbarMobile.style.animation = "navbar-options-mobile-hide 0s forwards";
+    navbarHamburgerIcon.src = `${mainPath}/assets/page/hamburger.svg`;
 }
 
 // Force close
-function navHamburgerCollapse() {
-    navHamburgerOpen = false;
-    navHamburgerInteract();
+function navbarHamburgerCollapse() {
+    navbarHamburgerOpen = false;
+    navbarHamburgerInteract();
 }
 
-// Auto close nav
+// Auto close navbar
 let viewWidth = window.matchMedia("(max-width: 780px)");
 
 viewWidth.addEventListener("change", function() {
-    //navHamburgerCollapse();
+    //navbarHamburgerCollapse();
 });
 
 // Apply color scheme
-function navApplyColorScheme(scheme) {
-    let navColorSchemeChanger = document.getElementById("navColorSchemeChanger");
+function navbarApplyColorScheme(scheme) {
+    let navbarColorSchemeChanger = document.getElementById("navbarColorSchemeChanger");
     let svgClass = document.getElementsByClassName("svg-color");
     let root = document.documentElement;
 
@@ -296,34 +294,34 @@ function navApplyColorScheme(scheme) {
         switch(scheme) {
             // Dark theme
             case 0:
-                navColorSchemeChanger.src = `${mainPath}/assets/ui/mode_dark.svg`;
+                navbarColorSchemeChanger.src = `${mainPath}/assets/ui/mode_dark.svg`;
                 root.style = "color-scheme: dark;"
                 e.style = "filter: invert(0%);";
             break;
 
             // Light theme
             case 1:
-                navColorSchemeChanger.src = `${mainPath}/assets/ui/mode_light.svg`;
+                navbarColorSchemeChanger.src = `${mainPath}/assets/ui/mode_light.svg`;
                 root.style = "color-scheme: light;"
                 e.style = "filter: invert(100%);";
             break;
         }
     });
     
-    let pageThemeIcon = document.getElementById("navColorSchemeChanger");
-    pageThemeIcon.style.animation = "navThemeOnLoad 0.8s forwards ease";
+    let pageThemeIcon = document.getElementById("navbarColorSchemeChanger");
+    pageThemeIcon.style.animation = "navbarThemeOnLoad 0.8s forwards ease";
 }
 
 // Change color scheme
-function navChangeColorScheme() {
-    if (navColorSchemeOption < 1) {
-        navColorSchemeOption += 1;
+function navbarChangeColorScheme() {
+    if (navbarColorSchemeOption < 1) {
+        navbarColorSchemeOption += 1;
     } else {
-        navColorSchemeOption = 0;
+        navbarColorSchemeOption = 0;
     }
 
-    colorSchemeData.save(navColorSchemeOption);
-    navApplyColorScheme(navColorSchemeOption);
+    colorSchemeData.save(navbarColorSchemeOption);
+    navbarApplyColorScheme(navbarColorSchemeOption);
 }
 
 //#endregion

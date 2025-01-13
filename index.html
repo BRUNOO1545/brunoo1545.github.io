@@ -59,10 +59,18 @@
         </div>
 
         <nav class="navbar">
-            <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navPageIcon" class="svg-color">
+            <div class="navbar-hamburger">
+                <img src="./assets/ui/hamburger.svg" id="navbarHamburger" class="svg-color" alt="Change theme">
+            </div>
+
+            <div class="navbar-title">
+                <img src="./assets/ui/mode_light.sv" alt="Change theme" id="navbarPageIcon" onerror="this.src='./assets/ui/image_fail.svg';">
+                <h1 class="navbar-title-name">Bruno Suárez</h1>
+                <h1 class="navbar-title-profession">Web Developer</h1>
+            </div>
 
             <div class="navbar-options">
-                <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navColorSchemeChanger" class="svg-color" onclick="navChangeColorScheme()">
+                <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navbarColorSchemeChanger" class="svg-color" onclick="navbarChangeColorScheme()">
             </div>
         </nav>
 

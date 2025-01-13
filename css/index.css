@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,800;1,800&display=swap');
 
 * {
     scroll-behavior: smooth;
     scroll-margin-top: 60px;
     user-select: none;
     font-family: 'Kanit', sans-serif;
+    font-weight: 300;
 }
 
 :root {
@@ -180,6 +181,31 @@
 
 /* media query */
 @media screen and (max-width: 950px) {
+    .navbar {
+        height: 32px;
+    }
+
+    .navbar-title {
+        flex-direction: column;
+    }
+
+    .navbar-title img {
+        display: none;
+    }
+
+    .navbar-title-name {
+        font-size: var(--size-font-small);
+        font-weight: 400;
+    }
+
+    .navbar-title-profession {
+        font-size: var(--size-font-small);
+        font-weight: 300;
+    }
+
+    .navbar-hamburger {
+        display: flex;
+    }
 
     .navbar img {
         width: 32px;
@@ -191,6 +217,31 @@
 }
 
 @media screen and (min-width: 950px) {
+    .navbar {
+        height: auto;
+    }
+
+    .navbar-title {
+        flex-direction: row;
+    }
+
+    .navbar-title img {
+        display: flex;
+    }
+
+    .navbar-title-name {
+        font-size: var(--size-font-medium);
+        font-weight: 400;
+    }
+
+    .navbar-title-profession {
+        font-size: var(--size-font-medium);
+        font-weight: 200;
+    }
+
+    .navbar-hamburger {
+        display: none;
+    }
 
     .navbar img {
         width: 46px;
@@ -249,16 +300,43 @@ body {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    /*box-shadow: 0 0 40px var(--color-border);
-    */background-color: var(--color-navbar-background);
-    animation: navBottomEffectAlt 2.3s infinite;
-    -webkit-animation: navBottomEffectAlt 2.3s infinite;
+    box-shadow: 0 0 40px var(--color-border);
+    background-color: var(--color-navbar-background);
+    /*animation: navBottomEffectAlt 2.3s infinite;
+    -webkit-animation: navBottomEffectAlt 2.3s infinite;*/
+}
+
+.navbar-title {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-title img {
+    margin-right: 4px;
+}
+
+.navbar-title-name {
+    color: var(--color-text-title);
+    margin: 0 4px;
+    padding: 0;
+}
+
+.navbar-title-profession {
+    color: var(--color-text-subtitle);
+    color: var(--color-primary);
+    margin: 0 4px;
+    padding: 0;
 }
 
 .navbar-options {
+    display: flex;
     margin: 0;
     padding: 0;
-    display: flex;
 }
 
 
