@@ -10,9 +10,8 @@
 
 :root {
     /* colors */
-    --color-primary:                #FA0092;
-    --color-secondary:              #ff129c;
-    --color-contrast:               #7d12ff;
+    --color-contrast:               #FA0092;
+    --color-contrast-alt:           #7000ff;
     --color-background:             light-dark(#e7e7e7, #0D0D0D);
     --color-text:                   light-dark(#000000, #ffffff);
     --color-text-button:            light-dark(#ffffff, #000000);
@@ -146,41 +145,47 @@
     }
 }
 
-@keyframes navbarBottomEffect {
+@keyframes navbarProfessionText {
     0% {
-        box-shadow: 0 0 40px var(--color-primary);
+        color: transparent;
+        margin-left: 25px;
+        letter-spacing: 0.3rem;
     }
-    50% {
-        box-shadow: 0 0 40px var(--color-secondary);
+    9%, 18% {
+        color: var(--color-contrast);
+        margin-left: 4px;
+        letter-spacing: normal;
+        content: "Web Developer";
+    }
+    27%, 36% {
+        color: transparent;
+        margin-left: 25px;
+        letter-spacing: 0.3rem;
+    }
+    45%, 54% {
+        color: var(--color-contrast);
+        margin-left: 4px;
+        letter-spacing: normal;
+        content: "Game Developer";
+    }
+    63%, 72% {
+        color: transparent;
+        margin-left: 25px;
+        letter-spacing: 0.3rem;
+    }
+    81%, 90%{
+        color: var(--color-contrast);
+        margin-left: 4px;
+        letter-spacing: normal;
+        content: "Music Producer";
     }
     100% {
-        box-shadow: 0 0 40px var(--color-primary);
+        color: transparent;
+        margin-left: 25px;
+        letter-spacing: 0.3rem;
     }
 }
 
-@keyframes navbarBottomEffectAlt {
-    0% {
-        box-shadow: 0 0 40px red;
-    }
-    16% {
-        box-shadow: 0 0 40px lime;
-    }
-    32% {
-        box-shadow: 0 0 40px blue;
-    }
-    48% {
-        box-shadow: 0 0 40px magenta;
-    }
-    64% {
-        box-shadow: 0 0 40px yellow;
-    }
-    80% {
-        box-shadow: 0 0 40px cyan;
-    }
-    100% {
-        box-shadow: 0 0 40px red;
-    }
-}
 
 /* media query */
 @media screen and (max-width: 950px) {
@@ -256,7 +261,6 @@
     }
 }
 
-
 /* body */
 body {
     background-color: var(--color-background);
@@ -303,7 +307,10 @@ body {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 40px var(--color-border);
+    border-style: solid;
+    border-color: var(--color-contrast);
+    border-width: 0 0 1px 0;
+    box-shadow: 0 0 40px var(--color-contrast);
     background-color: var(--color-navbar-background);
     /*animation: navbarBottomEffectAlt 2.3s infinite;
     -webkit-animation: navbarBottomEffectAlt 2.3s infinite;*/
@@ -321,6 +328,14 @@ body {
 
 .navbar-title img {
     margin-right: 4px;
+    border-style: solid;
+    border-color: var(--color-contrast);
+    border-width: 1px;
+    border-radius: var(--size-border-small);
+    -webkit-border-radius: var(--size-border-small);
+    -moz-border-radius: var(--size-border-small);
+    -ms-border-radius: var(--size-border-small);
+    -o-border-radius: var(--size-border-small);
 }
 
 .navbar-title-name {
@@ -330,10 +345,14 @@ body {
 }
 
 .navbar-title-profession {
-    color: var(--color-text-subtitle);
-    color: var(--color-primary);
     margin: 0 4px;
     padding: 0;
+}
+
+.navbar-title-profession::after {
+    content: "";
+    animation: navbarProfessionText 10s infinite;
+    -webkit-animation: navbarProfessionText 10s infinite;
 }
 
 .navbar-options {
@@ -578,6 +597,7 @@ body {
     background-color: var(--color-button-hover);
 }
 
+
 /* card */
 .container-card {
     display: flex;
@@ -588,6 +608,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 
 /* project card */
 .project-card {
@@ -722,6 +743,7 @@ body {
     margin-left: 8px;
 }
 
+
 /* general card */
 .general-card {
     width: 130px;
@@ -750,7 +772,7 @@ body {
 }
 
 .general-card:hover {
-    scale: 1.3;
+    scale: 1.1;
     background-color: var(--color-card-hover);
     border-color: var(--color-border-hover);
     z-index: 1;

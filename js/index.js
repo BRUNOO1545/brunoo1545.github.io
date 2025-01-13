@@ -31,6 +31,10 @@ function scanProjects() {
     fetch(jsonfile)
         .then(res => res.json())
         .then(data => {
+
+            // apply page icon
+            let pageIcon = document.getElementById('navbarPageIcon');
+            pageIcon.src = data.metadata.icon;
             
             // fetch footer
             data.metadata.footer.forEach(element => {
