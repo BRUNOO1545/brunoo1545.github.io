@@ -309,6 +309,9 @@ function navApplyColorScheme(scheme) {
             break;
         }
     });
+    
+    let pageThemeIcon = document.getElementById("navColorSchemeChanger");
+    pageThemeIcon.style.animation = "navThemeOnLoad 0.8s forwards ease";
 }
 
 // Change color scheme
