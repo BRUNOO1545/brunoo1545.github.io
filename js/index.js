@@ -1,4 +1,5 @@
 const mainPath = '../';
+let root = document.documentElement;
 
 // #region startup
 
@@ -139,7 +140,7 @@ function scanProjects() {
 
 //#endregion
 
-// #region page interactions
+// #region preview
 
 let previewOpen = false;
 let previewDiv = document.getElementById("previewProject");
@@ -218,10 +219,12 @@ function previewProjectOpen(projectId) {
     });
     
     previewOpen = true;
+    root.style.overflow = 'hidden';
 }
 
 function previewProjectClose() {
     previewOpen = false;
+    root.style.overflow = 'visible';
     previewDiv.style.animation = 'previewHide 0.3s forwards ease-in-out';
 }
 
@@ -287,7 +290,6 @@ viewWidth.addEventListener("change", function() {
 function navbarApplyColorScheme(scheme) {
     let navbarColorSchemeChanger = document.getElementById("navbarColorSchemeChanger");
     let svgClass = document.getElementsByClassName("svg-color");
-    let root = document.documentElement;
 
     Array.from(svgClass).forEach(e => {
 

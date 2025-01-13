@@ -10,7 +10,7 @@
 
 :root {
     /* colors */
-    --color-primary:                #7d12ff;
+    --color-primary:                #FA0092;
     --color-secondary:              #ff129c;
     --color-contrast:               #7d12ff;
     --color-background:             light-dark(#e7e7e7, #0D0D0D);
@@ -39,6 +39,9 @@
     --size-font-medium:         1.5rem;
     --size-font-small:          1rem;
     --size-font-extra-small:    0.6rem;
+    --size-font-caption:        1.5rem;
+    --size-font-title:          1.4rem;
+    --size-font-data:           1.2rem;
     --size-border-big:          12px;
     --size-border-medium:       10px;
     --size-border-small:        8px;
@@ -131,7 +134,7 @@
     }
 }
 
-@keyframes navThemeOnLoad {
+@keyframes navbarThemeOnLoad {
     0% {
         rotate: 0deg;
     }
@@ -143,7 +146,7 @@
     }
 }
 
-@keyframes navBottomEffect {
+@keyframes navbarBottomEffect {
     0% {
         box-shadow: 0 0 40px var(--color-primary);
     }
@@ -155,7 +158,7 @@
     }
 }
 
-@keyframes navBottomEffectAlt {
+@keyframes navbarBottomEffectAlt {
     0% {
         box-shadow: 0 0 40px red;
     }
@@ -302,8 +305,8 @@ body {
     align-items: center;
     box-shadow: 0 0 40px var(--color-border);
     background-color: var(--color-navbar-background);
-    /*animation: navBottomEffectAlt 2.3s infinite;
-    -webkit-animation: navBottomEffectAlt 2.3s infinite;*/
+    /*animation: navbarBottomEffectAlt 2.3s infinite;
+    -webkit-animation: navbarBottomEffectAlt 2.3s infinite;*/
 }
 
 .navbar-title {
@@ -337,6 +340,16 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
+    transition: scale 0.5s;
+    -webkit-transition: scale 0.5s;
+    -moz-transition: scale 0.5s;
+    -ms-transition: scale 0.5s;
+    -o-transition: scale 0.5s;
+}
+
+.navbar-options:hover{
+    scale: 1.1;
+    cursor: pointer;
 }
 
 
@@ -444,6 +457,7 @@ body {
 
 .preview-nav-close:hover {
     scale: 1.1;
+    cursor: pointer;
 }
 
 .preview-content {
@@ -454,25 +468,28 @@ body {
     align-items: flex-start;
     align-content: flex-start;
     margin: 8px 0;
-    padding: 12px 16px;
+    padding: 12px 20px;
     overflow-y: auto;
     overflow-x: hidden;
     height: 100%;
 }
 
-.preview-content h2 {
-    margin: 6px 0 2px 0;
-}
-
-.preview-content h3 {
+.preview-content-caption {
     align-self: center;
     text-align: center;
     margin: 0 0 40px;
+    font-size: var(--size-font-caption);
 }
 
-.preview-content h4 {
+.preview-content-title {
+    margin: 6px 0 2px 0;
+    font-size: var(--size-font-title);
+}
+
+.preview-content-data {
     color: var(--color-card-metadata);
     margin: 0 0 10px 12px;
+    font-size: var(--size-font-data);
 }
 
 .preview-content ul {
