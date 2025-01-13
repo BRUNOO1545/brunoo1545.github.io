@@ -1,3 +1,18 @@
+// Vars
+const colorSchemeData = {
+    save: function(scheme) {
+        localStorage.setItem("colorScheme", parseInt(scheme));
+    },
+    load: function() {
+        let val = localStorage.getItem("colorScheme");
+        
+        return (val === null) ? 0 : parseInt(val);
+    }
+}
+
+let navbarHamburgerOpen = false;
+let navbarColorSchemeOption = colorSchemeData.load();
+
 const mainPath = '../';
 let root = document.documentElement;
 
@@ -236,21 +251,6 @@ function previewProjectClose() {
 
 //#region navbar and Hamburger
 
-// Vars
-const colorSchemeData = {
-    save: function(scheme) {
-        localStorage.setItem("colorScheme", parseInt(scheme));
-    },
-    load: function() {
-        let val = localStorage.getItem("colorScheme");
-        
-        return (val === null) ? 0 : parseInt(val);
-    }
-}
-
-let navbarHamburgerOpen = false;
-let navbarColorSchemeOption = colorSchemeData.load();
-
 // Check close
 function navbarHamburgerInteract() {
     let navbarMobile = document.getElementById("navbarMobileOptions");
@@ -302,6 +302,7 @@ function navbarApplyColorScheme(scheme) {
             case 0:
                 navbarColorSchemeChanger.src = `${mainPath}/assets/ui/mode_dark.svg`;
                 root.style = "color-scheme: dark;"
+                root.style.setProperty('--color-navbar-neon', '#FA0092');
                 e.style = "filter: invert(0%);";
             break;
 
@@ -309,6 +310,7 @@ function navbarApplyColorScheme(scheme) {
             case 1:
                 navbarColorSchemeChanger.src = `${mainPath}/assets/ui/mode_light.svg`;
                 root.style = "color-scheme: light;"
+                root.style.setProperty('--color-navbar-neon', '#7000ff');
                 e.style = "filter: invert(100%);";
             break;
         }
