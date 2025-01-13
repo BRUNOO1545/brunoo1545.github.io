@@ -168,6 +168,9 @@ function previewProjectOpen(projectId) {
 
     if (previewOpen) return;
 
+    // scroll to top
+    document.getElementById('previewContent').scrollTop = 0;
+
     fetch(jsonfile)
         .then(res => res.json())
         .then(data => {
@@ -302,7 +305,7 @@ function navbarApplyColorScheme(scheme) {
             case 0:
                 navbarColorSchemeChanger.src = `${mainPath}/assets/ui/mode_dark.svg`;
                 root.style = "color-scheme: dark;"
-                root.style.setProperty('--color-navbar-neon', '#FA0092');
+                root.style.setProperty('--color-contrast', '#FA0092');
                 e.style = "filter: invert(0%);";
             break;
 
@@ -310,7 +313,7 @@ function navbarApplyColorScheme(scheme) {
             case 1:
                 navbarColorSchemeChanger.src = `${mainPath}/assets/ui/mode_light.svg`;
                 root.style = "color-scheme: light;"
-                root.style.setProperty('--color-navbar-neon', '#7000ff');
+                root.style.setProperty('--color-contrast', '#7000ff');
                 e.style = "filter: invert(100%);";
             break;
         }

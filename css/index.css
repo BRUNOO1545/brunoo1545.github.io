@@ -10,6 +10,7 @@
 
 :root {
     /* colors */
+    --color-contrast:            #FA0092;
     --color-background:             light-dark(#e7e7e7, #0D0D0D);
     --color-text:                   light-dark(#000000, #ffffff);
     --color-text-button:            light-dark(#ffffff, #000000);
@@ -29,7 +30,6 @@
     --color-scrollbar-thumb-hover:  light-dark(#000000, #c7c7c7);
     --color-scrollbar-background:   light-dark(#1b1b1b44, #ffffff44);
     --color-navbar-background:      light-dark(#f3f3f3, #070707);
-    --color-navbar-neon:            #FA0092;
 
     /* sizing */
     --size-font-extra-big:      2.5rem;
@@ -151,7 +151,7 @@
         letter-spacing: 0.3rem;
     }
     9%, 18% {
-        color: var(--color-navbar-neon);
+        color: var(--color-contrast);
         margin-left: 4px;
         letter-spacing: normal;
         content: "Web Developer";
@@ -162,7 +162,7 @@
         letter-spacing: 0.3rem;
     }
     45%, 54% {
-        color: var(--color-navbar-neon);
+        color: var(--color-contrast);
         margin-left: 4px;
         letter-spacing: normal;
         content: "Game Developer";
@@ -173,7 +173,7 @@
         letter-spacing: 0.3rem;
     }
     81%, 90%{
-        color: var(--color-navbar-neon);
+        color: var(--color-contrast);
         margin-left: 4px;
         letter-spacing: normal;
         content: "Music Producer";
@@ -307,12 +307,25 @@ body {
     justify-content: space-between;
     align-items: center;
     border-style: solid;
-    border-color: var(--color-navbar-neon);
+    border-color: var(--color-contrast);
     border-width: 0 0 1px 0;
-    box-shadow: 0 0 40px var(--color-navbar-neon);
+    box-shadow: 0 0 40px var(--color-contrast);
     background-color: var(--color-navbar-background);
     /*animation: navbarBottomEffectAlt 2.3s infinite;
     -webkit-animation: navbarBottomEffectAlt 2.3s infinite;*/
+}
+
+.navbar-hamburger {
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.navbar-hamburger:hover {
+    scale: 1.1;
+    cursor: pointer;
 }
 
 .navbar-title {
@@ -328,7 +341,7 @@ body {
 .navbar-title img {
     margin-right: 4px;
     border-style: solid;
-    border-color: var(--color-navbar-neon);
+    border-color: var(--color-contrast);
     border-width: 1px;
     border-radius: var(--size-border-small);
     -webkit-border-radius: var(--size-border-small);
@@ -620,7 +633,6 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     margin: 12px;
-    border-color: transparent;
     border-style: solid;
     border-width: 1px;
     border-color: var(--color-border);
@@ -638,6 +650,7 @@ body {
 
 .project-card:hover {
     background-color: var(--color-card-hover);
+    /* border-color: var(--color-border-hover); */
     border-color: var(--color-border-hover);
     scale: 1.05;
     z-index: 1;
