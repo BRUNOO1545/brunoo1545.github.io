@@ -600,17 +600,24 @@ body {
     font-weight: 100;
 }
 
-.first-container-sub a {
+.first-container-sub button {
     text-decoration: none;
     align-self: center;
     margin: 0;
     margin-top: 32px;
     padding: 0;
+    background-color: transparent;
+    border-width: 0;
     animation: scrollButton 1s infinite ease-in-out alternate;
     -webkit-animation: scrollButton 1s infinite ease-in-out alternate;
 }
 
-.first-container-sub a img {
+
+.first-container-sub button {
+    cursor: pointer;
+}
+
+.first-container-sub button img {
     width: 46px;
     height: auto;
     margin: 8px 8px 0;
