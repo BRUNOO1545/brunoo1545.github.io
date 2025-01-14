@@ -23,7 +23,7 @@
             "technologies": [
                 { "name": "Unreal Engine 4", "source": "https://www.unrealengine.com/" },
                 { "name": "Blender", "source": "https://www.blender.org/" },
-                { "name": "FL Studio", "source": "https://www.image-line.com/https://www.image-line.com/" }
+                { "name": "FL Studio", "source": "https://www.image-line.com/" }
             ],
             "languages": [
                 "C++"

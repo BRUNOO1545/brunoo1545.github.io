@@ -21,13 +21,23 @@ let root = document.documentElement;
 let pageStarted = false;
 
 function pageStartup() {
-    let loadingDiv = document.getElementById("loadingScreen");
-
-    pageStarted = true;
     //navbarHamburgerInstantCollapse();
     previewProjectClose();
     scanProjects();
+}
+
+function loadingScreenHide() {
+
+    if (pageStarted) return;
+    
+    // onstart load
+    let loadingDiv = document.getElementById("loadingScreen");
+    let pageThemeIcon = document.getElementById("navbarColorSchemeChanger");
+
     loadingDiv.style.animation = 'loadingFadeOut 1s forwards';
+    pageThemeIcon.style.animation = "navbarThemeOnLoad 0.8s forwards ease";
+
+    pageStarted = true;
 }
 
 // #endregion
@@ -117,7 +127,7 @@ function scanProjects() {
                                 </div>
                             </div>
                             
-                            <a onclick="previewProjectOpen('${projectIndex}')">Ver más</a>
+                            <button onclick="previewProjectOpen('${projectIndex}')">Ver más</button>
                         </div>
                     </li>`);
             });
@@ -126,7 +136,7 @@ function scanProjects() {
             data.languages.forEach(element => {
                 listLanguages.insertAdjacentHTML('beforeend', 
                     `<li class="general-card" alt="${element.alt}">
-                        <img src="${mainPath}/assets/lang/${element.logo}" width="64px" alt="${element.alt}">
+                        <img src="${mainPath}/assets/lang/${element.logo}" width="64px" alt="${element.alt} logo">
                         <p>${element.name}</p>
                         <progress value="${element.percent}" max="100" style="--value: ${element.percent}; --max: 100;"></progress>
                     </li>`);
@@ -136,7 +146,7 @@ function scanProjects() {
             data.technologies.forEach(element => {
                 projectTechnologies.insertAdjacentHTML('beforeend', 
                     `<li class="general-card" alt="${element.alt} project">
-                        <img src="${mainPath}/assets/logo/${element.logo}" width="64px" alt="${element.alt}">
+                        <img src="${mainPath}/assets/logo/${element.logo}" width="64px" alt="${element.alt} logo">
                         <p>${element.name}</p>
                         <progress value="${element.percent}" max="100" style="--value: ${element.percent}; --max: 100;"></progress>
                     </li>`);
@@ -146,7 +156,7 @@ function scanProjects() {
             data.software.forEach(element => {
                 listSoftware.insertAdjacentHTML('beforeend', 
                     `<li class="general-card" alt="${element.alt}">
-                        <img src="${mainPath}/assets/logo/${element.logo}" width="64px" alt="${element.alt}">
+                        <img src="${mainPath}/assets/logo/${element.logo}" width="64px" alt="${element.alt} logo">
                         <p>${element.name}</p>
                         <progress value="${element.percent}" max="100" style="--value: ${element.percent}; --max: 100;"></progress>
                     </li>`);
@@ -171,12 +181,12 @@ function previewProjectOpen(projectId) {
     // scroll to top
     document.getElementById('previewContent').scrollTop = 0;
 
+    // apply data
     fetch(jsonfile)
         .then(res => res.json())
         .then(data => {
             let project = data.projects[projectId];
 
-            // apply data
             let projectnavbar = document.getElementById("previewProjectNav");
             projectnavbar.style.backgroundImage = `linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${project.id}/card.png')`;
 
@@ -318,10 +328,11 @@ function navbarApplyColorScheme(scheme) {
             break;
         }
     });
-    
-    let pageThemeIcon = document.getElementById("navbarColorSchemeChanger");
-    pageThemeIcon.style.animation = "navbarThemeOnLoad 0.8s forwards ease";
+
+    // onload
+    loadingScreenHide();
 }
+
 
 // Change color scheme
 function navbarChangeColorScheme() {

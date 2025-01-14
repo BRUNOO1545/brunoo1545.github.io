@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,800;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300&display=swap');
 
 * {
     scroll-behavior: smooth;
@@ -43,6 +43,7 @@
     --size-border-big:          12px;
     --size-border-medium:       10px;
     --size-border-small:        8px;
+    --size-shadow-profession:   12px;
 }
 
 
@@ -144,41 +145,48 @@
     }
 }
 
-@keyframes navbarProfessionText {
-    0% {
+@keyframes professionText {
+    0%, 10% {
+        text-shadow: 0 0 0 transparent;
         color: transparent;
         margin-left: 25px;
         letter-spacing: 0.3rem;
     }
-    9%, 18% {
+    20%, 25% {
+        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
         color: var(--color-contrast);
         margin-left: 4px;
         letter-spacing: normal;
         content: "Web Developer";
     }
-    27%, 36% {
+    30%, 40% {
+        text-shadow: 0 0 0 transparent;
         color: transparent;
         margin-left: 25px;
         letter-spacing: 0.3rem;
     }
-    45%, 54% {
+    50%, 55% {
+        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
         color: var(--color-contrast);
         margin-left: 4px;
         letter-spacing: normal;
         content: "Game Developer";
     }
-    63%, 72% {
+    60%, 70% {
+        text-shadow: 0 0 0 transparent;
         color: transparent;
         margin-left: 25px;
         letter-spacing: 0.3rem;
     }
-    81%, 90%{
+    80%, 85%{
+        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
         color: var(--color-contrast);
         margin-left: 4px;
         letter-spacing: normal;
         content: "Music Producer";
     }
-    100% {
+    90%, 100% {
+        text-shadow: 0 0 0 transparent;
         color: transparent;
         margin-left: 25px;
         letter-spacing: 0.3rem;
@@ -359,12 +367,7 @@ body {
 .navbar-title-profession {
     margin: 0 4px;
     padding: 0;
-}
-
-.navbar-title-profession::after {
-    content: "";
-    animation: navbarProfessionText 10s infinite;
-    -webkit-animation: navbarProfessionText 10s infinite;
+    color: var(--color-contrast);
 }
 
 .navbar-options {
@@ -383,6 +386,27 @@ body {
     cursor: pointer;
 }
 
+
+/* first container*/
+.first-container {
+    margin: 0;
+    margin-top: 80px;
+    padding: 8px;
+    display: flex;
+}
+
+.first-containe h1 {
+    margin: 0 4px;
+    padding: 0;
+}
+
+.first-container h1::after {
+    content: "";
+    font-weight: 100;
+    font-size: var(--size-font-big);
+    animation: professionText 20s infinite;
+    -webkit-animation: professionText 20s infinite;
+}
 
 /* preview */
 .preview-container {
@@ -663,7 +687,7 @@ body {
     font-size: 1rem;
 }
 
-.project-card a {
+.project-card button {
     background-color: var(--color-button);
     color: var(--color-text-button);
     text-shadow: 0 0;
@@ -672,6 +696,7 @@ body {
     align-self: flex-end;
     text-decoration: none;
     font-size: var(--size-font-small);
+    border-style: none;
     border-radius: var(--size-border-small);    
     -webkit-border-radius: var(--size-border-small);
     -moz-border-radius: var(--size-border-small);
@@ -684,7 +709,7 @@ body {
     -o-transition: all 0.5s;
 }
 
-.project-card a:hover {
+.project-card button:hover {
     background-color: var(--color-button-hover);
 }
 
