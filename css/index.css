@@ -527,6 +527,11 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
+}
+
+.navbar-options button {
+    background-color: transparent;
+    border-width: 0;
     transition: scale 0.5s;
     -webkit-transition: scale 0.5s;
     -moz-transition: scale 0.5s;
@@ -534,7 +539,7 @@ body {
     -o-transition: scale 0.5s;
 }
 
-.navbar-options:hover{
+.navbar-options button:hover{
     scale: 1.1;
     cursor: pointer;
 }
