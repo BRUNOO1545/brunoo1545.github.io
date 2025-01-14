@@ -2,7 +2,7 @@
 
 * {
     scroll-behavior: smooth;
-    scroll-margin-top: 60px;
+    scroll-margin-top: 100px;
     user-select: none;
     font-family: 'Kanit', sans-serif;
     font-weight: 300;
@@ -40,9 +40,11 @@
     --size-font-caption:        1.5rem;
     --size-font-title:          1.4rem;
     --size-font-data:           1.2rem;
+    --size-font-profession:     2.2rem;
     --size-border-big:          12px;
     --size-border-medium:       10px;
     --size-border-small:        8px;
+    --size-shadow-profession:   12px;
     --size-shadow-profession:   12px;
 }
 
@@ -145,7 +147,7 @@
     }
 }
 
-@keyframes professionText {
+@keyframes professionText2 {
     0%, 10% {
         text-shadow: 0 0 0 transparent;
         color: transparent;
@@ -155,9 +157,9 @@
     20%, 25% {
         text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
         color: var(--color-contrast);
-        margin-left: 4px;
+        margin-left: 0;
         letter-spacing: normal;
-        content: "Web Developer";
+        content: "Web Design";
     }
     30%, 40% {
         text-shadow: 0 0 0 transparent;
@@ -168,9 +170,9 @@
     50%, 55% {
         text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
         color: var(--color-contrast);
-        margin-left: 4px;
+        margin-left: 0;
         letter-spacing: normal;
-        content: "Game Developer";
+        content: "Indie Game Dev";
     }
     60%, 70% {
         text-shadow: 0 0 0 transparent;
@@ -181,7 +183,7 @@
     80%, 85%{
         text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
         color: var(--color-contrast);
-        margin-left: 4px;
+        margin-left: 0;
         letter-spacing: normal;
         content: "Music Producer";
     }
@@ -191,6 +193,71 @@
         margin-left: 25px;
         letter-spacing: 0.3rem;
     }
+}
+
+@keyframes professionText {
+    0%, 10% {
+        text-shadow: 0 0 0 transparent;
+        color: transparent;
+        margin-left: 25px;
+        letter-spacing: 0.3rem;
+    }
+    20%, 25% {
+        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
+        color: var(--color-contrast);
+        margin-left: 0;
+        letter-spacing: normal;
+        content: "Web Design";
+    }
+    30%, 40% {
+        text-shadow: 0 0 0 transparent;
+        color: transparent;
+        margin-left: 25px;
+        letter-spacing: 0.3rem;
+    }
+    50%, 55% {
+        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
+        color: var(--color-contrast);
+        margin-left: 0;
+        letter-spacing: normal;
+        content: "Indie Game Dev";
+    }
+    60%, 70% {
+        text-shadow: 0 0 0 transparent;
+        color: transparent;
+        margin-left: 25px;
+        letter-spacing: 0.3rem;
+    }
+    80%, 85%{
+        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
+        color: var(--color-contrast);
+        margin-left: 0;
+        letter-spacing: normal;
+        content: "Music Producer";
+    }
+    90%, 100% {
+        text-shadow: 0 0 0 transparent;
+        color: transparent;
+        margin-left: 25px;
+        letter-spacing: 0.3rem;
+    }
+}
+
+@keyframes scrollButton {
+    from {
+        transform: translateY(25px);
+        -webkit-transform: translateY(25px);
+        -moz-transform: translateY(25px);
+        -ms-transform: translateY(25px);
+        -o-transform: translateY(25px);
+}
+    from {
+        transform: translateY(-25px);
+        -webkit-transform: translateY(-25px);
+        -moz-transform: translateY(-25px);
+        -ms-transform: translateY(-25px);
+        -o-transform: translateY(-25px);
+}
 }
 
 
@@ -229,6 +296,10 @@
     .preview-title h1 {
         font-size: var(--size-font-medium);
     }
+    
+    .first-container-profession::after {
+        font-size: var(--size-font-big);
+    }
 }
 
 @media screen and (min-width: 950px) {
@@ -265,6 +336,10 @@
 
     .preview-title h1 {
         font-size: var(--size-font-big);
+    }
+    
+    .first-container-profession::after {
+        font-size: var(--size-font-extra-big);
     }
 }
 
@@ -319,8 +394,6 @@ body {
     border-width: 0 0 1px 0;
     box-shadow: 0 0 40px var(--color-contrast);
     background-color: var(--color-navbar-background);
-    /*animation: navbarBottomEffectAlt 2.3s infinite;
-    -webkit-animation: navbarBottomEffectAlt 2.3s infinite;*/
 }
 
 .navbar-hamburger {
@@ -389,24 +462,69 @@ body {
 
 /* first container*/
 .first-container {
-    margin: 0;
-    margin-top: 80px;
-    padding: 8px;
+    margin: 32px 24px 64px;
+    height: calc(100dvh - 180px);
+    padding: 24px;
     display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--color-navbar-background);
+    border-radius: var(--size-border-big);
+    -webkit-border-radius: var(--size-border-big);
+    -moz-border-radius: var(--size-border-big);
+    -ms-border-radius: var(--size-border-big);
+    -o-border-radius: var(--size-border-big);
 }
 
-.first-containe h1 {
-    margin: 0 4px;
+.first-container h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+}
+
+.first-container-sub {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.first-container-sub a {
+    text-decoration: none;
+    align-self: center;
+    margin: 0;
+    margin-top: 32px;
+    padding: 0;
+    animation: scrollButton 1s infinite ease-in-out alternate;
+    -webkit-animation: scrollButton 1s infinite ease-in-out alternate;
+}
+
+.first-container-sub a img {
+    width: 46px;
+    height: auto;
+    margin: 8px 8px 0;
+}
+
+.first-container-profession {
+    margin: 0;
     padding: 0;
 }
 
-.first-container h1::after {
+.first-container-profession::after {
+    text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
+    color: var(--color-contrast);
     content: "";
     font-weight: 100;
-    font-size: var(--size-font-big);
     animation: professionText 20s infinite;
     -webkit-animation: professionText 20s infinite;
 }
+
 
 /* preview */
 .preview-container {
