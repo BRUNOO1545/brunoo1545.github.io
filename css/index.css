@@ -340,7 +340,7 @@
         margin: 32px 0 0;
         padding: 12px 12px 128px;
         background-image: url('../assets/gallery/other/portada.jpg');
-        background-position: top;
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         background-clip: border-box;
