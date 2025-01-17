@@ -697,9 +697,25 @@ main {
 }
 
 .preview-nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--color-shadow);
+    border-radius: calc(var(--size-border-big) - 1px) calc(var(--size-border-big) - 1px) 0 0;
+    -webkit-border-radius: calc(var(--size-border-big) - 1px) calc(var(--size-border-big) - 1px) 0 0;
+    -moz-border-radius: calc(var(--size-border-big) - 1px) calc(var(--size-border-big) - 1px) 0 0;
+    -ms-border-radius: calc(var(--size-border-big) - 1px) calc(var(--size-border-big) - 1px) 0 0;
+    -o-border-radius: calc(var(--size-border-big) - 1px) calc(var(--size-border-big) - 1px) 0 0;
+}
+
+.preview-nav-inside {
     display: flex;
     width: auto;
-    height: 96px;
+    height: 64px;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -712,50 +728,15 @@ main {
     -o-border-radius: calc(var(--size-border-big) - 1px) calc(var(--size-border-big) - 1px) 0 0;
 }
 
-.preview-title {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 16px;
-    text-shadow: 1px 1px var(--color-shadow);
-}
-
-.preview-title h1 {
-    color: var(--color-card-title);
-    margin: 0;
-    padding-left: 16px;
-}
-
-.preview-nav-logo {
-    width: 46px;
-    height: auto;
-    filter: drop-shadow(2px 2px var(--color-shadow));
-    -webkit-filter: drop-shadow(2px 2px var(--color-shadow));
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-}
-
-.preview-nav-close {
-    width: 32px;
-    height: auto;
-    margin-right: 8px;
-    filter: drop-shadow(2px 2px var(--color-shadow));
-    -webkit-filter: drop-shadow(2px 2px var(--color-shadow));
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-}
-
-.preview-nav-close:hover {
-    scale: 1.1;
-    cursor: pointer;
+.preview-nav-divisor {
+    width: auto;
+    height: 18px;
+    background-color: var(--color-preview-background);
+    border-radius: var(--size-border-big) var(--size-border-big) 0 0;
+    -webkit-border-radius: var(--size-border-big) var(--size-border-big) 0 0;
+    -moz-border-radius: var(--size-border-big) var(--size-border-big) 0 0;
+    -ms-border-radius: var(--size-border-big) var(--size-border-big) 0 0;
+    -o-border-radius: var(--size-border-big) var(--size-border-big) 0 0;
 }
 
 .preview-content {
@@ -765,7 +746,7 @@ main {
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    margin: 8px 0;
+    margin: 0 0 8px;
     padding: 12px 20px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -833,6 +814,70 @@ main {
 
 .preview-content ul li:hover {
     scale: 1.1;
+}
+
+.preview-content-metadata {
+    width: 100%;
+    margin: 0 0 12px;
+    padding: 8px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background);
+    border-radius: var(--size-border-small);
+    -webkit-border-radius: var(--size-border-small);
+    -moz-border-radius: var(--size-border-small);
+    -ms-border-radius: var(--size-border-small);
+    -o-border-radius: var(--size-border-small);
+}
+
+.preview-title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    text-shadow: 1px 1px var(--color-shadow);
+}
+
+.preview-title h1 {
+    color: var(--color-card-title);
+    margin: 0;
+    padding-left: 16px;
+}
+
+.preview-nav-logo {
+    width: 46px;
+    height: auto;
+    filter: drop-shadow(2px 2px var(--color-shadow));
+    -webkit-filter: drop-shadow(2px 2px var(--color-shadow));
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.preview-nav-close {
+    width: 32px;
+    height: auto;
+    margin-right: 8px;
+    filter: drop-shadow(2px 2px var(--color-shadow));
+    -webkit-filter: drop-shadow(2px 2px var(--color-shadow));
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.preview-nav-close:hover {
+    scale: 1.1;
+    cursor: pointer;
 }
 
 .preview-url {

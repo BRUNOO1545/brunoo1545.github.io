@@ -23,7 +23,7 @@ let pageStarted = false;
 function pageStartup() {
     //navbarHamburgerInstantCollapse();
     previewProjectClose();
-    scanProjects();
+    scanData();
 }
 
 function loadingScreenHide() {
@@ -46,7 +46,7 @@ function loadingScreenHide() {
 
 const jsonfile = '../pagedata.json'; // "https://brunoo1545.github.io/pagedata.json"
 
-function scanProjects() {
+function scanData() {
     const listFooter = document.getElementById('list-footer');
     const listProject = document.getElementById('list-project');
     const listLanguages = document.getElementById('list-languages');
@@ -186,6 +186,34 @@ function previewProjectOpen(projectId) {
         .then(res => res.json())
         .then(data => {
             let project = data.projects[projectId];
+
+            // metadata
+            let projectMetadataDate = document.getElementById("previewProjectMetadataDate");
+            let projectMetadataType = document.getElementById("previewProjectMetadataType");
+            let projectMetadataStatus = document.getElementById("previewProjectMetadataStatus");
+
+            let _date, _type, _status;
+            _date = (project.date === "") ? "TBD" : project.date;
+
+            switch (project.type) {
+                case 0: _type = "Software"; break;
+                case 1: _type = "Videojuego"; break;
+                case 2: _type = "Página web"; break;
+                case 3: _type = "Otro"; break;
+                default: _type = "Desconocido"; break;
+            }
+
+            switch (project.status) {
+                case 0: _status = "Concepto"; break;
+                case 1: _status = "En desarollo"; break;
+                case 2: _status = "Terminado"; break;
+                case 3: _status = "Cancelado"; break;
+                default: _status = "Desconocido"; break;
+            }
+            
+            projectMetadataDate.textContent = _date;
+            projectMetadataType.textContent = _type;
+            projectMetadataStatus.textContent = _status;
 
             let projectnavbar = document.getElementById("previewProjectNav");
             projectnavbar.style.backgroundImage = `linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${project.id}/card.png')`;

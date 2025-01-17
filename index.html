@@ -35,15 +35,35 @@
         
         <div id="previewProject" class="preview-container">
             <div class="preview-screen">
-                <div class="preview-nav" id="previewProjectNav">
-                    <div class="preview-title">
-                        <img src="./assets/ui/image_fail.svg" class="preview-nav-logo" alt="Projcet icon" id="previewProjectIcon" onerror="this.src='./assets/ui/image_fail.svg';">
-                        <h1 id="previewProjectTitle"></h1>
+                <div class="preview-nav">
+                    <div class="preview-nav-inside" id="previewProjectNav">
+                        <div class="preview-title">
+                            <img src="./assets/ui/image_fail.svg" class="preview-nav-logo" alt="Projcet icon" id="previewProjectIcon" onerror="this.src='./assets/ui/image_fail.svg';">
+                            <h1 id="previewProjectTitle"></h1>
+                        </div>
+                        <img src="./assets/ui/hamburger_close.svg" class="preview-nav-close" alt="Cerrar preview" onclick="previewProjectClose();">
+
                     </div>
-                    <img src="./assets/ui/hamburger_close.svg" class="preview-nav-close" alt="Cerrar preview" onclick="previewProjectClose();">
+                    
+                    <div class="preview-nav-divisor"></div>
                 </div>
                 
                 <div class="preview-content" id="previewContent">
+                    <div class="preview-content-metadata"">
+                        <div class="project-card-preview-data">
+                            <img src="../assets/ui/card_date.svg" class="svg-color" alt="Card date">
+                            <p id="previewProjectMetadataDate"></p>
+                        </div>
+                        <div class="project-card-preview-data">
+                            <img src="../assets/ui/card_type.svg" class="svg-color" alt="Card type">
+                            <p id="previewProjectMetadataType"></p>
+                        </div>
+                        <div class="project-card-preview-data">
+                            <img src="../assets/ui/card_status.svg" class="svg-color" alt="Card status">
+                            <p id="previewProjectMetadataStatus"></p>
+                        </div>
+                    </div>
+
                     <p class="preview-content-caption" id="previewProjectCaption"></p>
                     <p class="preview-content-title">Descripción</p>
                     <p class="preview-content-data" id="previewProjectDescription"></p>
