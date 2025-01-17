@@ -817,8 +817,7 @@ main {
 }
 
 .preview-content-metadata {
-    width: 100%;
-    margin: 0 0 12px;
+    margin: 18px 0 0;
     padding: 8px 0;
     display: flex;
     flex-wrap: wrap;
@@ -826,7 +825,7 @@ main {
     align-content: center;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-background);
+    align-self: center;
     border-radius: var(--size-border-small);
     -webkit-border-radius: var(--size-border-small);
     -moz-border-radius: var(--size-border-small);
