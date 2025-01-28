@@ -524,12 +524,13 @@ body {
 }
 
 .navbar-options {
-    display: flex;
+    display: none;
+    /* display: flex; */
     margin: 0;
     padding: 0;
 }
 
-.navbar-options button {
+.navbar-button {
     background-color: transparent;
     border-width: 0;
     transition: scale 0.5s;
@@ -539,8 +540,8 @@ body {
     -o-transition: scale 0.5s;
 }
 
-.navbar-options button:hover,
-.navbar-options button:focus {
+.navbar-button:hover,
+.navbar-button:focus {
     scale: 1.1;
     cursor: pointer;
 }
@@ -870,9 +871,29 @@ main {
 }
 
 .preview-nav-close {
+    margin: 0;
+    padding: 0;
+    margin-right: 8px;
+    background-color: transparent;
+    border-width: 0;
+    transition: scale 0.5s;
+    -webkit-transition: scale 0.5s;
+    -moz-transition: scale 0.5s;
+    -ms-transition: scale 0.5s;
+    -o-transition: scale 0.5s;
+}
+
+.preview-nav-close:hover,
+.preview-nav-close:focus {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.preview-nav-close img {
     width: 32px;
     height: auto;
-    margin-right: 8px;
+    margin: 0;
+    padding: 0;
     filter: drop-shadow(2px 2px var(--color-shadow));
     -webkit-filter: drop-shadow(2px 2px var(--color-shadow));
     transition: all 0.3s;
@@ -880,12 +901,6 @@ main {
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
-}
-
-.preview-nav-close:hover,
-.preview-nav-close:focus {
-    scale: 1.1;
-    cursor: pointer;
 }
 
 .preview-url {

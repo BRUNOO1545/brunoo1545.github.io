@@ -34,11 +34,9 @@
         </div>
 
         <nav class="navbar">
-            <div class="navbar-options">
-                <button onclick="navbarHamburger();">
-                    <img src="./assets/ui/hamburger.svg" id="navbarHamburger" class="svg-color" alt="Hamburger menu">
-                </button>
-            </div>
+            <button onclick="navbarHamburger();" class="navbar-hamburger navbar-button">
+                <img src="./assets/ui/hamburger.svg" id="navbarHamburgerTrigger" class="svg-color" alt="Hamburger menu">
+            </button>
 
             <div class="navbar-title">
                 <img id="navbarPageIcon" alt="Page logo">
@@ -47,10 +45,11 @@
             </div>
 
             <div class="navbar-options">
-                <button onclick="navbarChangeColorScheme();">
-                    <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navbarColorSchemeChanger" class="svg-color">
-                </button>
             </div>
+            
+            <button onclick="navbarChangeColorScheme();" class="navbar-button">
+                <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navbarColorSchemeChanger" class="svg-color">
+            </button>
         </nav>
 
         <div class="navbar-hamburger-menu" id="navHamburgerMenu">
@@ -65,8 +64,10 @@
                             <img src="./assets/ui/image_fail.svg" class="preview-nav-logo" alt="Projcet icon" id="previewProjectIcon" onerror="this.src='./assets/ui/image_fail.svg';">
                             <h1 id="previewProjectTitle"></h1>
                         </div>
-                        <img src="./assets/ui/hamburger_close.svg" class="preview-nav-close" alt="Cerrar preview" onclick="previewProjectClose();">
 
+                        <button onclick="previewProjectClose();" class="preview-nav-close">
+                            <img src="./assets/ui/hamburger_close.svg" alt="Cerrar preview">
+                        </button>
                     </div>
                     
                     <div class="preview-nav-divisor"></div>
