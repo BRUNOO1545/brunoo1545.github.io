@@ -31,8 +31,9 @@ progress[value] {
     width: 80%;
     height: 6px;
     border: 0;
-    --border-radius: 4px;
+    --border-radius: 3px;
     border-radius: var(--border-radius);
+    counter-reset: progress var(--progress-value);
     --progress-value-string: '';
     --progress-max-decimal: calc(var(--value, 0) / var(--max, 0));
     --progress-value-decimal: calc(var(--progress-value, 0) / var(--max, 0));
