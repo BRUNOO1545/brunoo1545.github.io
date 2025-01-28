@@ -23,7 +23,7 @@
     --color-card:                   light-dark(#ffffff6e, #2c2c2c6e);
     --color-card-hover:             light-dark(#e7e7e7ff, #1b1b1b6e);
     --color-card-title:             light-dark(#ffffff, #ffffff);
-    --color-card-metadata:          light-dark(#949494, #949494);
+    --color-card-metadata:          light-dark(#4f4e4e, #949494);
     --color-preview-background:     light-dark(#ffffff, #1b1b1b);
     --color-scrollbar-thumb:        light-dark(#202020, #ffffff);
     --color-scrollbar-thumb-hover:  light-dark(#000000, #c7c7c7);
@@ -43,7 +43,6 @@
     --size-border-big:          12px;
     --size-border-medium:       10px;
     --size-border-small:        8px;
-    --size-shadow-profession:   12px;
     --size-shadow-profession:   12px;
 }
 
@@ -114,10 +113,12 @@
 
 @keyframes previewShow {
     from {
+        display: none;
         opacity: 0;
         top: 100dvh;
     }
     to {
+        display: flex;
         opacity: 1;
         top: 0;
     }
@@ -125,10 +126,12 @@
 
 @keyframes previewHide {
     from {
+        display: flex;
         opacity: 1;
         top: 0;
     }
     to {
+        display: none;
         opacity: 0;
         top: 100dvh;
     }
@@ -486,19 +489,6 @@ body {
     background-color: var(--color-navbar-background);
 }
 
-.navbar-hamburger {
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-}
-
-.navbar-hamburger:hover {
-    scale: 1.1;
-    cursor: pointer;
-}
-
 .navbar-title {
     display: flex;
     flex-wrap: nowrap;
@@ -549,7 +539,8 @@ body {
     -o-transition: scale 0.5s;
 }
 
-.navbar-options button:hover{
+.navbar-options button:hover,
+.navbar-options button:focus {
     scale: 1.1;
     cursor: pointer;
 }
@@ -657,7 +648,6 @@ main {
     width: 100%;
     height: 100%;
     position: fixed;
-    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
@@ -753,11 +743,28 @@ main {
     height: 100%;
 }
 
+.preview-content-basic-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    background-color: var(--color-background);
+    border-radius: var(--size-border-big);
+    -webkit-border-radius: var(--size-border-big);
+    -moz-border-radius: var(--size-border-big);
+    -ms-border-radius: var(--size-border-big);
+    -o-border-radius: var(--size-border-big);
+}
+
 .preview-content-caption {
     align-self: center;
     text-align: center;
-    margin: 0 0 40px;
+    margin: 20px 0;
     font-size: var(--size-font-caption);
+}
+
+.preview-content-carousel {
+    margin: 0 20px;
 }
 
 .preview-content-title {
@@ -771,7 +778,7 @@ main {
     font-size: var(--size-font-data);
 }
 
-.preview-content ul {
+.preview-content-list {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -783,7 +790,7 @@ main {
     align-items: center;
 }
 
-.preview-content ul li {
+.preview-content-list li {
     margin: 2px 4px;
     padding: 4px 8px;
     background-color: var(--color-background);
@@ -799,20 +806,21 @@ main {
     -o-transition: all 0.3s;
 }
 
-.preview-content ul li p {
+.preview-content-list li p {
     margin: 0;
     padding: 0;
     color: var(--color-text);
 }
 
-.preview-content ul li a {
+.preview-content-list li a {
     margin: 0;
     padding: 0;
     text-decoration: none;
     color: var(--color-text);
 }
 
-.preview-content ul li:hover {
+.preview-content-list li:hover,
+.preview-content-list li:focus {
     scale: 1.1;
 }
 
@@ -874,7 +882,8 @@ main {
     -o-transition: all 0.3s;
 }
 
-.preview-nav-close:hover {
+.preview-nav-close:hover,
+.preview-nav-close:focus {
     scale: 1.1;
     cursor: pointer;
 }
@@ -916,7 +925,8 @@ main {
     -o-transition: all 0.5s;
 }
 
-.preview-url li a:hover {
+.preview-url li a:hover,
+.preview-url li a:focus {
     background-color: var(--color-button-hover);
 }
 
@@ -959,7 +969,8 @@ main {
     -o-transition: all 0.2s;
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card:focus {
     background-color: var(--color-card-hover);
     /* border-color: var(--color-border-hover); */
     border-color: var(--color-border-hover);
@@ -996,7 +1007,8 @@ main {
     -o-transition: all 0.5s;
 }
 
-.project-card button:hover {
+.project-card button:hover,
+.project-card button:focus {
     background-color: var(--color-button-hover);
 }
 
@@ -1094,14 +1106,16 @@ main {
     -o-transition: all 0.2s;
 }
 
-.general-card:hover {
+.general-card:hover,
+.general-card:focus {
     scale: 1.1;
     background-color: var(--color-card-hover);
     border-color: var(--color-border-hover);
     z-index: 1;
 }
 
-.general-card:hover p {
+.general-card:hover p,
+.general-card:focus p {
     color: var(--color-text);
     height: 32px;
 }
@@ -1154,7 +1168,8 @@ main {
     -o-transition: all 0.25s;
 }
 
-.footer-card-data:hover {
+.footer-card-data:hover,
+.footer-card-data:focus {
     scale: 1.1;
 }
 

@@ -1,9 +1,9 @@
 // Vars
 const colorSchemeData = {
-    save: function(scheme) {
+    set: function(scheme) {
         localStorage.setItem("colorScheme", parseInt(scheme));
     },
-    load: function() {
+    get: function() {
         let val = localStorage.getItem("colorScheme");
         
         return (val === null) ? 0 : parseInt(val);
@@ -11,7 +11,7 @@ const colorSchemeData = {
 }
 
 let navbarHamburgerOpen = false;
-let navbarColorSchemeOption = colorSchemeData.load();
+let navbarColorSchemeOption = colorSchemeData.get();
 
 const mainPath = '../';
 let root = document.documentElement;
@@ -163,7 +163,7 @@ function scanData() {
             });
 
             //apply color scheme
-            navbarApplyColorScheme(colorSchemeData.load());
+            navbarApplyColorScheme(colorSchemeData.get());
         });
 }
 
@@ -370,7 +370,7 @@ function navbarChangeColorScheme() {
         navbarColorSchemeOption = 0;
     }
 
-    colorSchemeData.save(navbarColorSchemeOption);
+    colorSchemeData.set(navbarColorSchemeOption);
     navbarApplyColorScheme(navbarColorSchemeOption);
 }
 

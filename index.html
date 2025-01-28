@@ -32,6 +32,30 @@
             <img src="./assets/ui/load.svg" class="svg-color" alt="Cargando">
             <h1>CARGANDO</h1>
         </div>
+
+        <nav class="navbar">
+            <div class="navbar-options">
+                <button onclick="navbarHamburger();">
+                    <img src="./assets/ui/hamburger.svg" id="navbarHamburger" class="svg-color" alt="Hamburger menu">
+                </button>
+            </div>
+
+            <div class="navbar-title">
+                <img id="navbarPageIcon" alt="Page logo">
+                <h1 class="navbar-title-name">Bruno Suárez</h1>
+                <h1 class="navbar-title-profession">Portfolio</h1>
+            </div>
+
+            <div class="navbar-options">
+                <button onclick="navbarChangeColorScheme();">
+                    <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navbarColorSchemeChanger" class="svg-color">
+                </button>
+            </div>
+        </nav>
+
+        <div class="navbar-hamburger-menu" id="navHamburgerMenu">
+            
+        </div>
         
         <div id="previewProject" class="preview-container">
             <div class="preview-screen">
@@ -50,7 +74,35 @@
                 
                 <div class="preview-content" id="previewContent">
 
-                    <p class="preview-content-caption" id="previewProjectCaption"></p>
+                    <div class="preview-content-basic-info">
+                        <p class="preview-content-caption" id="previewProjectCaption"></p>
+
+                        <div class="preview-content-carousel">
+                            <button class="preview-content-carousel-button prev" data-carousel-button="prev"> < </button>
+                            <button class="preview-content-carousel-button next" data-carousel-button="next"> > </button>
+
+                            <ul class="preview-content-carousel-images">
+                                <li class="preview-content-carousel-slide"><img src="https://picsum.photos/400/300" alt=""></li>
+                                <li class="preview-content-carousel-slide"><img src="https://picsum.photos/400/300" alt=""></li>
+                                <li class="preview-content-carousel-slide"><img src="https://picsum.photos/400/300" alt=""></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="preview-content-metadata">
+                            <div class="project-card-preview-data">
+                                <img src="../assets/ui/card_date.svg" class="svg-color" alt="Card date">
+                                <p id="previewProjectMetadataDate"></p>
+                            </div>
+                            <div class="project-card-preview-data">
+                                <img src="../assets/ui/card_type.svg" class="svg-color" alt="Card type">
+                                <p id="previewProjectMetadataType"></p>
+                            </div>
+                            <div class="project-card-preview-data">
+                                <img src="../assets/ui/card_status.svg" class="svg-color" alt="Card status">
+                                <p id="previewProjectMetadataStatus"></p>
+                            </div>
+                        </div>
+                    </div>
 
                     <p class="preview-content-title">Descripción</p>
                     <p class="preview-content-data" id="previewProjectDescription"></p>
@@ -59,48 +111,15 @@
                     <p class="preview-content-data" id="previewProjectHistory"></p>
 
                     <p class="preview-content-title">Lenguajes usados</p>
-                    <ul id="listProjectLanguages"></ul>
+                    <ul class="preview-content-list" id="listProjectLanguages"></ul>
                     
                     <p class="preview-content-title">Tecnologías usadas</p>
-                    <ul id="listProjectTechnologies"></ul>
-                    
-                    <div class="preview-content-metadata">
-                        <div class="project-card-preview-data">
-                            <img src="../assets/ui/card_date.svg" class="svg-color" alt="Card date">
-                            <p id="previewProjectMetadataDate"></p>
-                        </div>
-                        <div class="project-card-preview-data">
-                            <img src="../assets/ui/card_type.svg" class="svg-color" alt="Card type">
-                            <p id="previewProjectMetadataType"></p>
-                        </div>
-                        <div class="project-card-preview-data">
-                            <img src="../assets/ui/card_status.svg" class="svg-color" alt="Card status">
-                            <p id="previewProjectMetadataStatus"></p>
-                        </div>
-                    </div>
+                    <ul class="preview-content-list" id="listProjectTechnologies"></ul>
                 </div>
 
                 <ul id="previewProjectURL" class="preview-url"></ul>
             </div>
         </div>
-
-        <nav class="navbar">
-            <div class="navbar-hamburger">
-                <img src="./assets/ui/hamburger.svg" id="navbarHamburger" class="svg-color" alt="Hamburger menu">
-            </div>
-
-            <div class="navbar-title">
-                <img id="navbarPageIcon" alt="Page logo">
-                <h1 class="navbar-title-name">Bruno Suárez</h1>
-                <h1 class="navbar-title-profession">Portfolio</h1>
-            </div>
-
-            <div class="navbar-options">
-                <button onclick="navbarChangeColorScheme();">
-                    <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navbarColorSchemeChanger" class="svg-color">
-                </button>
-            </div>
-        </nav>
 
         <div class="first-container">
             <div class="first-container-caption">
