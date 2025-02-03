@@ -113,12 +113,12 @@
 
 @keyframes previewShow {
     from {
-        display: none;
+        visibility: hidden;
         opacity: 0;
         top: 100dvh;
     }
     to {
-        display: flex;
+        visibility: visible;
         opacity: 1;
         top: 0;
     }
@@ -126,12 +126,12 @@
 
 @keyframes previewHide {
     from {
-        display: flex;
+        visibility: visible;
         opacity: 1;
         top: 0;
     }
     to {
-        display: none;
+        visibility: hidden;
         opacity: 0;
         top: 100dvh;
     }
@@ -645,6 +645,7 @@ main {
 
 /* preview */
 .preview-container {
+    display: flex;
     z-index: 2;
     width: 100%;
     height: 100%;
@@ -739,8 +740,7 @@ main {
     align-content: flex-start;
     margin: 0 0 8px;
     padding: 12px 20px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: auto;
     height: 100%;
 }
 
