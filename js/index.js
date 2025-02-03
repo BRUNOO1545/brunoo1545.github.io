@@ -188,10 +188,10 @@ let previewDiv = document.getElementById("previewProject");
     
 function previewProjectOpen(projectId) {
 
-    if (previewOpen) return;
-
     // scroll to top
     document.getElementById('previewContent').scrollTop = 0;
+
+    if (previewOpen) return;
 
     // apply data
     fetch(jsonfile)
@@ -203,13 +203,14 @@ function previewProjectOpen(projectId) {
             let projectMetadataDate = document.getElementById("previewProjectMetadataDate");
             let projectMetadataType = document.getElementById("previewProjectMetadataType");
             let projectMetadataStatus = document.getElementById("previewProjectMetadataStatus");
-
             let metadata = displayMetadata(project);
+
             projectMetadataDate.textContent = metadata.date;
             projectMetadataType.textContent = metadata.type;
             projectMetadataStatus.textContent = metadata.status;
 
-            let projectnavbar, projectTitle, projectIcon, projectCaption, projectDescription, projectHistory, projectLanguages;
+            let projectnavbar, projectTitle, projectIcon, projectCaption, projectDescription, projectHistory, projectLanguages, projectTechnologies, previewProjectURL;
+
             projectnavbar = document.getElementById("previewProjectNav");
             projectnavbar.style.backgroundImage = `linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${project.id}/card.png')`;
 
@@ -237,7 +238,7 @@ function previewProjectOpen(projectId) {
                     </li>`);
             });
 
-            let projectTechnologies = document.getElementById("listProjectTechnologies");
+            projectTechnologies = document.getElementById("listProjectTechnologies");
             projectTechnologies.innerHTML = "";
 
             project.technologies.forEach(element => {
@@ -247,7 +248,7 @@ function previewProjectOpen(projectId) {
                     </li>`);
             });
 
-            let previewProjectURL = document.getElementById("previewProjectURL");
+            previewProjectURL = document.getElementById("previewProjectURL");
             previewProjectURL.innerHTML = "";
 
             project.url.forEach(element => {
