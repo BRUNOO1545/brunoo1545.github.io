@@ -46,6 +46,34 @@ function loadingScreenHide() {
 
 const jsonfile = '../pagedata.json'; // "https://brunoo1545.github.io/pagedata.json"
 
+function displayMetadata(project) {
+    var _data = {
+        type: "",
+        status: "",
+        date: ""
+    }
+
+    switch (project.type) {
+        case 0: _data.type = "Software"; break;
+        case 1: _data.type = "Videojuego"; break;
+        case 2: _data.type = "Página web"; break;
+        case 3: _data.type = "Otro"; break;
+        default: _data.type = "Desconocido"; break;
+    }
+
+    switch (project.status) {
+        case 0: _data.status = "Concepto"; break;
+        case 1: _data.status = "En desarollo"; break;
+        case 2: _data.status = "Terminado"; break;
+        case 3: _data.status = "Cancelado"; break;
+        default: _data.status = "Desconocido"; break;
+    }
+
+    _data.date = (project.date === "") ? "TBD" : project.date;
+
+    return _data;
+}
+
 function scanData() {
     const listFooter = document.getElementById('list-footer');
     const listProject = document.getElementById('list-project');
@@ -74,27 +102,11 @@ function scanData() {
                 
                 if (element.hide) return;
 
-                let _type, _status, _caption, _date, _description, _screenshots;
-                _date = (element.date === "") ? "TBD" : element.date;
+                let _metadata, _caption, _description, _screenshots;
+                _metadata = displayMetadata(element);
                 _description = (element.description === "") ? "No hay decripción." : element.description;
                 _caption = (element.caption === "") ? "Sin información." : element.caption;
-
-                switch (element.type) {
-                    case 0: _type = "Software"; break;
-                    case 1: _type = "Videojuego"; break;
-                    case 2: _type = "Página web"; break;
-                    case 3: _type = "Otro"; break;
-                    default: _type = "Desconocido"; break;
-                }
-
-                switch (element.status) {
-                    case 0: _status = "Concepto"; break;
-                    case 1: _status = "En desarollo"; break;
-                    case 2: _status = "Terminado"; break;
-                    case 3: _status = "Cancelado"; break;
-                    default: _status = "Desconocido"; break;
-                }
-
+                
                 for (var _i = 0; _i < element.screenshots; _i++) {
                     _screenshots += `<img src="${mainPath}/assets/projects/${element.id}/screenshot_${[_i]}.png" alt="Screenshot ${_i}" class="project-card-preview-screenshot">`;
                 }
@@ -115,15 +127,15 @@ function scanData() {
                             <div style="display: flex; flex-wrap: wrap; flex-direction: column; align-content: flex-start; align-items: flex-start; margin-bottom: 14px;">
                                 <div class="project-card-preview-data">
                                     <img src="${mainPath}/assets/ui/card_date.svg" class="svg-color" alt="Card date">
-                                    <p>${_date}</p>
+                                    <p>${_metadata.date}</p>
                                 </div>
                                 <div class="project-card-preview-data">
                                     <img src="${mainPath}/assets/ui/card_type.svg" class="svg-color" alt="Card type">
-                                    <p>${_type}</p>
+                                    <p>${_metadata.type}</p>
                                 </div>
                                 <div class="project-card-preview-data">
                                     <img src="${mainPath}/assets/ui/card_status.svg" class="svg-color" alt="Card status">
-                                    <p>${_status}</p>
+                                    <p>${_metadata.status}</p>
                                 </div>
                             </div>
                             
@@ -192,48 +204,31 @@ function previewProjectOpen(projectId) {
             let projectMetadataType = document.getElementById("previewProjectMetadataType");
             let projectMetadataStatus = document.getElementById("previewProjectMetadataStatus");
 
-            let _date, _type, _status;
-            _date = (project.date === "") ? "TBD" : project.date;
+            let metadata = displayMetadata(project);
+            projectMetadataDate.textContent = metadata.date;
+            projectMetadataType.textContent = metadata.type;
+            projectMetadataStatus.textContent = metadata.status;
 
-            switch (project.type) {
-                case 0: _type = "Software"; break;
-                case 1: _type = "Videojuego"; break;
-                case 2: _type = "Página web"; break;
-                case 3: _type = "Otro"; break;
-                default: _type = "Desconocido"; break;
-            }
-
-            switch (project.status) {
-                case 0: _status = "Concepto"; break;
-                case 1: _status = "En desarollo"; break;
-                case 2: _status = "Terminado"; break;
-                case 3: _status = "Cancelado"; break;
-                default: _status = "Desconocido"; break;
-            }
-            
-            projectMetadataDate.textContent = _date;
-            projectMetadataType.textContent = _type;
-            projectMetadataStatus.textContent = _status;
-
-            let projectnavbar = document.getElementById("previewProjectNav");
+            let projectnavbar, projectTitle, projectIcon, projectCaption, projectDescription, projectHistory, projectLanguages;
+            projectnavbar = document.getElementById("previewProjectNav");
             projectnavbar.style.backgroundImage = `linear-gradient(to top, black, transparent), url('${mainPath}/assets/projects/${project.id}/card.png')`;
 
-            let projectTitle = document.getElementById("previewProjectTitle");
+            projectTitle = document.getElementById("previewProjectTitle");
             projectTitle.textContent = project.title;
             
-            let projectIcon = document.getElementById("previewProjectIcon");
+            projectIcon = document.getElementById("previewProjectIcon");
             projectIcon.src = `${mainPath}/assets/projects/${project.id}/icon.png`;
 
-            let projectCaption = document.getElementById("previewProjectCaption");
+            projectCaption = document.getElementById("previewProjectCaption");
             projectCaption.textContent = (project.caption === "") ? "" : `"${project.caption}"`;
 
-            let projectDescription = document.getElementById("previewProjectDescription");
+            projectDescription = document.getElementById("previewProjectDescription");
             projectDescription.textContent = (project.description === "") ? "Sin decripción." : project.description;
             
-            let projectHistory = document.getElementById("previewProjectHistory");
+            projectHistory = document.getElementById("previewProjectHistory");
             projectHistory.textContent = (project.history === "") ? "Sin historia." : project.history;
 
-            let projectLanguages = document.getElementById("listProjectLanguages");
+            projectLanguages = document.getElementById("listProjectLanguages");
             projectLanguages.innerHTML = "";
             project.languages.forEach(element => {
                 projectLanguages.insertAdjacentHTML('beforeend', 
