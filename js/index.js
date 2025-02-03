@@ -1,5 +1,5 @@
 // Vars
-const colorSchemeData = {
+const colorScheme = {
     set: function(scheme) {
         localStorage.setItem("colorScheme", parseInt(scheme));
     },
@@ -11,7 +11,7 @@ const colorSchemeData = {
 }
 
 let navbarHamburgerOpen = false;
-let navbarColorSchemeOption = colorSchemeData.get();
+let navbarColorSchemeOption = colorScheme.get();
 
 const mainPath = '../';
 let root = document.documentElement;
@@ -175,7 +175,7 @@ function scanData() {
             });
 
             //apply color scheme
-            navbarApplyColorScheme(colorSchemeData.get());
+            navbarApplyColorScheme(colorScheme.get());
         });
 }
 
@@ -332,7 +332,7 @@ function navbarApplyColorScheme(scheme) {
     let navbarColorSchemeChanger = document.getElementById("navbarColorSchemeChanger");
     let svgClass = document.getElementsByClassName("svg-color");
 
-    Array.from(svgClass).forEach(e => {
+    Array.from(svgClass).forEach(icons => {
 
         switch(scheme) {
             // Dark theme
@@ -340,7 +340,7 @@ function navbarApplyColorScheme(scheme) {
                 navbarColorSchemeChanger.src = `${mainPath}/assets/ui/mode_dark.svg`;
                 root.style = "color-scheme: dark;"
                 root.style.setProperty('--color-contrast', '#FA0092');
-                e.style = "filter: invert(0%);";
+                icons.style = "filter: invert(0%);";
             break;
 
             // Light theme
@@ -348,7 +348,7 @@ function navbarApplyColorScheme(scheme) {
                 navbarColorSchemeChanger.src = `${mainPath}/assets/ui/mode_light.svg`;
                 root.style = "color-scheme: light;"
                 root.style.setProperty('--color-contrast', '#7000ff');
-                e.style = "filter: invert(100%);";
+                icons.style = "filter: invert(100%);";
             break;
         }
     });
@@ -366,8 +366,8 @@ function navbarChangeColorScheme() {
         navbarColorSchemeOption = 0;
     }
 
-    colorSchemeData.set(navbarColorSchemeOption);
+    colorScheme.set(navbarColorSchemeOption);
     navbarApplyColorScheme(navbarColorSchemeOption);
 }
 
-//#endregion
+//#endregion    
