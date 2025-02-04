@@ -1,4 +1,15 @@
 // Vars
+const colorScheme = {
+    set: function(scheme) {
+        localStorage.setItem("colorScheme", parseInt(scheme));
+    },
+    get: function() {
+        let val = localStorage.getItem("colorScheme");
+        
+        return (val === null) ? 0 : parseInt(val);
+    }
+}
+
 let navbarHamburgerOpen = false;
 let navbarColorSchemeOption = colorScheme.get();
 
@@ -319,17 +330,6 @@ viewWidth.addEventListener("change", function() {
 //#endregion
 
 //#region color scheme
-
-const colorScheme = {
-    set: function(scheme) {
-        localStorage.setItem("colorScheme", parseInt(scheme));
-    },
-    get: function() {
-        let val = localStorage.getItem("colorScheme");
-        
-        return (val === null) ? 0 : parseInt(val);
-    }
-}
 
 // Apply color scheme
 function navbarApplyColorScheme(scheme) {
