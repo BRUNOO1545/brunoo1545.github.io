@@ -4,6 +4,8 @@
     user-select: none;
     font-family: 'Kanit', sans-serif;
     font-weight: 300;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -439,8 +441,6 @@
 /* body */
 body {
     background-color: var(--color-background);
-    margin: 0;
-    padding: 0;
 }
 
 /* loading screen */
