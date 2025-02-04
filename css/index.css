@@ -1158,12 +1158,6 @@ main {
     z-index: 1;
 }
 
-.general-card:hover p,
-.general-card:focus p {
-    color: var(--color-text);
-    height: 32px;
-}
-
 .general-card p {
     color: transparent;
     height: 0px;
@@ -1173,6 +1167,12 @@ main {
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
+}
+
+.general-card:hover p,
+.general-card:focus p {
+    color: var(--color-text);
+    height: 32px;
 }
 
 .general-card img {
