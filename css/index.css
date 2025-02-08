@@ -305,6 +305,7 @@
 
 
 /* media query */
+
 @media screen and (max-width: 950px) {
     .navbar {
         height: 32px;
@@ -427,6 +428,21 @@
         font-size: var(--size-font-extra-big);
     }
 }
+
+
+/* check compatibillity with IOS */
+@supports (-webkit-overflow-scrolling: touch) {
+    .first-container {
+        background-attachment: scroll;
+    }
+}
+
+@supports not (-webkit-overflow-scrolling: touch) {
+    .first-container {
+        background-attachment: fixed;
+    }
+}
+
 
 /* body */
 body {
@@ -552,7 +568,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-clip: border-box;
-    background-attachment: fixed;
 }
 
 .first-container-caption {
