@@ -44,7 +44,7 @@ function loadingScreenHide() {
 
 //#region list project data
 
-const jsonfile = '../pagedata.json'; // "https://brunoo1545.github.io/pagedata.json"
+const pagedata = '../pagedata.json'; // "https://brunoo1545.github.io/pagedata.json"
 
 function displayMetadata(project) {
     var _data = {
@@ -74,14 +74,14 @@ function displayMetadata(project) {
     return _data;
 }
 
-function scanData() {
+async function scanData() {
     const listFooter = document.getElementById('list-footer');
     const listProject = document.getElementById('list-project');
     const listLanguages = document.getElementById('list-languages');
     const projectTechnologies = document.getElementById('list-technologies');
     const listSoftware = document.getElementById('list-software');
     
-    fetch(jsonfile)
+    fetch(pagedata)
         .then(res => res.json())
         .then(data => {
 
@@ -194,7 +194,7 @@ function previewProjectOpen(projectId) {
     if (previewOpen) return;
 
     // apply data
-    fetch(jsonfile)
+    fetch(pagedata)
         .then(res => res.json())
         .then(data => {
             let project = data.projects[projectId];

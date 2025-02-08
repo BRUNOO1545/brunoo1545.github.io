@@ -6,8 +6,6 @@
     user-select: none;
     font-family: 'Kanit', sans-serif;
     font-weight: 300;
-    margin: 0;
-    padding: 0;
 }
 
 :root {
@@ -347,11 +345,6 @@
         margin: 32px 0 0;
         padding: 12px 12px 128px;
         background-image: url('../assets/gallery/other/portada.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-clip: border-box;
-        background-attachment: fixed;
     }
 
     .first-container-presentation h1 {
@@ -414,12 +407,7 @@
         margin: 32px 24px 0 0;
         padding: 24px 24px 128px;
         background-image: url('../assets/gallery/other/portada_dmc.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-clip: border-box;
-        background-attachment: fixed;
-}
+    }
 
     .first-container-presentation h1 {
         font-size: var(--size-font-big);
@@ -443,6 +431,8 @@
 /* body */
 body {
     background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
 }
 
 /* loading screen */
@@ -558,6 +548,11 @@ body {
     align-content: flex-start;
     justify-content: space-between;
     align-items: flex-start;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-attachment: fixed;
 }
 
 .first-container-caption {
