@@ -8,7 +8,7 @@
     <body style="display: flex; align-items: center; flex-direction: column; flex-wrap: nowrap; align-content: center; justify-content: center;">
         <h1>Device orientation test</h1>
         <p id="data">Not Supported</p>
-        <img src="assets/gallery/art/1.jpg" alt="art" id="image" style="width: 50%;">
+        <img src="assets/gallery/art/1.jpg" alt="art" id="image" style="width: 150%;">
     </body>
     <script>
         window.addEventListener('deviceorientation', function(event) {
@@ -16,7 +16,15 @@
             var beta = event.beta;
             var gamma = event.gamma;
             document.getElementById('data').innerHTML = 'Alpha: ' + alpha + '<br>Beta: ' + beta + '<br>Gamma: ' + gamma;
-            document.getElementById('image').style.transform = 'rotate(' + gamma + 'deg)';
+
+            var _gravity, _x, _y;
+            _gravity = 9.8;
+            //_x = -(gamma / _gravity);
+            _x = event.gamma + s*(_x - event.gamma);
+            _y = -(beta / _gravity);
+            
+            //document.getElementById('image').style.transform = `translate(${_x}px, ${_y}px)`;
+            document.getElementById('image').style.transform = `translateX(${-_x}px)`;
         });
     </script>
 </html>
