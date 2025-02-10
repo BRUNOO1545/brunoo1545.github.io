@@ -16,7 +16,7 @@
             var beta = event.beta;
             var gamma = event.gamma;
             document.getElementById('data').innerHTML = 'Alpha: ' + alpha + '<br>Beta: ' + beta + '<br>Gamma: ' + gamma;
-            document.getElementById('image').style.transform = 'rotate(' + -(gamma * 0.5) + 'deg)';
+            document.getElementById('image').style.transform = `rotate(${-(gamma * 0.5)}deg)`;
         });
     </script>
 </html>
