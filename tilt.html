@@ -16,9 +16,12 @@
             var beta = event.beta;
             var gamma = event.gamma;
             document.getElementById('data').innerHTML = 'Alpha: ' + alpha + '<br>Beta: ' + beta + '<br>Gamma: ' + gamma;
+
+            var _x, _y;
+            _x = -(gamma / 9.8);
+            _y = -(beta / 9.8);
             
-            //document.getElementById('image').style.transform = `translate(${-gamma * 0.5}px, ${-beta * 0.5}px)`;
-            document.getElementById('image').style.transform = `translate(${event.acceleration.x}px, ${event.acceleration.y}px)`;
+            document.getElementById('image').style.transform = `translate(${_x}px, ${_y}px)`;
         });
     </script>
 </html>
