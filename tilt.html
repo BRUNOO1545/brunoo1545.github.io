@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Orientation test</title>
+    </head>
+    <body style="display: flex; align-items: center; flex-direction: column; flex-wrap: nowrap; align-content: center; justify-content: center;">
+        <h1>Device orientation test</h1>
+        <p id="data">Not Supported</p>
+        <img src="assets/gallery/art/1.jpg" alt="art" id="image" style="width: 50%;">
+    </body>
+    <script>
+        window.addEventListener('deviceorientation', function(event) {
+            var alpha = event.alpha;
+            var beta = event.beta;
+            var gamma = event.gamma;
+            document.getElementById('data').innerHTML = 'Alpha: ' + alpha + '<br>Beta: ' + beta + '<br>Gamma: ' + gamma;
+            document.getElementById('image').style.transform = 'rotate(' + gamma + 'deg)';
+        });
+    </script>
+</html>
