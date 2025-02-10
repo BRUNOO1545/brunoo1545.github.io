@@ -17,9 +17,10 @@
             var gamma = event.gamma;
             document.getElementById('data').innerHTML = 'Alpha: ' + alpha + '<br>Beta: ' + beta + '<br>Gamma: ' + gamma;
 
-            var _x, _y;
-            _x = -(gamma / 9.8);
-            _y = -(beta / 9.8);
+            var _gravity, _x, _y;
+            _gravity = 9.8;
+            _x = -(gamma / _gravity);
+            _y = -(beta / _gravity);
             
             document.getElementById('image').style.transform = `translate(${_x}px, ${_y}px)`;
         });
