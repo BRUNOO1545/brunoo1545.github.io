@@ -19,11 +19,12 @@
 
             var _gravity, _x, _y;
             _gravity = 9.8;
-            _x = -(gamma / _gravity);
+            //_x = -(gamma / _gravity);
+            _x = event.gamma + s*(_x - event.gamma);
             _y = -(beta / _gravity);
             
             //document.getElementById('image').style.transform = `translate(${_x}px, ${_y}px)`;
-            document.getElementById('image').style.transform = `translateX(${_x}px)`;
+            document.getElementById('image').style.transform = `translateX(${-(_x / _gravity)}px)`;
         });
     </script>
 </html>
