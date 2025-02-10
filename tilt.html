@@ -15,9 +15,10 @@
             var alpha = event.alpha;
             var beta = event.beta;
             var gamma = event.gamma;
-            //document.getElementById('data').innerHTML = 'Alpha: ' + alpha + '<br>Beta: ' + beta + '<br>Gamma: ' + gamma;
+            document.getElementById('data').innerHTML = 'Alpha: ' + alpha + '<br>Beta: ' + beta + '<br>Gamma: ' + gamma;
             
-            document.getElementById('image').style.transform = `translate(${-gamma * 0.5}px, ${-beta * 0.5}px)`;
+            //document.getElementById('image').style.transform = `translate(${-gamma * 0.5}px, ${-beta * 0.5}px)`;
+            document.getElementById('image').style.transform = `translate(${event.acceleration.x}px, ${event.acceleration.y}px)`;
         });
     </script>
 </html>
