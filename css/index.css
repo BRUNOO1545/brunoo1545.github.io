@@ -151,54 +151,6 @@
     }
 }
 
-@keyframes professionTextOriginal {
-    0%, 10% {
-        text-shadow: 0 0 0 transparent;
-        color: transparent;
-        margin-left: 25px;
-        letter-spacing: 0.3rem;
-    }
-    20%, 25% {
-        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
-        color: var(--color-contrast);
-        margin-left: 0;
-        letter-spacing: normal;
-        content: "Web Design";
-    }
-    30%, 40% {
-        text-shadow: 0 0 0 transparent;
-        color: transparent;
-        margin-left: 25px;
-        letter-spacing: 0.3rem;
-    }
-    50%, 55% {
-        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
-        color: var(--color-contrast);
-        margin-left: 0;
-        letter-spacing: normal;
-        content: "Game Dev";
-    }
-    60%, 70% {
-        text-shadow: 0 0 0 transparent;
-        color: transparent;
-        margin-left: 25px;
-        letter-spacing: 0.3rem;
-    }
-    80%, 85%{
-        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
-        color: var(--color-contrast);
-        margin-left: 0;
-        letter-spacing: normal;
-        content: "Sound Design";
-    }
-    90%, 100% {
-        text-shadow: 0 0 0 transparent;
-        color: transparent;
-        margin-left: 25px;
-        letter-spacing: 0.3rem;
-    }
-}
-
 @keyframes professionText {
     0%, 5% {
         text-shadow: 0 0 0 transparent;
