@@ -98,7 +98,7 @@ async function scanData() {
                     </li>`);
                 
                 listNavbarMobile.insertAdjacentHTML('beforeend', 
-                    `<li alt="${element.name}" onclick="navbarHamburgerInteract();">
+                    `<li alt="${element.name}" onclick="navbarHamburgerCollapse();">
                         <a href="${element.url}">${element.name}</a>
                     </li>`);
             });

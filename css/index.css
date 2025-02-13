@@ -601,6 +601,13 @@ body {
 }
 
 .navbar-hamburger-menu {
+    z-index: 995;
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+.navbar-hamburger-menu-options-outside {
     z-index: 996;
     position: fixed;
     width: 100dvw;
@@ -684,6 +691,11 @@ body {
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
+}
+
+.navbar-hamburger-menu-options-divisor {
+    width: 100%;
+    height: 100%;
 }
 
 
