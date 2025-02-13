@@ -2,10 +2,10 @@
     "metadata": {
         "icon": "https://avatars.githubusercontent.com/u/71949811?v=4?s=400",
         "navbar": [
+            { "name": "Inicio", "url": "#home" },
+            { "name": "Conocimiento", "url": "#knowledge" },
             { "name": "Proyectos", "url": "#projects" },
-            { "name": "Tecnologías", "url": "#technologies" },
-            { "name": "Contacto", "url": "#contact" },
-            { "name": "Sobre mí", "url": "#about" }
+            { "name": "Contacto", "url": "#contact" }
         ],
         "footer": [
             { "name": "LinkedIn", "logo": "linkedin.svg", "url": "https://www.linkedin.com/in/brunoo1545/" },
