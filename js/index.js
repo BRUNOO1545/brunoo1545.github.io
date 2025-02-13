@@ -325,6 +325,13 @@ function navbarHamburgerInstantCollapse() {
     navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
 }
 
+// Collapse outside
+function navbarHamburgerCollapse() {
+    navbarHamburgerOpen = false;
+    navbarMobile.style.animation = "hamburgerMenuTrayClose 0.3s forwards";
+    navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
+}
+
 // Auto close navbar
 window.matchMedia("(max-width: 950px)").addEventListener("change", function() {
     navbarHamburgerInstantCollapse();
