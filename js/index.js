@@ -98,7 +98,7 @@ async function scanData() {
                     </li>`);
                 
                 listNavbarMobile.insertAdjacentHTML('beforeend', 
-                    `<li alt="${element.name}" onclick="navbarHamburgerInteract();">
+                    `<li alt="${element.name}" onclick="navbarHamburgerCollapse();">
                         <a href="${element.url}">${element.name}</a>
                     </li>`);
             });
@@ -322,6 +322,13 @@ function navbarHamburgerInteract() {
 function navbarHamburgerInstantCollapse() {
     navbarHamburgerOpen = false;
     navbarMobile.style.animation = "hamburgerMenuTrayClose 0s forwards";
+    navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
+}
+
+// Collapse outside
+function navbarHamburgerCollapse() {
+    navbarHamburgerOpen = false;
+    navbarMobile.style.animation = "hamburgerMenuTrayClose 0.3s forwards";
     navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
 }
 
