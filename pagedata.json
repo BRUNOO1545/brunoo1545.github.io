@@ -210,7 +210,7 @@
         { "name": "C++",        "logo": "cpp.png",        "percent": 50,    "alt": "C++" },
         { "name": "C#",         "logo": "csharp.png",     "percent": 25,    "alt": "C#" },
         { "name": "CSS3",       "logo": "css.png",        "percent": 75,    "alt": "CSS3" },
-        { "name": "HTML5",       "logo": "html.png",      "percent": 75,    "alt": "HTML" },
+        { "name": "HTML5",      "logo": "html.png",       "percent": 75,    "alt": "HTML" },
         { "name": "JavaScript", "logo": "javascript.png", "percent": 50,    "alt": "JavaScript" },
         { "name": "Kotlin",     "logo": "kotlin.png",     "percent": 50,    "alt": "Kotlin" },
         { "name": "GML",        "logo": "gml.png",        "percent": 100,   "alt": "GML" },
