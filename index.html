@@ -33,7 +33,7 @@
         </div>
 
         <nav class="navbar">
-            <button onclick="navbarHamburger();" class="navbar-hamburger navbar-button">
+            <button onclick="navbarHamburgerInteract();" class="navbar-hamburger navbar-button">
                 <img src="./assets/ui/hamburger.svg" id="navbarHamburgerTrigger" class="svg-color" alt="Hamburger menu">
             </button>
 
@@ -44,15 +44,24 @@
             </div>
 
             <div class="navbar-options">
+                <ul id="navbarOptions">
+                    <li><a href="#mainPage">Inicio</a></li>
+                    <li><a href="#projectList">Portfolio</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+                
+                <button onclick="navbarChangeColorScheme();" class="navbar-button">
+                    <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navbarColorSchemeChanger" class="svg-color">
+                </button>
             </div>
-            
-            <button onclick="navbarChangeColorScheme();" class="navbar-button">
-                <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navbarColorSchemeChanger" class="svg-color">
-            </button>
         </nav>
 
         <div class="navbar-hamburger-menu" id="navHamburgerMenu">
-            
+            <ul id="navbarOptionsMobile">
+                <li><a href="#mainPage">Inicio</a></li>
+                <li><a href="#projectList">Portfolio</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
         </div>
         
         <div id="previewProject" class="preview-container">

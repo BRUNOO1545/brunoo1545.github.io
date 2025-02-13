@@ -288,27 +288,24 @@ function previewProjectClose() {
 
 //#region navbar and Hamburger
 
+let navbarMobile = document.getElementById("navHamburgerMenu");
+let navbarHamburgerIcon = document.getElementById("navbarHamburgerTrigger");
+
 // Check close
 function navbarHamburgerInteract() {
-    let navbarMobile = document.getElementById("navbarMobileOptions");
-    let navbarHamburgerIcon = document.getElementById("navbarHamburgerIcon");
-    
     if (navbarHamburgerOpen === false) {
         navbarHamburgerOpen = true;
-        navbarMobile.style.animation = "navbar-options-mobile-hide 0.3s forwards";
-        navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
+        navbarMobile.style.animation = "navbar-options-tray-hide 0.3s forwards";
+        navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger_close.svg`;
     } else {
         navbarHamburgerOpen = false;
-        navbarMobile.style.animation = "navbar-options-mobile-show 0.3s forwards";
-        navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger_close.svg`;
+        navbarMobile.style.animation = "navbar-options-tray-show 0.3s forwards";
+        navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
     }
 }
 
 // Instant collapse
 function navbarHamburgerInstantCollapse() {
-    let navbarMobile = document.getElementById("navbarMobileOptions");
-    let navbarHamburgerIcon = document.getElementById("navbarHamburgerIcon");
-    
     navbarHamburgerOpen = true;
     navbarMobile.style.animation = "navbar-options-mobile-hide 0s forwards";
     navbarHamburgerIcon.src = `${mainPath}/assets/page/hamburger.svg`;
