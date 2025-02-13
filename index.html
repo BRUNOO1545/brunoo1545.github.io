@@ -33,7 +33,7 @@
         </div>
 
         <nav class="navbar">
-            <button onclick="navbarHamburger();" class="navbar-hamburger navbar-button">
+            <button onclick="navbarHamburgerInteract();" class="navbar-hamburger navbar-button">
                 <img src="./assets/ui/hamburger.svg" id="navbarHamburgerTrigger" class="svg-color" alt="Hamburger menu">
             </button>
 
@@ -44,15 +44,16 @@
             </div>
 
             <div class="navbar-options">
+                <ul id="list-navbar-options"></ul>
+                
+                <button onclick="navbarChangeColorScheme();" class="navbar-button">
+                    <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navbarColorSchemeChanger" class="svg-color">
+                </button>
             </div>
-            
-            <button onclick="navbarChangeColorScheme();" class="navbar-button">
-                <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navbarColorSchemeChanger" class="svg-color">
-            </button>
         </nav>
 
         <div class="navbar-hamburger-menu" id="navHamburgerMenu">
-            
+            <ul id="list-navbar-options-mobile"></ul>
         </div>
         
         <div id="previewProject" class="preview-container">
@@ -119,7 +120,7 @@
             </div>
         </div>
 
-        <div class="first-container">
+        <div class="first-container" id="home">
             <div class="first-container-caption">
                 <div class="first-container-presentation">
                     <h1>Bienvenido</h1>
@@ -135,8 +136,8 @@
             </div>
         </div>
 
-        <main id="mainPage">
-            <div id="projectList" class="container">
+        <main>
+            <div id="knowledge" class="container">
                 <p class="container-title">Portfolio</p>
 
                 <p class="container-subtitle">Hablemos un poco de mis habilidades en software y tecnologias</p>
@@ -147,7 +148,9 @@
                 
                 <p class="container-subtitle">Otros programas</p>
                 <ul id="list-software" class="container-card"></ul>
-                
+            </div>
+
+            <div id="projects" class="container">
                 <p class="container-subtitle">Proyectos relacionados</p>
                 <ul id="list-project" class="container-card"></ul>
             </div>

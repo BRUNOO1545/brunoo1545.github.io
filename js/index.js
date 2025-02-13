@@ -21,7 +21,7 @@ let root = document.documentElement;
 let pageStarted = false;
 
 function pageStartup() {
-    //navbarHamburgerInstantCollapse();
+    navbarHamburgerInstantCollapse();
     previewProjectClose();
     scanData();
 }
@@ -75,6 +75,8 @@ function displayMetadata(project) {
 }
 
 async function scanData() {
+    const listNavbar = document.getElementById('list-navbar-options');
+    const listNavbarMobile = document.getElementById('list-navbar-options-mobile');
     const listFooter = document.getElementById('list-footer');
     const listProject = document.getElementById('list-project');
     const listLanguages = document.getElementById('list-languages');
@@ -86,8 +88,20 @@ async function scanData() {
         .then(data => {
 
             // apply page icon
-            let pageIcon = document.getElementById('navbarPageIcon');
-            pageIcon.src = data.metadata.icon;
+            document.getElementById('navbarPageIcon').src = data.metadata.icon;
+            
+            // fetch navbar options
+            data.metadata.navbar.forEach(element => {
+                listNavbar.insertAdjacentHTML('beforeend', 
+                    `<li alt="${element.name}">
+                        <a href="${element.url}">${element.name}</a>
+                    </li>`);
+                
+                listNavbarMobile.insertAdjacentHTML('beforeend', 
+                    `<li alt="${element.name}" onclick="navbarHamburgerInteract();">
+                        <a href="${element.url}">${element.name}</a>
+                    </li>`);
+            });
             
             // fetch footer
             data.metadata.footer.forEach(element => {
@@ -288,43 +302,32 @@ function previewProjectClose() {
 
 //#region navbar and Hamburger
 
+let navbarMobile = document.getElementById("navHamburgerMenu");
+let navbarHamburgerIcon = document.getElementById("navbarHamburgerTrigger");
+
 // Check close
 function navbarHamburgerInteract() {
-    let navbarMobile = document.getElementById("navbarMobileOptions");
-    let navbarHamburgerIcon = document.getElementById("navbarHamburgerIcon");
-    
     if (navbarHamburgerOpen === false) {
         navbarHamburgerOpen = true;
-        navbarMobile.style.animation = "navbar-options-mobile-hide 0.3s forwards";
-        navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
+        navbarMobile.style.animation = "hamburgerMenuTrayOpen 0.3s forwards";
+        navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger_close.svg`;
     } else {
         navbarHamburgerOpen = false;
-        navbarMobile.style.animation = "navbar-options-mobile-show 0.3s forwards";
-        navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger_close.svg`;
+        navbarMobile.style.animation = "hamburgerMenuTrayClose 0.3s forwards";
+        navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
     }
 }
 
 // Instant collapse
 function navbarHamburgerInstantCollapse() {
-    let navbarMobile = document.getElementById("navbarMobileOptions");
-    let navbarHamburgerIcon = document.getElementById("navbarHamburgerIcon");
-    
-    navbarHamburgerOpen = true;
-    navbarMobile.style.animation = "navbar-options-mobile-hide 0s forwards";
-    navbarHamburgerIcon.src = `${mainPath}/assets/page/hamburger.svg`;
-}
-
-// Force close
-function navbarHamburgerCollapse() {
     navbarHamburgerOpen = false;
-    navbarHamburgerInteract();
+    navbarMobile.style.animation = "hamburgerMenuTrayClose 0s forwards";
+    navbarHamburgerIcon.src = `${mainPath}/assets/ui/hamburger.svg`;
 }
 
 // Auto close navbar
-let viewWidth = window.matchMedia("(max-width: 780px)");
-
-viewWidth.addEventListener("change", function() {
-    //navbarHamburgerCollapse();
+window.matchMedia("(max-width: 950px)").addEventListener("change", function() {
+    navbarHamburgerInstantCollapse();
 });
 
 //#endregion

@@ -151,54 +151,6 @@
     }
 }
 
-@keyframes professionTextOriginal {
-    0%, 10% {
-        text-shadow: 0 0 0 transparent;
-        color: transparent;
-        margin-left: 25px;
-        letter-spacing: 0.3rem;
-    }
-    20%, 25% {
-        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
-        color: var(--color-contrast);
-        margin-left: 0;
-        letter-spacing: normal;
-        content: "Web Design";
-    }
-    30%, 40% {
-        text-shadow: 0 0 0 transparent;
-        color: transparent;
-        margin-left: 25px;
-        letter-spacing: 0.3rem;
-    }
-    50%, 55% {
-        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
-        color: var(--color-contrast);
-        margin-left: 0;
-        letter-spacing: normal;
-        content: "Game Dev";
-    }
-    60%, 70% {
-        text-shadow: 0 0 0 transparent;
-        color: transparent;
-        margin-left: 25px;
-        letter-spacing: 0.3rem;
-    }
-    80%, 85%{
-        text-shadow: 0 0 var(--size-shadow-profession) var(--color-contrast);
-        color: var(--color-contrast);
-        margin-left: 0;
-        letter-spacing: normal;
-        content: "Sound Design";
-    }
-    90%, 100% {
-        text-shadow: 0 0 0 transparent;
-        color: transparent;
-        margin-left: 25px;
-        letter-spacing: 0.3rem;
-    }
-}
-
 @keyframes professionText {
     0%, 5% {
         text-shadow: 0 0 0 transparent;
@@ -303,9 +255,26 @@
 }
 }
 
+@keyframes hamburgerMenuTrayOpen {
+    from {
+        left: -200dvw;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes hamburgerMenuTrayClose {
+    from {
+        left: 0;
+    }
+    to {
+        left: -200dvw;
+    }
+}
+
 
 /* media query */
-
 @media screen and (max-width: 950px) {
     .navbar {
         height: 32px;
@@ -337,6 +306,11 @@
         width: 32px;
         height: auto;
     }
+    
+    .navbar-options ul {
+        display: none;
+    }
+
     .preview-title h1 {
         font-size: var(--size-font-medium);
     }
@@ -398,6 +372,10 @@
         width: 46px;
         height: auto;
     }
+    
+    .navbar-options ul {
+        display: flex;
+    }
 
     .preview-title h1 {
         font-size: var(--size-font-big);
@@ -450,6 +428,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 
 /* loading screen */
 .loading-screen {
@@ -532,10 +511,46 @@ body {
 }
 
 .navbar-options {
-    display: none;
-    /* display: flex; */
+    display: flex;
+    flex-direction: row;
     margin: 0;
     padding: 0;
+}
+
+.navbar-options ul {
+    margin: 0;
+    margin-right: 12px;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.navbar-options ul li {
+    text-transform: uppercase;
+    color: var(--color-button);
+    margin: 0 4px;
+    padding: 0 8px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.navbar-options ul li:hover {
+    scale: 1.1;
+    text-shadow: 0 0 32px var(--color-contrast);
+}
+
+.navbar-options ul li a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: var(--size-font-title);
 }
 
 .navbar-button {
@@ -552,6 +567,58 @@ body {
 .navbar-button:focus {
     scale: 1.1;
     cursor: pointer;
+}
+
+.navbar-hamburger-menu {
+    z-index: 997;
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: var(--color-background);
+    box-shadow: 0 0 64px 128px var(--color-background);
+}
+
+.navbar-hamburger-menu ul {
+    width: 100%;
+    margin: 0;
+    padding: 24px 18px 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.navbar-hamburger-menu ul li {
+    text-transform: uppercase;
+    color: var(--color-button);
+    margin: 0 4px;
+    padding: 0 8px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.navbar-hamburger-menu ul li:hover {
+    margin-left: 12px;
+    text-shadow: 0 0 32px var(--color-contrast);
+}
+
+.navbar-hamburger-menu ul li a {
+    width: 100%;
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: var(--size-font-medium);
 }
 
 
