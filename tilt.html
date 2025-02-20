@@ -29,8 +29,8 @@
                 addEventListener("mousemove", mouseDetect);
             } else {
                 img.style.transform = `translate(${_x}px, ${_y}px)`;
-
-                imgForeground.style.transform = `translateX(${_x}px)`;
+                imgForeground.style.transform = `translate(${-_x}px, ${-_y}px)`;
+                
                 document.getElementById('data').innerHTML = 'Alpha: ' + alpha + '<br>Beta: ' + beta + '<br>Gamma: ' + gamma;
             }
         });
