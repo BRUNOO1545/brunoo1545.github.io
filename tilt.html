@@ -7,7 +7,7 @@
     </head>
     <body style="display: flex; align-items: center; flex-direction: column; flex-wrap: nowrap; align-content: center; justify-content: center; color: white;">
         <h1>Device orientation test</h1>
-        <p id="data">Not Supported</p>
+        <p id="data">Device orientation not supported</p>
         <img src="assets/gallery/art/1.jpg" alt="art" id="image" style="scale: 1.5; height: 150dvh; position: fixed; top: -25px; z-index: -1;">
     </body>
     <script>
@@ -17,7 +17,6 @@
             var alpha = event.alpha;
             var beta = event.beta;
             var gamma = event.gamma;
-            document.getElementById('data').innerHTML = 'Alpha: ' + alpha + '<br>Beta: ' + beta + '<br>Gamma: ' + gamma;
 
             var _gravity, _x, _y;
             _gravity = 9.8;
@@ -27,6 +26,7 @@
             if (_x === !null) {
                 //img.style.transform = `translate(${_x}px, ${_y}px)`;
                 img.style.transform = `translateX(${-_x}px)`;
+                document.getElementById('data').innerHTML = 'Alpha: ' + alpha + '<br>Beta: ' + beta + '<br>Gamma: ' + gamma;
             } else {
                 addEventListener("mousemove", mouseDetect);
             }
