@@ -9,9 +9,11 @@
         <h1>Device orientation test</h1>
         <p id="data">Device orientation not supported</p>
         <img src="assets/gallery/art/1.jpg" alt="art" id="image" style="scale: 1.5; height: 150dvh; position: fixed; top: -25px; z-index: -1;">
+        <img src="assets/gallery/art/1_foreground.jpg" alt="art" id="imageForeground" style="scale: 1.5; height: 150dvh; position: fixed; top: -25px; z-index: -1;">
     </body>
     <script>
         const img = document.getElementById('image');
+        const imgForeground = document.getElementById('imageForeground');
 
         window.addEventListener('deviceorientation', (element) => {
             var alpha = event.alpha;
@@ -26,6 +28,7 @@
             if (_x === !null) {
                 //img.style.transform = `translate(${_x}px, ${_y}px)`;
                 img.style.transform = `translateX(${-_x}px)`;
+                imgForeground.style.transform = `translateX(${_x}px)`;
                 document.getElementById('data').innerHTML = 'Alpha: ' + alpha + '<br>Beta: ' + beta + '<br>Gamma: ' + gamma;
             } else {
                 addEventListener("mousemove", mouseDetect);
@@ -36,6 +39,7 @@
             const imageDisplacement = 50;
             
             img.style.transform = `translate(${-input.clientX / imageDisplacement}px, ${-input.clientY / (imageDisplacement * 2)}px)`;
+            imgForeground.style.transform = `translate(${input.clientX / imageDisplacement}px, ${input.clientY / (imageDisplacement * 2)}px)`;
         }
     </script>
 </html>
