@@ -40,6 +40,8 @@ function loadingScreenHide() {
     pageStarted = true;
 }
 
+window.addEventListener('DOMContentLoaded', pageStartup);
+
 // #endregion
 
 //#region list project data
