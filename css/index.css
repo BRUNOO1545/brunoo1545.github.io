@@ -861,6 +861,7 @@ main {
 }
 
 .preview-nav-inside {
+    z-index: 4;
     display: flex;
     width: auto;
     height: 64px;
@@ -877,9 +878,14 @@ main {
 }
 
 .preview-nav-divisor {
+    position: relative;
     width: auto;
-    height: 18px;
+    height: 26px;
+    margin: 0 0 -12px 0;
+    padding: 2px 0 0 0;
     background-color: var(--color-preview-background);
+    background-clip: content-box;
+    border-style: none;
     border-radius: var(--size-border-big) var(--size-border-big) 0 0;
     -webkit-border-radius: var(--size-border-big) var(--size-border-big) 0 0;
     -moz-border-radius: var(--size-border-big) var(--size-border-big) 0 0;
@@ -888,6 +894,7 @@ main {
 }
 
 .preview-content {
+    z-index: 5;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -898,6 +905,9 @@ main {
     padding: 12px 20px;
     overflow: auto;
     height: 100%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--color-preview-background);
 }
 
 .preview-content-basic-info {
@@ -916,7 +926,7 @@ main {
 .preview-content-caption {
     align-self: center;
     text-align: center;
-    margin: 20px 0;
+    margin: 10px 0 20px 0;
     font-size: var(--size-font-caption);
 }
 
@@ -960,7 +970,7 @@ main {
 
 .preview-content-data {
     color: var(--color-card-metadata);
-    margin: 0 0 10px 12px;
+    margin: 0 0 20px 12px;
     font-size: var(--size-font-data);
 }
 
