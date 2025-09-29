@@ -237,7 +237,7 @@ function previewProjectOpen(projectId) {
             projectIcon.src = `${mainPath}/assets/projects/${project.id}/icon.png`;
 
             projectCaption = document.getElementById("previewProjectCaption");
-            projectCaption.textContent = (project.caption === "") ? "" : `"${project.caption}"`;
+            //projectCaption.textContent = (project.caption === "") ? "" : `"${project.caption}"`;  // <-- This is the text used to show a preview of the project inside preview.
 
             projectDescription = document.getElementById("previewProjectDescription");
             projectDescription.textContent = (project.description === "") ? "Sin decripción." : project.description;
