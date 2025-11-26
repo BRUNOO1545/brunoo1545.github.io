@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -20,152 +20,149 @@
         <meta property="og:locale" content="es_AR"/>
         <title>Bruno Suarez | Portfolio</title>
         <link rel="canonical" href="https://brunoo1545.github.io/"/>
-		<link rel="icon" type="image/x-icon" href="./assets/img/ui/favicon.ico"/>
+		<link rel="icon" type="image/x-icon" href="./assets/ui/favicon.ico"/>
         <link rel="stylesheet" href="./css/index.css"/>
         <link rel="stylesheet" href="./css/progress.css"/>
         <script defer src="./js/index.js"></script>
     </head>
 
-    <body class="mainBody" onload="pageStartup();">
-        <div id="pageStartupDiv" class="pageStartup useUnselect">
-            <img src="./assets/img/ui/load.png">
-            <p>CARGANDO</p>
+    <body>
+        <div id="loadingScreen" class="loading-screen">
+            <img src="./assets/ui/load.svg" class="svg-color" alt="Cargando">
+            <h1>CARGANDO</h1>
         </div>
 
-        <nav class="mainNav">
-            <div class="navNormalMenuDisplayed useUnselect useShadow useShadowImg">
-                <a href="https://brunoo1545.github.io/" class="mainNavLogo">
-                    <img src="https://avatars.githubusercontent.com/u/71949811?v=4">
-                    <p class="useShadowTextSub">BRUNOO1545</p>
-                </a>
+        <nav class="navbar">
+            <button onclick="navbarHamburgerInteract();" class="navbar-hamburger navbar-button">
+                <img src="./assets/ui/hamburger.svg" id="navbarHamburgerTrigger" class="svg-color" alt="Hamburger menu">
+            </button>
 
-                <div id="navHamburguer" class="mainNavOptionsHamburguer" onclick="navHamburguerMenuShow()">
-                    <img id="navHamburguerMenuIcon" src="./assets/img/ui/menu_hamburguer.png">
-                </div>
-
-                <div class="mainNavOptions">
-                    <ul>
-                        <li><a href="#home">INICIO</a></li>
-                        <li><a href="#about">SOBRE MÍ</a></li>
-                        <li><a href="#mishka">MISHKA</a></li>
-                        <li><a href="#portfolio">PORTFOLIO</a></li>
-                        <li><a href="#contact">CONTACTO</a></li>
-                    </ul>
-                </div>
+            <div class="navbar-title">
+                <img id="navbarPageIcon" alt="Page logo">
+                <h1 class="navbar-title-name">Bruno Suárez</h1>
+                <h1 class="navbar-title-profession">Portfolio</h1>
             </div>
 
-            <div id="navMenuDisplay" class="navHamburguerMenuDisplayed useUnselect useShadow useShadowImg">
-                <ul id="navMenuContent" onclick="navHamburguerMenuForceClose()" class="useShadowImgMobileNav">
-                    <li>
-                        <a href="#home">
-                            <img src="./assets/img/ui/menu_home.png">
-                            <p>INICIO</p>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#about">
-                            <img src="./assets/img/ui/menu_about.png">
-                            <p>SOBRE MÍ</p>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#mishka">
-                            <img src="./assets/img/ui/menu_mishka.png">
-                            <p>MISHKA</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#portfolio">
-                            <img src="./assets/img/ui/menu_portfolio.png">
-                            <p>PORTFOLIO</p>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#contact">
-                            <img src="./assets/img/ui/menu_contact.png">
-                            <p>CONTACTO</p>
-                        </a>
-                    </li>
-                </ul>
+            <div class="navbar-options">
+                <ul id="list-navbar-options"></ul>
+                
+                <button onclick="navbarChangeColorScheme();" class="navbar-button">
+                    <img src="./assets/ui/mode_light.svg" alt="Change theme" id="navbarColorSchemeChanger" class="svg-color">
+                </button>
             </div>
         </nav>
 
-        <main onclick="navHamburguerMenuForceClose()">
-            <div id="home" class="helloContainer useUnselect">
-                <p class="useShadowText">Hola!<br>Bienvenido al Brunoverso.</p>
+        <div class="navbar-hamburger-menu" id="navHamburgerMenu">
+            <div class="navbar-hamburger-menu-options-outside" onclick="navbarHamburgerCollapse();"></div>
+            <div class="navbar-hamburger-menu-options">
+                <ul id="list-navbar-options-mobile"></ul>
+                <div class="navbar-hamburger-menu-options-divisor"></div>
             </div>
+        </div>
+        
+        <div id="previewProject" class="preview-container">
+            <div class="preview-screen">
+                <div class="preview-nav">
+                    <div class="preview-nav-inside" id="previewProjectNav">
+                        <div class="preview-title">
+                            <img src="./assets/ui/image_fail.svg" class="preview-nav-logo" alt="Projcet icon" id="previewProjectIcon" onerror="this.src='./assets/ui/image_fail.svg';">
+                            <h1 id="previewProjectTitle"></h1>
+                        </div>
 
-            <div id="about" class="basicContainer useShadow basicContainerHoverImg">
+                        <button onclick="previewProjectClose();" class="preview-nav-close">
+                            <img src="./assets/ui/hamburger_close.svg" alt="Cerrar preview">
+                        </button>
+                    </div>
+                    
+                    <div class="preview-nav-divisor"></div>
+                </div>
+                
+                <div class="preview-content" id="previewContent">
 
-                <!-- Me -->
-                <p class="basicContainerTitle useShadowText">Sobre mi</p>
+                    <p class="preview-content-title">Descripción</p>
+                    <p class="preview-content-data" id="previewProjectDescription"></p>
 
-                <div class="basicContainerContent">
-                    <img src="./assets/img/gallery/art/2.jpg" class="useShadow useUnselect">
-                    <p class="useShadowTextSub">Hola, soy Bruno, mi pasatiempo es programar, jugar videojuegos, hacer música, editar fotos y aprender nuevas cosas.<br>Programar me consume casi todo el tiempo, es por eso que suelo hacer algunas cosas simples (como esta página), otras complejas (como programar videojuegos), y hasta otras inusuales como en la que estoy trabajando ahora, un motor 3D a base de Raycast. Aunque de los proyectos ya hablaremos más tarde...</p>
+                    <div class="preview-content-basic-info">
+                        <p class="preview-content-title-center">Screenshots</p>
+
+                        <div class="preview-content-carousel">
+                            <ul class="preview-content-carousel-images" id="previewProjectScreenshotCarousel">
+                                <li class="preview-content-carousel-slide"><img src="./assets/projects/in_memoriam/screenshot_1.png" alt="" active></li>
+                                <li class="preview-content-carousel-slide"><img src="./assets/projects/in_memoriam/screenshot_2.png" alt=""></li>
+                                <li class="preview-content-carousel-slide"><img src="./assets/projects/in_memoriam/screenshot_3.png" alt=""></li>
+                            </ul>
+                            <p class="preview-content-caption" id="previewProjectCaption"></p>
+                        </div>
+                    </div>
+
+                    <p class="preview-content-title">Historia detrás del proyecto</p>
+                    <p class="preview-content-data" id="previewProjectHistory"></p>
+
+                    <p class="preview-content-title">Lenguajes usados</p>
+                    <ul class="preview-content-list" id="listProjectLanguages"></ul>
+                    
+                    <p class="preview-content-title">Tecnologías usadas</p>
+                    <ul class="preview-content-list" id="listProjectTechnologies"></ul>
+                        
+                    <div class="preview-content-metadata">
+                        <div class="project-card-preview-data">
+                            <img src="../assets/ui/card_date.svg" class="svg-color" alt="Card date">
+                            <p id="previewProjectMetadataDate"></p>
+                        </div>
+                        <div class="project-card-preview-data">
+                            <img src="../assets/ui/card_type.svg" class="svg-color" alt="Card type">
+                            <p id="previewProjectMetadataType"></p>
+                        </div>
+                        <div class="project-card-preview-data">
+                            <img src="../assets/ui/card_status.svg" class="svg-color" alt="Card status">
+                            <p id="previewProjectMetadataStatus"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <ul id="previewProjectURL" class="preview-url"></ul>
+            </div>
+        </div>
+
+        <div class="first-container" id="home">
+            <div class="first-container-caption">
+                <div class="first-container-presentation">
+                    <h1>Bienvenido</h1>
+                    <h2>Seguí bajando conocer mis habilidades</h2>
                 </div>
             </div>
 
-            <div id="mishka" class="basicContainer useShadow basicContainerHoverImg">
-                <!-- Mishka -->
-                <p class="basicContainerTitle useShadowText">Mishka 🖤</p>
-                <p class="basicContainerSubtitle useShadowTextSub">Actualmente, tengo una gata llamada Mishka y es un auténtico amor aunque un poco arisca.</p>
+            <div class="first-container-sub">
+                <h1>¿A qué me dedico?</h1>
+                <h1 class="first-container-profession"></h1>
 
-                <div class="basicContainerMural">
-                    <div class="basicContainerImg useShadowImg useUnselect">
-                        <img src="./assets/img/gallery/mishka/1.jpg">
-                        <p class="useShadowTextSub">Anteojos</p>
-                    </div>
-                    
-                    <div class="basicContainerImg useShadowImg useUnselect">
-                        <img src="./assets/img/gallery/mishka/2.jpg">
-                        <p class="useShadowTextSub">Con frío</p>
-                    </div>
-                    
-                    <div class="basicContainerImg useShadowImg useUnselect">
-                        <img src="./assets/img/gallery/mishka/3.jpg">
-                        <p class="useShadowTextSub">Durmiendo</p>
-                    </div>
-                </div>
+                <button onClick="document.getElementById('mainPage').scrollIntoView();"><img src="./assets/ui/down.svg" alt="Scroll down"></button>
             </div>
+        </div>
 
-            <div id="portfolio" class="basicContainer useUnselect useShadow basicContainerHoverImg">
-                <p class="basicContainerTitle useShadowText">Portfolio</p>
+        <main id="mainPage">
+            <div id="knowledge" class="container">
+                <p class="container-title">Portfolio</p>
 
-                <p class="basicContainerSubtitle useShadowTextSub">Hablemos un poco de mis habilidades en software y tecnologias</p>
+                <p class="container-subtitle">Hablemos un poco de mis habilidades en software y tecnologias</p>
                 <ul id="list-technologies" class="container-card"></ul>
                 
-                <p class="basicContainerSubtitle useShadowTextSub">Ahora le toca a los lenguajes</p>
+                <p class="container-subtitle">Ahora le toca a los lenguajes</p>
                 <ul id="list-languages" class="container-card"></ul>
                 
-                <p class="basicContainerSubtitle useShadowTextSub">Otros programas</p>
+                <p class="container-subtitle">Otros programas</p>
                 <ul id="list-software" class="container-card"></ul>
-                
-                <p class="basicContainerSubtitle useShadowTextSub">Proyectos relacionados</p>
+            </div>
+
+            <div id="projects" class="container">
+                <p class="container-subtitle">Proyectos relacionados</p>
                 <ul id="list-project" class="container-card"></ul>
             </div>
         </main>
 
-        <footer id="contact" onclick="navHamburguerMenuForceClose()">
-            <div class="basicContainerFooter useShadow userHoverBasic">
-                <p class="basicContainerTitle useShadowText">Contacto y redes</p>
-                <p class="basicContainerSubtitle useShadowTextSub">Acá están mis redes, usá cualquier metodo de contacto</p>
-
-                <div class="basicContainerLogos useShadowImg">
-                    <a href="https://www.github.com/brunoo1545/" target="_blank"><img src="./assets/img/socialmedia/github.png" class="useUnselect" alt="Github" title="Github"></a>
-                    <a href="https://www.instagram.com/brunoo1545/" target="_blank"><img src="./assets/img/socialmedia/instagram.png" class="useUnselect" alt="Instagram" title="Instagram"></a>
-                    <a href="https://open.spotify.com/intl-es/artist/5GU3aszupYH9fS3jNnsWhV?si=L_AAchzcQtGF53cLPFysFA" target="_blank"><img src="./assets/img/socialmedia/spotify.png" class="useUnselect" alt="Spotify" title="Spotify"></a>
-                    <a href="https://www.twitch.tv/brunoo1545/" target="_blank"><img src="./assets/img/socialmedia/twitch.png" class="useUnselect" alt="Twitch" title="Twitch"></a>
-                    <a href="https://www.twitter.com/brunooo1545/" target="_blank"><img src="./assets/img/socialmedia/twitterx.png" class="useUnselect" alt="Twitter (X)" title="Twitter (X)"></a>
-                    <a href="https://www.youtube.com/channel/UCN3H8P5ltstml7YoOJGDcbw" target="_blank"><img src="./assets/img/socialmedia/youtube.png" class="useUnselect" alt="Youtube" title="Youtube"></a>
-                </div>
-
-                <p class="footerCopy useShadowTextSub">2024 BRUNOO1545 • <a href="https://github.com/BRUNOO1545/brunoo1545.github.io" target="_blank">SOURCE CODE</a></p>
-            </div>
+        <footer id="contact">
+            <p class="container-title">Contacto y redes</p>
+            <ul id="list-footer" class="footer-card"></ul>
         </footer>
     </body>
 </html>
