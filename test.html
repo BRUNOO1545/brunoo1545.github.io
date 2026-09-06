@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Liquid Glass + Chromatic Aberration</title>
+    <style>
+        body {
+            /* Un fondo con mucho contraste para notar bien la refracción y los colores */
+            background: url('https://picsum.photos/id/1015/1920/1080') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: system-ui, sans-serif;
+        }
+
+        glass-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        glass-box:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <glass-box width="350" height="250">Sexo 2</glass-box>
+
+    <script>
+        // Función matemática original intacta
+        function generateDisplacementMap(width, height) {
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            const imgData = ctx.createImageData(width, height);
+            const data = imgData.data;
+
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const index = (y * width + x) * 4;
+                    
+                    let nx = (x / width) * 2.0 - 1.0;
+                    let ny = (y / height) * 2.0 - 1.0;
+
+                    let distX = nx * nx * nx; 
+                    let distY = ny * ny * ny; 
+
+                    data[index] = 128 + (distX * 127);     // Canal Rojo (Eje X)
+                    data[index + 1] = 128 + (distY * 127); // Canal Verde (Eje Y)
+                    data[index + 2] = 0;                   
+                    data[index + 3] = 255;                 
+                }
+            }
+            ctx.putImageData(imgData, 0, 0);
+            return canvas.toDataURL(); 
+        }
+
+        class GlassBox extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+                this.width = this.getAttribute('width') || 300;
+                this.height = this.getAttribute('height') || 200;
+                
+                this.filterId = `glass-filter-${Math.random().toString(36).substr(2, 9)}`;
+                this.initSVGFilter();
+            }
+
+            initSVGFilter() {
+                const base64Texture = generateDisplacementMap(this.width, this.height);
+
+                const svgContainer = document.createElement('div');
+                svgContainer.style.position = 'absolute';
+                svgContainer.style.width = '0';
+                svgContainer.style.height = '0';
+                svgContainer.style.pointerEvents = 'none';
+                
+                // Escalas de distorsión distintas para simular la separación de luz
+                const scaleR = 50;  // Rojo normal
+                const scaleG = 53;  // Verde un poco más distorsionado
+                const scaleB = 56;  // Azul más distorsionado aún
+
+                // EL TRUCO ESTÁ ACÁ ADENTRO
+                svgContainer.innerHTML = `
+                    <svg aria-hidden="true">
+                        <filter id="${this.filterId}" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+                            
+                            <feImage href="${base64Texture}" result="dispMap" width="100%" height="100%" preserveAspectRatio="none"/>
+                            
+                            <!-- 1. Desplazamos tres veces con escalas sutilmente diferentes -->
+                            <feDisplacementMap in="SourceGraphic" in2="dispMap" scale="${scaleR}" xChannelSelector="R" yChannelSelector="G" result="distortedR"/>
+                            <feDisplacementMap in="SourceGraphic" in2="dispMap" scale="${scaleG}" xChannelSelector="R" yChannelSelector="G" result="distortedG"/>
+                            <feDisplacementMap in="SourceGraphic" in2="dispMap" scale="${scaleB}" xChannelSelector="R" yChannelSelector="G" result="distortedB"/>
+                            
+                            <!-- 2. Aislamos los canales de cada versión desplazada (Matemática pura) -->
+                            <!-- Extrae solo el rojo -->
+                            <feColorMatrix in="distortedR" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0 1" result="redOnly"/>
+                            <!-- Extrae solo el verde -->
+                            <feColorMatrix in="distortedG" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 0 1" result="greenOnly"/>
+                            <!-- Extrae solo el azul -->
+                            <feColorMatrix in="distortedB" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 0 1" result="blueOnly"/>
+                            
+                            <!-- 3. Los sumamos (Light Additive Blending) -->
+                            <feComposite in="redOnly" in2="greenOnly" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="rg"/>
+                            <feComposite in="rg" in2="blueOnly" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="finalAberration"/>
+                            
+                            <!-- 4. Un blur final MUY leve para que no quede crocante (opcional) -->
+                            <feGaussianBlur in="finalAberration" stdDeviation="0.5" result="blurred" />
+
+                            <feMerge>
+                                <feMergeNode in="blurred" />
+                            </feMerge>
+                        </filter>
+                    </svg>
+                `;
+                document.body.appendChild(svgContainer);
+            }
+
+            connectedCallback() {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            width: ${this.width}px;
+                            height: ${this.height}px;
+                            border-radius: 24px;
+                            background: rgba(255, 255, 255, 0.02); /* Lo bajé un toque para que se vea más el fondo */
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                            box-shadow: inset 0 0 20px rgba(255,255,255,0.05);
+                            
+                            backdrop-filter: url(#${this.filterId});
+                            -webkit-backdrop-filter: url(#${this.filterId});
+                        }
+                    </style>
+                    <slot></slot>
+                `;
+            }
+        }
+
+        customElements.define('glass-box', GlassBox);
+    </script>
+</body>
+</html>
