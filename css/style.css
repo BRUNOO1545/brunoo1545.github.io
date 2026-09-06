@@ -3,12 +3,17 @@ body {
     background: url('https://picsum.photos/id/1015/1920/1080');
 }
 
+canvas {
+    pointer-events: none !important;
+}
+
 /* Liquid Glass */
-.glass-nav {
-    z-index: 10000;
+.nav-containter {
+    pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10000;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -27,7 +32,8 @@ body {
     -o-border-radius: 2vw;
 }
 
-.glass-nav h1 {
+.nav-containter button {
+    pointer-events: auto;
+    position: relative;
     z-index: 3;
-    color: #FFF;
 }

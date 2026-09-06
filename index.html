@@ -27,8 +27,8 @@
     </head>
 
     <body>
-        <div class="glass-nav">
-            <h1>sas</h1>
+        <div class="nav-containter">
+            <button>sas</button>
         </div>
     </body>
 
@@ -36,7 +36,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         const glassEffect = liquidGL({
         snapshot: "body", // The area used for refraction, <body> recommended and default
-        target: ".glass-nav", // CSS selector for the element(s) to glass-ify
+        target: ".nav-containter", // CSS selector for the element(s) to glass-ify
         resolution: 2.0, // The quality of the snapshot
         refraction: 0.01, // Base refraction strength (0–1)
         aberration: 0, // Chromatic aberration strength (0–1). 0 = off
@@ -45,7 +45,7 @@
         frost: 0, // Subtle blur radius in px. 0 = crystal clear
         shadow: true, // Adds a soft drop-shadow under the pane
         specular: true, // Animated light highlights (slightly more GPU)
-        reveal: "fade", // Reveal animation
+        reveal: "none", // Reveal animation
         tilt: false, // Whether tilt on hover is enabled
         tiltFactor: 5, // If tilt is enabled, how much tilt
         tiltEase: 400, // Tilt settle duration in ms, on hover in and out
@@ -62,6 +62,7 @@
         },
         });
     });
+
     </script>
 
     <br>
